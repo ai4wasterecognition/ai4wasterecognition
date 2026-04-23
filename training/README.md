@@ -13,6 +13,7 @@ The goal is not to publish a final benchmark yet, but to make the release reprod
 - `configs/radar_transformer_biomass.yaml`
 - `configs/radar_transformer_material_primary.yaml`
 - `../scripts/export_radar_dataset.py`
+- `../scripts/build_radar_release.py`
 - `../scripts/train_radar_transformer.py`
 
 ## Recommended Workflow
@@ -23,6 +24,12 @@ The goal is not to publish a final benchmark yet, but to make the release reprod
 python scripts/export_radar_dataset.py \
   --subset core \
   --output-dir build/radar_core_v1
+```
+
+Or build the full local release package:
+
+```bash
+python scripts/build_radar_release.py
 ```
 
 2. Train the biomass detector:

@@ -20,9 +20,13 @@ data/
 processed/
 outputs/
 report_assets/
+build/
+release/
+runs/
 
 # Working exports in the repository root
 *.csv
+!docs/datasets/radar_material_mapping_overrides.csv
 
 # Local office documents and reports
 *.docx

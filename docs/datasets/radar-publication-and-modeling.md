@@ -178,7 +178,10 @@ The recommended public label source chain is:
 
 1. catalog join from `Ciselnik Merani`
 2. curated mapping from `material_name_auto_mapping.csv`
-3. explicit provenance fields that record whether a label came from catalog only or from catalog plus curated mapping
+3. tracked overrides from `radar_material_mapping_overrides.csv`
+4. explicit provenance fields that record whether a label came from catalog only or from catalog plus curated mapping
+
+Known ambiguous records should not be forced into benchmark classes. In this repository, unresolved labels can be marked as `unknown`, and the default material-classification training script excludes `unknown` from the supervised benchmark.
 
 ## Split Policy
 
@@ -255,7 +258,9 @@ Therefore, the best v1 choice is:
 The repository contains a first reproducibility scaffold for this plan:
 
 - `scripts/export_radar_dataset.py`
+- `scripts/build_radar_release.py`
 - `scripts/train_radar_transformer.py`
+- `docs/datasets/radar_material_mapping_overrides.csv`
 - `training/configs/`
 - `training/README.md`
 

@@ -1,0 +1,26 @@
+measurement_id,material_name_auto,material_primary,material_secondary,obal,has_biomass,is_background,label_source
+m_0001a84982c4b378,Nádoba s plastem + PET láhev s vodou,plastic,water,nadoba,False,False,catalog+mapping
+m_0005201e1a2c04f0,Nádoba s papírem + biomasa,paper_cardboard,biomass,nadoba,True,False,catalog+mapping
+m_000d50df83ea017b,Nádoba s plastem,plastic,,nadoba,False,False,catalog+mapping
+m_000fa9e0e11c4699,Pytel s plastem vzdálenosti 1m – jiná poloha,plastic,,pytel,False,False,catalog+mapping
+m_0010e6188e5da9d1,plechovky,metal,,,False,False,catalog+mapping
+m_001145cbaa2a361d,Nádoba s papírem,paper_cardboard,,nadoba,False,False,catalog+mapping
+m_0012141c240ad6c1,Málá a velká pet láhev s vodu,water,plastic,,False,False,catalog+mapping
+m_0013faa61144a9ba,"Nádoba s papírem + biomasa, vzdálenejší stena nádoby od radaru, (výška = stred nádoby)",paper_cardboard,biomass,nadoba,True,False,catalog+mapping
+m_001c245f60782139,Nádoba s papírem + plechovky,paper_cardboard,metal,nadoba,False,False,catalog+mapping
+m_001f6c9041526b38,Pytel s plastem vzdálenosti 1m,plastic,,pytel,False,False,catalog+mapping
+m_002239c2b3b8cd32,Nádoba s papírem,paper_cardboard,,nadoba,False,False,catalog+mapping
+m_00323115aa93070b,"Velká biomasa na plastové podložke výška = na podložkách 0.7m, vzdálenost od radaru = bližšia stena nádoby",biomass,plastic,nadoba,True,False,catalog+mapping
+m_003e2a2292701c5d,Sklo,glass,,,False,False,catalog+mapping
+m_004bc67e685508bb,Samotný olej 1l,oil,,,False,False,catalog+mapping
+m_004dedf8ce7bc6a6,Nádoba s plastem + PET láhev s vodou,plastic,water,nadoba,False,False,catalog+mapping
+m_0050e49a09841c0b,Velký pytel s plastem,plastic,,pytel,False,False,catalog+mapping
+m_0057ab469c58a4e3,Nádoba s plastem + biomasa,plastic,biomass,nadoba,True,False,catalog+mapping
+m_005bd49103ad29f3,Referenčné meranie - pozadie 2,background,,,False,True,catalog+mapping
+m_005f9f97a1d9faeb,Lidské telo – figurant - jiná poloha,human,,,False,False,catalog+mapping
+m_0060f1af3f4b64e6,"Málá a velká pet láhev s vodu, tetra pack s rastliným mliekom",water,plastic,,False,False,catalog+mapping
+m_006b8e54b887b40a,"Karton krabice 1,2 m",paper_cardboard,,,False,False,catalog+mapping
+m_006fb645457ce22a,Nádoba s plastem sklo,glass,plastic,nadoba,False,False,catalog+mapping
+m_0070a65f04dbe0b8,Referenčné meranie - pozadie 1,background,,,False,True,catalog+mapping
+m_0070c274b7750f29,"Velká biomasa na plastové podložke výška = 0.7m, vzdálenost od radaru = 0.6m",biomass,plastic,,True,False,catalog+mapping
+m_007322c8408ae55c,"Velká biomasa na plastové podložke výška = na podložkách 0.7m, vzdálenost od radaru =vzdialená stena nádoby",biomass,plastic,nadoba,True,False,catalog+mapping

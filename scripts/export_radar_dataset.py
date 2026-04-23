@@ -16,6 +16,7 @@ import pandas as pd
 
 DEFAULT_XLSX = Path("data/16012026/Dec_Jan_v5.xlsx")
 DEFAULT_MAPPING = Path("outputs/object_detectability/material_name_auto_mapping.csv")
+DEFAULT_MAPPING_OVERRIDES = Path("docs/datasets/radar_material_mapping_overrides.csv")
 
 
 def normalize_text(value: object) -> str | None:
@@ -197,9 +198,13 @@ def load_catalog(xlsx_path: Path) -> pd.DataFrame:
     return catalog
 
 
-def load_material_mapping(mapping_path: Path) -> pd.DataFrame:
+def load_material_mapping(mapping_path: Path, overrides_path: Path | None = None) -> pd.DataFrame:
     mapping = pd.read_csv(mapping_path)
+    if overrides_path is not None and overrides_path.exists():
+        overrides = pd.read_csv(overrides_path)
+        mapping = pd.concat([mapping, overrides], ignore_index=True)
     mapping["material_name_norm"] = mapping["material_name_auto"].map(normalize_key)
+    mapping = mapping.drop_duplicates(subset=["material_name_norm"], keep="last")
     return mapping
 
 
@@ -237,9 +242,10 @@ def attach_labels(raw_bins: pd.DataFrame, catalog: pd.DataFrame, mapping: pd.Dat
         suffixes=("", "_mapped"),
     )
     mapped["material_name_auto"] = mapped["material_name_auto"].fillna(mapped["material_name_auto_mapped"])
-    mapped["has_biomass"] = (
-        mapped["material_primary"].eq("biomass")
-        | mapped["material_secondary"].eq("biomass")
+    mapped["has_biomass"] = np.where(
+        mapped["material_primary"].eq("unknown"),
+        pd.NA,
+        mapped["material_primary"].eq("biomass") | mapped["material_secondary"].eq("biomass"),
     )
     mapped["is_background"] = mapped["material_primary"].eq("background")
 
@@ -497,10 +503,17 @@ def normalize_for_parquet(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
-def export_dataset(xlsx_path: Path, mapping_path: Path, output_dir: Path, subset: str, seed: int) -> None:
+def export_dataset(
+    xlsx_path: Path,
+    mapping_path: Path,
+    output_dir: Path,
+    subset: str,
+    seed: int,
+    mapping_overrides_path: Path | None = None,
+) -> None:
     raw_bins = load_raw_bins(xlsx_path)
     catalog = load_catalog(xlsx_path)
-    mapping = load_material_mapping(mapping_path)
+    mapping = load_material_mapping(mapping_path, overrides_path=mapping_overrides_path)
     labeled_bins = attach_labels(raw_bins, catalog, mapping)
     subset_bins = apply_subset_filter(labeled_bins, subset)
 
@@ -540,6 +553,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--xlsx", type=Path, default=DEFAULT_XLSX)
     parser.add_argument("--mapping-csv", type=Path, default=DEFAULT_MAPPING)
+    parser.add_argument("--mapping-overrides-csv", type=Path, default=DEFAULT_MAPPING_OVERRIDES)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--subset", choices=["core", "extended", "all"], default="core")
     parser.add_argument("--seed", type=int, default=42)
@@ -554,6 +568,7 @@ def main() -> None:
         output_dir=args.output_dir,
         subset=args.subset,
         seed=args.seed,
+        mapping_overrides_path=args.mapping_overrides_csv,
     )
 
 

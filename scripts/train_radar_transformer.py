@@ -256,9 +256,12 @@ def load_exported_dataset(dataset_dir: Path, task: str) -> tuple[SplitData, Spli
         merged["target_label"] = merged["has_biomass"].astype(bool).map({False: "no_biomass", True: "biomass"})
     elif task == "material_primary":
         merged = merged[merged["material_primary"].notna()].copy()
+        merged = merged[merged["material_primary"].astype(str) != "unknown"].copy()
         merged["target_label"] = merged["material_primary"].astype(str)
     elif task == "material_fine":
         merged = merged[merged["material_name_auto"].notna()].copy()
+        if "material_primary" in merged.columns:
+            merged = merged[merged["material_primary"].astype(str) != "unknown"].copy()
         merged["target_label"] = merged["material_name_auto"].astype(str)
     else:
         raise ValueError(f"Unsupported task: {task}")

@@ -9,6 +9,12 @@ Recommended contents:
 - a few example annotations
 - preview figures or thumbnails
 
+Current generated examples:
+
+- `radar_core_measurement_labels_sample.csv`
+- `radar_core_measurement_metadata_sample.csv`
+- `radar_core_measurement_bins_sample.csv`
+
 Do not place full datasets here.
 
 Real dataset releases should be archived externally and linked from `docs/datasets/`.
