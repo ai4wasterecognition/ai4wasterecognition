@@ -1,154 +1,82 @@
 # Publishing Guide
 
-This guide assumes you want to use:
+This repository should be published as a project hub, not as a full dataset dump.
 
-- GitHub for the public project page, code, docs, and lightweight curated files
-- Zenodo for archival release and DOI assignment
+Recommended split:
 
-## 1. Decide the Repository Name
+- GitHub for project pages, deliverable mapping, dataset cards, dataset links, and small `samples/`
+- Zenodo or another research repository for full archived dataset releases and DOI assignment
 
-Because the repository should follow the official application and may later host multiple outputs, use the official project identity rather than a dataset-specific slug.
+## 1. Repository Identity
 
-Recommended repository name:
+Use the official project identity rather than a dataset-specific name.
 
-- `AI4WasteRecognition`
+- repository name: `AI4WasteRecognition`
+- description: `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`
 
-Recommended GitHub slug if you prefer lowercase style:
-
-- `ai4wasterecognition`
-- or `ai4waste-recognition`
-
-Recommendation:
-
-- repository name / slug: official project acronym
-- repository description: official project title
-- datasets: separate subpages, folders, or DOI links inside the same umbrella repository
-- radar outputs: one specific output stream, not the whole repository identity
-
-## 2. Prepare the First Public Commit
+## 2. First Public Commit
 
 From the project root:
 
 ```bash
-git init -b main
-git add README.md DATASET_CARD.md CITATION.cff .gitignore docs public_dataset
-git commit -m "Initial public repository scaffold"
+git add README.md DATASET_CARD.md CITATION.cff .gitignore docs samples
+git commit -m "Restructure repository around project deliverables"
 ```
 
-If you later decide to publish selected notebooks or scripts, add them in a second commit after review.
+## 3. Keep GitHub Focused on Public Documentation
 
-## 3. Create the GitHub Repository via the Web
+The default public contents should be:
 
-1. Go to `https://github.com/new`
-2. Set the owner
-3. Enter the repository name
-4. Add a short description
-5. Choose `Public`
-6. Do not initialize it with a README, `.gitignore`, or license
-7. Click `Create repository`
+- project overview pages
+- work-package and deliverable indexes
+- dataset landing pages in `docs/datasets/`
+- publication indexes
+- small examples in `samples/`
 
-## 4. Connect Local Git to GitHub
+The default non-GitHub contents should be:
 
-Replace the placeholders below:
+- full dataset packages
+- raw measurement exports
+- large media collections
+- restricted consortium documents
 
-```bash
-git remote add origin https://github.com/<github-user>/<repo-name>.git
-git push -u origin main
-```
+## 4. Publish Dataset Families via Landing Pages
 
-## 5. Fill the GitHub Repository Metadata
+For each real dataset release:
 
-On the GitHub repository page:
+1. create or update one dataset page in `docs/datasets/`
+2. add a short sample or schema preview in `samples/` if needed
+3. publish the real dataset in Zenodo or another archive
+4. add the DOI and download link back into the dataset page
 
-1. Add the repository description
-2. Add topics such as `radar`, `waste`, `dataset`, `fmcw`, `cw`, `open-science`
-3. Pin the repository if relevant
-4. Check that the `Cite this repository` widget appears from `CITATION.cff`
+## 5. GitHub Metadata
 
-## 6. Add Curated Public Dataset Files or Dataset Links
+On GitHub, fill in:
 
-If the dataset is small and curated, place release files in `public_dataset/`, for example:
+- repository description
+- topics such as `waste`, `open-science`, `dataset-registry`, `radar-sensing`, `computer-vision`, `segmentation`
+- the citation widget from `CITATION.cff`
 
-- `public_dataset/measurements.csv`
-- `public_dataset/material_conditions.csv`
-- `public_dataset/data_dictionary.csv`
+## 6. Release Strategy
 
-If the dataset is large or should be DOI-first:
+Recommended release order:
 
-- keep only dataset cards and download links in GitHub
-- publish the actual files in Zenodo or another research repository
-- link them from `README.md` and dataset documentation pages
+1. project scaffold and deliverable structure
+2. first public documentation release
+3. first dataset landing page plus sample files
+4. first external DOI-backed dataset archive
+5. project release notes pointing to the archive
 
-If the repository will host multiple public outputs:
+## 7. Zenodo Flow
 
-- create one page per dataset in `docs/datasets/`
-- add deliverable-linked notes in `docs/deliverables/`
-- keep the top-level `README.md` project-wide, not dataset-specific
+1. create or log into Zenodo
+2. connect the GitHub repository
+3. enable the repository
+4. create a GitHub release
+5. let Zenodo archive the release and mint a DOI
 
-Then commit and push:
+After the DOI is available:
 
-```bash
-git add public_dataset
-git commit -m "Add curated public dataset v0.1"
-git push
-```
-
-## 7. Create a GitHub Release
-
-Recommended first tag:
-
-- `v0.1.0` for an initial curated draft
-- `v1.0.0` for the first stable DOI-backed public release
-
-GitHub web flow:
-
-1. Open `Releases`
-2. Click `Draft a new release`
-3. Create the tag
-4. Add release notes summarizing the dataset contents
-5. Publish the release
-
-## 8. Connect GitHub to Zenodo
-
-Zenodo flow:
-
-1. Create or log into your Zenodo account
-2. Connect your GitHub account
-3. Enable this repository in Zenodo
-4. Create a GitHub release
-5. Wait for Zenodo to archive the release and mint a DOI
-
-After Zenodo creates the DOI:
-
-- add the DOI to `README.md`
-- add the DOI to `CITATION.cff`
-- optionally add a `.zenodo.json` file for richer metadata
-
-## 9. Update `CITATION.cff`
-
-Before the first stable public release, review:
-
-- final title
-- final version
-- author list or consortium citation style
-- DOI
-
-## 10. Optional CLI Flow with `gh`
-
-If you later install and authenticate the GitHub CLI:
-
-```bash
-gh repo create <repo-name> --public --source=. --remote=origin --push
-```
-
-At the moment this machine does not have `gh` installed, so the web flow is the safe default.
-
-## 11. Recommended Order of Public Release
-
-1. Publish the repository scaffold
-2. Publish project-level documentation under the official project name
-3. Decide per dataset whether it lives in GitHub or only via external DOI links
-4. Publish curated dataset files or dataset links
-5. Create the first GitHub release
-6. Archive the release in Zenodo if needed
-7. Announce the DOI-backed version
+- add it to the relevant dataset page
+- update `CITATION.cff` if needed
+- include it in release notes and README links

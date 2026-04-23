@@ -29,6 +29,6 @@ report_assets/
 *.odt
 readme.txt
 
-# Recommended place for future public releases
-!public_dataset/
-!public_dataset/**
+# Recommended place for future public examples
+!samples/
+!samples/**

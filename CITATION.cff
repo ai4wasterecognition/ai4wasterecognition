@@ -8,10 +8,11 @@ abstract: "Public-facing umbrella repository for the AI4WasteRecognition project
 keywords:
   - radar
   - waste
-  - FMCW
-  - CW
-  - detectability
   - dataset
+  - dataset-registry
+  - open-science
+  - segmentation
+  - waste-management
   - project-repository
 version: "0.1.0"
 date-released: "2026-04-23"
