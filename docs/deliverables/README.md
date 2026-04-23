@@ -38,7 +38,7 @@ The `Access` column below copies the `V/N` notation from the application table.
 | D2.3 | AI and Radar Sensor Applications in Waste Management Report | KPB2 | Optima Ideas | M8 | V | methods page and public report link |
 | D3.1 | Laboratory Setup and Calibration Report | KPB3 | Sensoneo | M5 | V | setup page, figures, and selected sample material |
 | D3.2 | Detector Validation and Certification Documentation | KPB3 | Sensoneo | M6 | N | reference note only if public summary is allowed |
-| D3.3 | Experimental Data Collection Dataset | KPB3 | Sensoneo | M24 | N | dataset landing page, samples, and external archive link |
+| D3.3 | Experimental Data Collection Dataset | KPB3 | Sensoneo | M24 | N | dataset landing page, repository release when approved, and optional archival DOI link |
 | D4.1 | Report on AI-Driven Radar Data Analysis | KPB4 | Optima Ideas | M24 | N | analysis summary page and linked dataset registry |
 | D4.2 | Report on AI-Driven Video Data Analysis | KPB4 | Optima Ideas | M24 | V | dataset and method landing page, publication links |
 | D4.3 | Report on AI-Driven multidetector Data Analysis | KPB4 | Optima Ideas | M24 | V | multidetector output page and external links |

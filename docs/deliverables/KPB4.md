@@ -14,4 +14,5 @@ This page covers the public repository representation of analytical deliverables
 - public summaries of methods and results
 - dataset landing pages for derived outputs
 - benchmark and schema notes
+- approved compact derived releases in `release/`
 - links to external archives and publications

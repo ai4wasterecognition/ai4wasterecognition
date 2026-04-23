@@ -6,8 +6,8 @@ These milestone notes are derived from the application and translated into expec
 | --- | --- | --- | --- |
 | M1 | Working project boards established | M1 | project structure and governance pages available |
 | M2 | Data collection start | M7 | first experimental workflow notes or dataset-page placeholders |
-| M3 | Data collection finalisation, optimisation and evaluation finalisation, interim report | M24 | interim output pages, dataset landing pages, and progress summaries |
-| M4 | Articles finalisation, project landing | M30 | publication index, final summaries, and linked final archives |
+| M3 | Data collection finalisation, optimisation and evaluation finalisation, interim report | M24 | interim output pages, dataset landing pages, repository-hosted releases where appropriate, and progress summaries |
+| M4 | Articles finalisation, project landing | M30 | publication index, final summaries, and linked archival mirrors where needed |
 
 ## How To Use This Page
 

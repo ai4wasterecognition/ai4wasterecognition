@@ -18,9 +18,10 @@ This page is intended for fused or multidetector outputs combining several sensi
 - modality overview
 - schema summary
 - sample fused records or preview assets in `samples/`
-- external archive link once released
+- compact repository release in `release/` if approved and practical
+- external archive link once released, if needed
 
-## External Archive
+## DOI and Archive
 
 - DOI: `TBD`
 - URL: `TBD`

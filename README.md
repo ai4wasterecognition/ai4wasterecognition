@@ -2,7 +2,7 @@
 
 This repository is the public umbrella repository for the project `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`.
 
-It is structured from the official project application and its deliverables, not from one internal analysis workspace. Radar measurements are only one output stream. The repository is meant to aggregate project information, deliverable-linked public outputs, dataset landing pages, sample files, and links to externally archived datasets.
+It is structured from the official project application and its deliverables, not from one internal analysis workspace. Radar measurements are only one output stream. The repository is meant to aggregate project information, deliverable-linked public outputs, dataset landing pages, directly hosted public dataset releases when practical, sample files, and links to externally archived datasets.
 
 ## Project Identity
 
@@ -21,11 +21,12 @@ This GitHub repository is intended to publish:
 - work-package and deliverable indexes
 - public summaries of reports, methods, and outputs
 - dataset cards and dataset landing pages
-- small, non-sensitive `samples/` only
-- links to DOI-backed archives where full datasets are released
+- versioned public dataset releases when they are small enough, non-sensitive, and consortium-approved
+- `samples/` for lightweight previews and for future larger datasets
+- links to DOI-backed archives where external archival release is preferred
 - publication and dissemination links
 
-This GitHub repository is not intended to be the primary storage for full research datasets. Full datasets should normally live in Zenodo or another research repository, with this repository acting as the public index and documentation layer.
+This GitHub repository can host curated benchmark-ready datasets directly when size and sensitivity allow it. For long-term archival, DOI minting, or larger future datasets, Zenodo or another research repository remains the recommended companion archive.
 
 ## Repository Layout
 
@@ -63,10 +64,11 @@ This repository follows that same structure. Each work package has its own deliv
 
 The current publication policy for this repository is:
 
-- no full operational datasets in GitHub by default
-- only small, curated, non-sensitive `samples/`
+- public datasets may be versioned directly in GitHub when they are compact, curated, and approved for release
+- the current radar training release is published in [release/radar_dataset_v1](release/radar_dataset_v1/README.md)
+- `samples/` remains for lightweight previews and for dataset families that are not fully hosted in the repository
 - one landing page per dataset family in `docs/datasets/`
-- one external archive link or DOI per real dataset release
+- one repository path and, when available, one archival DOI or external mirror per real dataset release
 - clear linkage between each dataset and the relevant deliverable(s)
 
 ## Important Publication Constraints
@@ -74,8 +76,8 @@ The current publication policy for this repository is:
 - Do not publish raw logs, sensitive measurements, or private consortium material without approval.
 - Do not publish personal data or anything that could identify a person.
 - Do not publish assets that may weaken future IP protection or commercialization.
-- Prefer external archival release for real datasets, and keep GitHub focused on documentation, metadata, samples, and links.
+- Use repository-hosted releases only for curated public datasets. Larger, citation-critical, or long-term archival copies should also be mirrored in Zenodo or another research archive.
 
 ## Citation
 
-If you use this repository or a dataset released from it, cite the repository metadata in `CITATION.cff` and the external DOI-backed archive when available.
+If you use this repository or a dataset released from it, cite the repository metadata in `CITATION.cff` and the archival DOI when one is added.

@@ -25,18 +25,20 @@ Describe what the dataset contains, why it exists, and which research question o
 
 - dataset landing page in `docs/datasets/`
 - small sample files in `samples/` if appropriate
+- directly hosted dataset files in `release/<dataset-version>/` if approved and practical
 - schema description or data dictionary
 - links to publications, reports, or notebooks if public
 
 ## What Stays Outside This Repository
 
-- full dataset files
 - large media assets
+- very large dataset packages that are a poor fit for Git
 - raw operational exports
 - sensitive or approval-restricted material
 
-## External Archive
+## Repository Release or External Archive
 
+- repository release path: `<release-path-or-placeholder>`
 - DOI: `<doi-or-placeholder>`
 - landing page: `<url-or-placeholder>`
 - version: `<version>`
@@ -47,7 +49,7 @@ Describe the main unit of observation for the dataset.
 
 ## Planned Public Files
 
-- sample file names that may appear in `samples/`
+- repository-hosted dataset files or sample file names
 - schema files or data dictionary files
 - optional preview figures or thumbnails
 
@@ -65,7 +67,7 @@ List the expected public fields, media types, labels, or annotation objects.
 
 ## Recommended Exclusions
 
-List items that should not be published in GitHub or in the external archive.
+List items that should not be published in GitHub or in any external archive.
 
 ## Ethics, Privacy, and IP Review
 

@@ -23,15 +23,16 @@ Describe the dataset family and its role in the project.
 - landing page
 - schema notes
 - sample files in `samples/` if relevant
+- repository-hosted release files in `release/<dataset-version>/` if relevant
 - links to publications or reports
 
-## External Archive
+## DOI and Archive
 
 - DOI: `<doi>`
 - URL: `<url>`
 - version: `<version>`
 
-## Sample Files
+## Public Files
 
 - `<sample-file>`
 

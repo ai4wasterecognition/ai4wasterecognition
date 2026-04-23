@@ -1,6 +1,6 @@
 # AI4WasteRecognition Radar Dataset Release
 
-This local release package was generated from the `WasteR` workspace.
+This public release package was generated from the `WasteR` workspace and is versioned directly in this repository as `release/radar_dataset_v1`.
 
 Contents:
 
@@ -8,6 +8,7 @@ Contents:
 - `extended/` atypical or lower-consistency subset
 - `summary.json` combined release summary
 - `checksums.sha256` file checksums
+- `core/data_dictionary.csv` and `extended/data_dictionary.csv`
 
 Counts:
 
@@ -16,4 +17,4 @@ Counts:
 - extended measurements: 201
 - extended bin rows: 17495
 
-This package is intended for local review before any public archival release.
+This package is the current public GitHub release for the radar training dataset. A DOI-backed archival mirror can be added later if needed.

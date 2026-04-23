@@ -223,11 +223,12 @@ This aligns well with:
 
 Recommended workflow:
 
-1. Keep the GitHub repository as the public project hub.
-2. Publish the real dataset in Zenodo as a dataset record.
-3. Link the GitHub repository to Zenodo for code releases.
-4. Reserve the DOI before the final upload if you want the DOI included inside files.
-5. Use DataCite-compliant metadata fields when describing the record.
+1. Keep the GitHub repository as the public project hub and home for compact curated releases.
+2. Publish the radar dataset directly in the repository when its size and sensitivity allow it.
+3. Add a Zenodo mirror when you want archival DOI support or a second publication channel.
+4. Link the GitHub repository to Zenodo for code or release archiving if needed.
+5. Reserve the DOI before the final upload if you want the DOI included inside files.
+6. Use DataCite-compliant metadata fields when describing the archival record.
 
 Zenodo states that a record consists of metadata, files, and a persistent identifier, and that metadata is critical for discoverability. Zenodo also supports automatic ingestion of GitHub releases once the repository is enabled.
 
@@ -263,6 +264,7 @@ The repository contains a first reproducibility scaffold for this plan:
 - `docs/datasets/radar_material_mapping_overrides.csv`
 - `training/configs/`
 - `training/README.md`
+- `release/radar_dataset_v1/`
 
 These scripts are meant to create and consume the dataset structure described above.
 

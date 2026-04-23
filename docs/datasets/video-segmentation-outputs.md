@@ -18,9 +18,10 @@ This page is intended for video-analysis, segmentation, or annotation outputs th
 - label taxonomy summary
 - annotation format notes
 - sample assets or thumbnails in `samples/`
-- external archive link once released
+- compact repository release in `release/` if approved and practical
+- external archive link once released, if needed
 
-## External Archive
+## DOI and Archive
 
 - DOI: `TBD`
 - URL: `TBD`

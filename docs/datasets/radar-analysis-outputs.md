@@ -19,12 +19,12 @@ For the recommended release shape and baseline model strategy, see [radar-public
 
 - dataset description
 - variable and metric summary
-- sample tables in `samples/`
+- sample tables in `samples/` or a compact repository release in `release/` if approved
 - links to public reports or publications
-- external archive link once released
+- external archive link once released, if needed
 - benchmark-oriented training scripts and configuration files
 
-## External Archive
+## DOI and Archive
 
 - DOI: `TBD`
 - URL: `TBD`

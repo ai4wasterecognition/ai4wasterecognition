@@ -8,8 +8,8 @@ This repository uses the work-package structure from the application as its prim
 | --- | --- | --- | --- |
 | KPB1 | Project Management | STU | governance summaries, data-management notes, sustainability notes |
 | KPB2 | Tech and AI Research | STU | reviews, technology landscape summaries, methodological notes |
-| KPB3 | Laboratory Experiment | Sensoneo | setup summaries, experimental data landing pages, sample assets |
-| KPB4 | Data analysis | Optima Ideas | radar, video, and multidetector analysis pages and linked datasets |
+| KPB3 | Laboratory Experiment | Sensoneo | setup summaries, experimental data landing pages, approved benchmark dataset releases, sample assets |
+| KPB4 | Data analysis | Optima Ideas | radar, video, and multidetector analysis pages, linked datasets, and training resources |
 | KPB5 | Evaluation | STU | comparisons, recommendations, final summaries, publication index |
 
 ## Repository Interpretation

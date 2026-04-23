@@ -1,6 +1,6 @@
 # Samples
 
-This folder is reserved for small, non-sensitive examples that help explain public datasets without publishing the full dataset package in GitHub.
+This folder is reserved for small, non-sensitive examples that complement public datasets and larger future archives.
 
 Recommended contents:
 
@@ -15,6 +15,6 @@ Current generated examples:
 - `radar_core_measurement_metadata_sample.csv`
 - `radar_core_measurement_bins_sample.csv`
 
-Do not place full datasets here.
+The full radar training release is hosted separately in [release/radar_dataset_v1](../release/radar_dataset_v1/README.md).
 
-Real dataset releases should be archived externally and linked from `docs/datasets/`.
+Do not place versioned dataset releases here. Use `release/<dataset-version>/` for repository-hosted public datasets, or document external archives from `docs/datasets/`.
