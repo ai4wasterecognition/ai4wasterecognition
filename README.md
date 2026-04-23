@@ -21,7 +21,7 @@ This public repository is intentionally narrower than the full local workspace. 
 - Short title / acronym: `AI4 Waste recognition`
 - Project code: `09I05-03-V02-00068`
 - Funding: EU NextGenerationEU through the Recovery and Resilience Plan for Slovakia
-- Call: 09I05-03-V02, research projects focused on digitalization of the economy in TRL 1-3
+- Call: `09I05-03-V02`, research projects focused on digitalization of the economy in TRL 1-3
 - Consortium: Slovak University of Technology in Bratislava, Optima Ideas s.r.o., Sensoneo j. s. a., Asseco Central Europe, a. s., and the City of Michalovce
 
 ## What Will Be Published Here
@@ -82,6 +82,12 @@ These files are useful internally, but the public project repository should expo
 - `public_dataset/` - optional location for small curated release files
 - `docs/PUBLISHING.md` - step-by-step GitHub and Zenodo publication guide
 - `docs/LICENSING.md` - license decision guidance for code, data, and documentation
+
+## Licensing
+
+This repository currently contains an MIT `LICENSE` file for code and documentation scaffolding already created in GitHub.
+
+Dataset licensing is not finalized here and should be decided separately for each public dataset release.
 
 ## Citation
 
