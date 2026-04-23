@@ -13,6 +13,8 @@ Planned dataset landing page.
 
 This page is intended to describe externally archived radar measurement datasets or curated experiment subsets produced during laboratory data collection.
 
+For the concrete publication and modeling strategy, see [radar-publication-and-modeling.md](radar-publication-and-modeling.md).
+
 ## What This Repository Should Contain
 
 - dataset description
@@ -20,6 +22,7 @@ This page is intended to describe externally archived radar measurement datasets
 - schema notes
 - small sample files in `samples/`
 - link to the external archive once published
+- exporter and training scripts linked from the repository
 
 ## What Should Stay External
 

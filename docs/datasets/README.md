@@ -25,6 +25,7 @@ The intended publication model is:
 
 ## Deliverable-Backed Dataset Families
 
+- [radar-publication-and-modeling.md](radar-publication-and-modeling.md) - release structure, metadata policy, and baseline transformer plan
 - [radar-experimental-data.md](radar-experimental-data.md) - linked mainly to `D3.3`
 - [radar-analysis-outputs.md](radar-analysis-outputs.md) - linked mainly to `D4.1`
 - [video-segmentation-outputs.md](video-segmentation-outputs.md) - linked mainly to `D4.2`

@@ -39,8 +39,10 @@ This GitHub repository is not intended to be the primary storage for full resear
 - [docs/deliverables/KPB4.md](docs/deliverables/KPB4.md) - analysis outputs
 - [docs/deliverables/KPB5.md](docs/deliverables/KPB5.md) - evaluation and publication outputs
 - [docs/datasets/README.md](docs/datasets/README.md) - dataset registry and publication rules
+- [docs/datasets/radar-publication-and-modeling.md](docs/datasets/radar-publication-and-modeling.md) - concrete radar publication and transformer baseline plan
 - [docs/publications/README.md](docs/publications/README.md) - publication index placeholder
 - [samples/README.md](samples/README.md) - policy for repository-hosted samples
+- [training/README.md](training/README.md) - export and training workflow for radar data
 - [DATASET_CARD.md](DATASET_CARD.md) - generic dataset-card template
 - [docs/PUBLISHING.md](docs/PUBLISHING.md) - GitHub and Zenodo publication workflow
 - [docs/LICENSING.md](docs/LICENSING.md) - licensing guidance for code, docs, and data

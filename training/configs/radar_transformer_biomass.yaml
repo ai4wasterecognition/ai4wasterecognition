@@ -1,0 +1,28 @@
+dataset_dir: build/radar_core_v1
+task: biomass_binary
+output_dir: runs/radar_transformer_biomass
+seed: 42
+
+training:
+  epochs: 60
+  batch_size: 128
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  patience: 12
+  num_workers: 0
+
+model:
+  d_model: 96
+  nhead: 4
+  num_layers: 3
+  dim_feedforward: 192
+  dropout: 0.1
+  patch_len: 4
+  patch_stride: 2
+  pooling: cls
+
+split:
+  column: split
+  train: train
+  val: val
+  test: test

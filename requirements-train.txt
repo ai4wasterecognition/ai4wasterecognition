@@ -1,0 +1,5 @@
+# Install PyTorch separately from https://pytorch.org/get-started/locally/
+numpy>=2.0
+pandas>=2.2
+pyarrow>=16
+PyYAML>=6.0

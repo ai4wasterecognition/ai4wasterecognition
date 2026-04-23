@@ -13,6 +13,8 @@ Planned dataset landing page.
 
 This page is intended for curated radar-derived analytical datasets such as detectability tables, derived benchmarks, or comparison summaries.
 
+For the recommended release shape and baseline model strategy, see [radar-publication-and-modeling.md](radar-publication-and-modeling.md).
+
 ## What This Repository Should Contain
 
 - dataset description
@@ -20,6 +22,7 @@ This page is intended for curated radar-derived analytical datasets such as dete
 - sample tables in `samples/`
 - links to public reports or publications
 - external archive link once released
+- benchmark-oriented training scripts and configuration files
 
 ## External Archive
 
