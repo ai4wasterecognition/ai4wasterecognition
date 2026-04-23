@@ -1,0 +1,34 @@
+# Jupyter and Python
+.ipynb_checkpoints/
+.jupyter_ystore.db
+*.ipynb
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+
+# Raw and local-only data
+data/
+
+# Large processed and intermediate outputs
+processed/
+outputs/
+report_assets/
+
+# Working exports in the repository root
+*.csv
+
+# Local office documents and reports
+*.docx
+*.odt
+readme.txt
+
+# Recommended place for future public releases
+!public_dataset/
+!public_dataset/**

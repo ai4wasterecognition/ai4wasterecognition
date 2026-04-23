@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this repository or a dataset released from it, please cite it using the metadata below."
+title: "AI4WasteRecognition"
+type: software
+authors:
+  - name: "AI4WasteRecognition Consortium"
+abstract: "Public-facing umbrella repository for the AI4WasteRecognition project, including project documentation, research artifacts, and links to curated dataset releases derived from the WasteR analysis workspace."
+keywords:
+  - radar
+  - waste
+  - FMCW
+  - CW
+  - detectability
+  - dataset
+  - project-repository
+version: "0.1.0"
+date-released: "2026-04-23"
