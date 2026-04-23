@@ -1,0 +1,25 @@
+{
+  "subset": "core",
+  "measurement_count": 13650,
+  "bin_row_count": 254594,
+  "material_primary_counts": {
+    "plastic": 4002,
+    "paper_cardboard": 3103,
+    "water": 1449,
+    "biomass": 1322,
+    "background": 1234,
+    "glass": 751,
+    "human": 690,
+    "container_only": 506,
+    "oil": 312,
+    "metal": 225,
+    "unknown": 56
+  },
+  "split_counts": {
+    "train": 9102,
+    "val": 2418,
+    "test": 2130
+  },
+  "max_seq_len": 33,
+  "channel_count": 4
+}

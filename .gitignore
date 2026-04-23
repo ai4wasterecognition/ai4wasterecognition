@@ -23,6 +23,9 @@ report_assets/
 build/
 release/
 runs/
+!release/
+!release/radar_dataset_v1/
+!release/radar_dataset_v1/**
 
 # Working exports in the repository root
 *.csv

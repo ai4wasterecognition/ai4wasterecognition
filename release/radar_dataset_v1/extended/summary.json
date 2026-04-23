@@ -1,0 +1,19 @@
+{
+  "subset": "extended",
+  "measurement_count": 201,
+  "bin_row_count": 17495,
+  "material_primary_counts": {
+    "background": 116,
+    "water": 34,
+    "paper_cardboard": 17,
+    "metal": 17,
+    "plastic": 17
+  },
+  "split_counts": {
+    "train": 127,
+    "test": 42,
+    "val": 32
+  },
+  "max_seq_len": 161,
+  "channel_count": 4
+}
