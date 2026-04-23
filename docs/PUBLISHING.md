@@ -7,7 +7,7 @@ This guide assumes you want to use:
 
 ## 1. Decide the Repository Name
 
-Because you want the repository name to follow the official application, use the official project identity rather than a dataset-specific slug.
+Because the repository should follow the official application and may later host multiple outputs, use the official project identity rather than a dataset-specific slug.
 
 Recommended repository name:
 
@@ -23,6 +23,7 @@ Recommendation:
 - repository name / slug: official project acronym
 - repository description: official project title
 - datasets: separate subpages, folders, or DOI links inside the same umbrella repository
+- radar outputs: one specific output stream, not the whole repository identity
 
 ## 2. Prepare the First Public Commit
 
@@ -77,6 +78,12 @@ If the dataset is large or should be DOI-first:
 - keep only dataset cards and download links in GitHub
 - publish the actual files in Zenodo or another research repository
 - link them from `README.md` and dataset documentation pages
+
+If the repository will host multiple public outputs:
+
+- create one page per dataset in `docs/datasets/`
+- add deliverable-linked notes in `docs/deliverables/`
+- keep the top-level `README.md` project-wide, not dataset-specific
 
 Then commit and push:
 

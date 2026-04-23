@@ -1,19 +1,21 @@
 # AI4WasteRecognition
 
-This repository is the public-facing project scaffold for the local `WasteR` analysis workspace. It is intended to host project documentation, reproducible analysis artifacts, and links to one or more curated public datasets derived from radar-based waste recognition experiments.
+This repository is the public-facing umbrella repository for the project `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`. It is intended to host project documentation, deliverable-linked outputs, dataset metadata, curated public releases, and links to externally archived datasets.
 
-## Overview
+## Project Overview
 
-AI4WasteRecognition explores whether 24 GHz radar sensing, combined with downstream analytics and AI methods, can support recognition of waste composition and waste cleanliness under controlled and semi-realistic measurement conditions.
+AI4WasteRecognition explores innovative methods for recognition of different types of waste using AI-assisted sensing and data-driven analysis. The project is positioned in TRL 1-3 and focuses on early-stage research, concept validation, experimental proof-of-concept, and preparation of reusable research outputs for follow-up work.
 
-The current local workspace contains:
+The broader project is not limited to one sensing modality or one dataset. It is intended to support multiple research outputs related to waste recognition, waste cleanliness assessment, and AI-ready data resources.
+
+The current local `WasteR` workspace is only one internal analysis environment behind this repository. It currently contains:
 
 - exploratory and analytical notebooks for CW vs FMCW comparison
 - environment and background-effect analyses
 - object/material detectability analysis
 - processed run-level tables derived from radar measurements
 
-This public repository is intentionally narrower than the full local workspace. Raw measurement logs, large intermediate files, internal office documents, and unpublished working exports are excluded by default.
+This public repository is intentionally broader in scope than the radar-only workspace, but narrower than the full private project storage. Raw measurement logs, large intermediate files, internal office documents, and unpublished working exports are excluded by default.
 
 ## Project Context
 
@@ -24,28 +26,55 @@ This public repository is intentionally narrower than the full local workspace. 
 - Call: `09I05-03-V02`, research projects focused on digitalization of the economy in TRL 1-3
 - Consortium: Slovak University of Technology in Bratislava, Optima Ideas s.r.o., Sensoneo j. s. a., Asseco Central Europe, a. s., and the City of Michalovce
 
-## What Will Be Published Here
+## Scope of This Repository
 
 This repository is designed to contain:
 
-- official project overview and publication-ready documentation
+- official project-level overview and publication-ready documentation
+- descriptions of project outputs and deliverables
 - one or more dataset cards describing public releases
 - citation metadata for the repository
 - instructions for GitHub and Zenodo publication
 - curated public dataset files and/or links to externally archived datasets
+- links to outputs published from different work packages or deliverables
 
-Recommended project-level structure:
+This means the repository can later include, for example:
 
-- `public_dataset/`
-  - small curated files that fit naturally in GitHub
+- radar-based research outputs and derived detectability datasets
+- waste-management datasets prepared for downstream modeling
+- segmentation datasets or annotation resources
+- supporting documentation for deliverables, publications, and public releases
+
+Radar measurements are therefore only one specific output stream of the project, not the definition of the whole repository.
+
+## Research Themes
+
+Based on the project description, the repository may eventually expose outputs related to:
+
+- radar-based waste recognition experiments
+- AI-ready datasets for waste classification and cleanliness analysis
+- segmentation or annotation datasets
+- benchmarking resources for comparing recognition approaches
+- public documentation tied to project deliverables, publications, or dissemination outputs
+
+## Recommended Structure
+
+- `README.md`
+  - project-level overview
 - `docs/datasets/`
-  - one markdown card per published dataset
-- `docs/links/`
-  - DOI and landing-page links for datasets stored in Zenodo or elsewhere
+  - one markdown card per public dataset
+- `docs/deliverables/`
+  - public-facing notes or indexes for deliverable-related outputs
+- `docs/PUBLISHING.md`
+  - publication workflow for GitHub and Zenodo
+- `public_dataset/`
+  - optional location for smaller curated files that fit naturally in GitHub
+- external DOI links
+  - for larger or separately archived datasets
 
 ## Current Status
 
-Status: public release scaffold under preparation.
+Status: public project repository scaffold under preparation.
 
 Important notes before the first public release:
 
@@ -55,7 +84,7 @@ Important notes before the first public release:
 - prefer DOI-backed dataset archives over pushing large working files directly to GitHub
 - use this repository as the umbrella project repository even if some datasets live elsewhere
 
-## Local Workspace vs Public Release
+## Local Workspace vs Public Project Repository
 
 The local workspace currently includes analysis notebooks and intermediate artifacts such as:
 
@@ -74,12 +103,21 @@ These files are useful internally, but the public project repository should expo
 - a clear license
 - a DOI-backed archival copy
 
+Not every internal analysis artifact should be published directly. In many cases, the correct public object will be:
+
+- a derived dataset
+- a dataset card plus DOI link
+- a cleaned benchmark split
+- or a deliverable-linked summary page
+
 ## Repository Structure
 
 - `README.md` - project overview
-- `DATASET_CARD.md` - initial dataset-release template
+- `DATASET_CARD.md` - initial generic dataset-release template
 - `CITATION.cff` - citation metadata for GitHub
 - `public_dataset/` - optional location for small curated release files
+- `docs/datasets/` - dataset-specific public pages
+- `docs/deliverables/` - deliverable/output placeholders
 - `docs/PUBLISHING.md` - step-by-step GitHub and Zenodo publication guide
 - `docs/LICENSING.md` - license decision guidance for code, data, and documentation
 
