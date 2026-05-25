@@ -1,0 +1,24 @@
+# Binary contamination detector: is there ANY foreign object in the plastic? yes/no.
+# Reference measurements (Nb=10 Empty, 20 1/3 plastic, 40 Full plastic) → False.
+# Everything else → True.
+
+model: transformer
+target: label_contamination_present
+release: release/multidetector_dataset_v1
+run_name: transformer_label_contamination
+models_dir: models/multidetector_dataset_v1
+
+d_model: 48           # smaller model, simpler task
+depth: 3
+heads: 4
+mlp_ratio: 2
+dropout: 0.1
+
+epochs: 25
+batch_size: 64
+lr: 0.0005
+weight_decay: 0.0001
+
+noise_db: 0.5
+channel_mask_p: 0.2
+seed: 42

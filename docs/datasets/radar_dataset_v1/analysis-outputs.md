@@ -13,7 +13,7 @@ Planned dataset landing page.
 
 This page is intended for curated radar-derived analytical datasets such as detectability tables, derived benchmarks, or comparison summaries.
 
-For the recommended release shape and baseline model strategy, see [radar-publication-and-modeling.md](radar-publication-and-modeling.md).
+For the recommended release shape and baseline model strategy, see [publication-and-modeling.md](publication-and-modeling.md).
 
 ## What This Repository Should Contain
 

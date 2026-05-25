@@ -40,7 +40,8 @@ This GitHub repository can host curated benchmark-ready datasets directly when s
 - [docs/deliverables/KPB4.md](docs/deliverables/KPB4.md) - analysis outputs
 - [docs/deliverables/KPB5.md](docs/deliverables/KPB5.md) - evaluation and publication outputs
 - [docs/datasets/README.md](docs/datasets/README.md) - dataset registry and publication rules
-- [docs/datasets/radar-publication-and-modeling.md](docs/datasets/radar-publication-and-modeling.md) - concrete radar publication and transformer baseline plan
+- [docs/datasets/radar_dataset_v1/publication-and-modeling.md](docs/datasets/radar_dataset_v1/publication-and-modeling.md) - concrete radar publication and transformer baseline plan
+- [docs/datasets/multidetector_dataset_v1/outputs.md](docs/datasets/multidetector_dataset_v1/outputs.md) - multidetector dataset landing page
 - [docs/publications/README.md](docs/publications/README.md) - publication index placeholder
 - [samples/README.md](samples/README.md) - policy for repository-hosted samples
 - [training/README.md](training/README.md) - export and training workflow for radar data
@@ -65,9 +66,12 @@ This repository follows that same structure. Each work package has its own deliv
 The current publication policy for this repository is:
 
 - public datasets may be versioned directly in GitHub when they are compact, curated, and approved for release
-- the current radar training release is published in [release/radar_dataset_v1](release/radar_dataset_v1/README.md)
-- `samples/` remains for lightweight previews and for dataset families that are not fully hosted in the repository
-- one landing page per dataset family in `docs/datasets/`
+- each dataset family lives in its own per-version subfolder across the entire repo: `release/<name>_v<n>/`, `scripts/<name>_v<n>/`, `samples/<name>_v<n>/`, `training/configs/<name>_v<n>/`, `docs/datasets/<name>_v<n>/`
+- current public releases:
+  - [release/radar_dataset_v1](release/radar_dataset_v1/README.md) — 24 GHz FMCW radar training set
+  - [release/multidetector_dataset_v1](release/multidetector_dataset_v1/README.md) — radar + UV-VIS + photos, fixed-geometry lab session
+- planned: `release/video_segmentation_dataset_v1/` (D4.2)
+- one landing page per dataset family in `docs/datasets/<name>_v<n>/`
 - one repository path and, when available, one archival DOI or external mirror per real dataset release
 - clear linkage between each dataset and the relevant deliverable(s)
 

@@ -1,0 +1,19 @@
+# Baseline scikit-learn classifier on multidetector_dataset_v1.
+# Default reference config; run from project root:
+#   python scripts/multidetector_dataset_v1/train_classifier.py \
+#       --model baseline --algo logreg --feat both --target label_category
+
+model: baseline
+algo: logreg                       # logreg | rf
+feat: both                         # hc (handcrafted) | flat | both
+target: label_category             # label_category | label_name | label_contamination_present
+release: release/multidetector_dataset_v1
+run_name: baseline_logreg_label_category
+models_dir: models/multidetector_dataset_v1
+
+# Notes on feature space:
+#   handcrafted = per-channel mean / std / max / argmax / target-bin mean (bin 7+8)
+#                 / background-bin mean (bin 1+16+17) / delta target-bg / snr_db
+#                 + cross-channel deltas (I1-I2, Q1-Q2)
+#   flat        = raw flattened (4 * 17) = 68 values
+#   both        = concatenation

@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from export_radar_dataset import (
+from export_dataset import (
     DEFAULT_MAPPING,
     DEFAULT_MAPPING_OVERRIDES,
     DEFAULT_XLSX,
@@ -69,12 +69,12 @@ def write_samples(release_root: Path, samples_dir: Path) -> None:
     metadata = pd.read_parquet(release_root / "core" / "measurement_metadata.parquet")
     bins = pd.read_parquet(release_root / "core" / "measurement_bins.parquet")
 
-    labels.head(25).to_csv(samples_dir / "radar_core_measurement_labels_sample.csv", index=False)
-    metadata.head(25).to_csv(samples_dir / "radar_core_measurement_metadata_sample.csv", index=False)
+    labels.head(25).to_csv(samples_dir / "core_measurement_labels_sample.csv", index=False)
+    metadata.head(25).to_csv(samples_dir / "core_measurement_metadata_sample.csv", index=False)
 
     first_measurement_id = bins["measurement_id"].iloc[0]
     bins[bins["measurement_id"] == first_measurement_id].head(40).to_csv(
-        samples_dir / "radar_core_measurement_bins_sample.csv",
+        samples_dir / "core_measurement_bins_sample.csv",
         index=False,
     )
 
@@ -85,7 +85,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--mapping-csv", type=Path, default=DEFAULT_MAPPING)
     parser.add_argument("--mapping-overrides-csv", type=Path, default=DEFAULT_MAPPING_OVERRIDES)
     parser.add_argument("--release-dir", type=Path, default=Path("release/radar_dataset_v1"))
-    parser.add_argument("--samples-dir", type=Path, default=Path("samples"))
+    parser.add_argument("--samples-dir", type=Path, default=Path("samples/radar_dataset_v1"))
     parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()
 

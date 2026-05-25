@@ -9,9 +9,15 @@ __pycache__/
 .venv/
 venv/
 
-# OS and editor noise
+# OS, editor and tool caches
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.claude/
 
 # Raw and local-only data
 data/
@@ -21,21 +27,35 @@ processed/
 outputs/
 report_assets/
 build/
-release/
 runs/
-!release/
-!release/radar_dataset_v1/
-!release/radar_dataset_v1/**
 
-# Working exports in the repository root
+# Local model checkpoints (regeneratable from training scripts)
+models/
+
+# Releases — exclude unknown release subdirs by default, whitelist published ones.
+# Using release/* (not release/) so git can still traverse into release/ to
+# evaluate the whitelist rules below.
+release/*
+!release/radar_dataset_v1/
+!release/multidetector_dataset_v1/
+
+# Working / report-only CSV exports in the repository root and elsewhere.
+# Whitelist only the CSV files that are part of a public release or doc set.
 *.csv
-!docs/datasets/radar_material_mapping_overrides.csv
+!docs/datasets/**/*.csv
+!release/**/*.csv
+!samples/**/*.csv
 
 # Local office documents and reports
 *.docx
 *.odt
 readme.txt
 
-# Recommended place for future public examples
+# Internal planning / utility files that should not be published
+PLAN_*.md
+prepare_frames_dataset.py
+generate_zadanie_docx.py
+
+# Recommended place for public examples
 !samples/
 !samples/**

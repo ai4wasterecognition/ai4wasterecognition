@@ -1,0 +1,18 @@
+column_name,description,dtype
+measurement_id,public stable identifier for a single radar capture,string
+bin_idx,1-based radar bin index inside a single capture,integer
+bin_range_m,"distance represented by the radar bin, not object distance",float
+i1_dbm,I1 channel magnitude in dBm,float
+q1_dbm,Q1 channel magnitude in dBm,float
+i2_dbm,I2 channel magnitude in dBm,float
+q2_dbm,Q2 channel magnitude in dBm,float
+is_target_bin_w2,"target-window flag using bins {2,3}",boolean
+is_target_bin_w3,"target-window flag using bins {2,3,4}",boolean
+is_background_bin,background-bin flag using bin 1 and the trailing bins,boolean
+material_name_auto,curated fine-grained object or material label,string
+material_primary,curated coarse material class,string
+material_secondary,optional secondary material class,string
+obal,optional packaging or container context,string
+has_biomass,binary flag for biomass presence,boolean
+capture_group_id,group identifier used for leakage-safe data splitting,string
+split,recommended split assignment,string

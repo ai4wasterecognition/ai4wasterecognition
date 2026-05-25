@@ -1,0 +1,110 @@
+{
+  "dataset_version": "multidetector_dataset_v1.0.0",
+  "n_measurements": 2950,
+  "n_bin_rows": 50150,
+  "n_channels": 4,
+  "channel_order": [
+    "I1",
+    "Q1",
+    "I2",
+    "Q2"
+  ],
+  "n_bins_per_frame": 17,
+  "bin_size_m": 0.320604,
+  "frequency_band_mhz": [
+    24008,
+    24242
+  ],
+  "modulation": "FMCW",
+  "ramp_time_ms": 50,
+  "measurement_distance_m": 2.12,
+  "back_wall_distance_m": 4.0,
+  "place": "Lab Optima",
+  "recommended_target_bins": [
+    7,
+    8
+  ],
+  "acquisition_date": "2026-04-23",
+  "label_classes": {
+    "label_name": [
+      "1/3 of clear dry paper waste",
+      "1/3 of clear dry paper waste + Al blinds (rolled up)",
+      "1/3 of clear wet paper waste",
+      "1/3 of plastic",
+      "1/3 of plastic + Al blinds (open)",
+      "1/3 of plastic + Al blinds (rolled up)",
+      "1/3 of plastic + dry paper",
+      "1/3 of plastic + glass objects",
+      "1/3 of plastic + wet paper",
+      "1/3 of plastic + wood objects",
+      "1/3 of plastic + wood objects (panel at right angles to the r. beam)",
+      "1/3 of plastic + wood objects (panel parallel to the r. beam)",
+      "Empty",
+      "Full of plastic",
+      "Full of plastic + Al blinds (rolled up)",
+      "Full of plastic + glass objects",
+      "Full of plastic + wet paper"
+    ],
+    "label_category": [
+      "Only paper waste",
+      "Plastic + Al blinds",
+      "Plastic + glass waste",
+      "Plastic + paper waste",
+      "Plastic + wooden objects",
+      "Reference measurement"
+    ],
+    "label_contamination_present": [
+      false,
+      true
+    ]
+  },
+  "samples_per_nb": {
+    "10": 193,
+    "20": 173,
+    "40": 153,
+    "50": 204,
+    "70": 179,
+    "71": 183,
+    "80": 184,
+    "120": 153,
+    "130": 159,
+    "140": 177,
+    "160": 207,
+    "180": 166,
+    "181": 218,
+    "200": 157,
+    "210": 141,
+    "220": 142,
+    "230": 161
+  },
+  "samples_per_category": {
+    "Plastic + wooden objects": 566,
+    "Plastic + Al blinds": 541,
+    "Reference measurement": 519,
+    "Plastic + paper waste": 496,
+    "Only paper waste": 444,
+    "Plastic + glass waste": 384
+  },
+  "splits": {
+    "test": 589,
+    "train": 1770,
+    "val": 591
+  },
+  "splits_strategy": "folder_time_ordered_60_20_20",
+  "split_seed": 42,
+  "tensor_shape": [
+    2950,
+    4,
+    17
+  ],
+  "excluded_nb": [
+    90
+  ],
+  "excluded_reason": "Operator excluded (no matching label in source catalogue)",
+  "source_documents": {
+    "raw_radar_frames": "data/multidetektor/meranie_23_04",
+    "label_xlsx": "data/multidetektor/VysledkyPreStatistiku.xlsx (column Name o sample, Category)",
+    "geometry_report": "data/multidetektor/D 4.31_Správa o multidetektorovej analýze údajov riadenej AI.docx",
+    "sample_overview": "data/multidetektor/Príloha c. 1 Prehlad_vzorkov a snímkov.docx"
+  }
+}

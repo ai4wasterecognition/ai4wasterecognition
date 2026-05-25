@@ -1,0 +1,45 @@
+filename,exif_dt,nearest_measurement_id,nearest_nb_of_sample,nearest_label_category,nearest_label_name,time_diff_sec,within_tolerance
+20260423_131511.jpg,2026-04-23T13:15:11,2026-04-23_13-14-01.859/FD/10_2026-04-23_13-14-17.613.txt,10,Reference measurement,Empty,54.0,True
+20260423_131519.jpg,2026-04-23T13:15:19,2026-04-23_13-14-01.859/FD/10_2026-04-23_13-14-17.613.txt,10,Reference measurement,Empty,62.0,True
+20260423_131522.jpg,2026-04-23T13:15:22,2026-04-23_13-14-01.859/FD/10_2026-04-23_13-14-17.613.txt,10,Reference measurement,Empty,65.0,True
+20260423_131529.jpg,2026-04-23T13:15:30,2026-04-23_13-14-01.859/FD/10_2026-04-23_13-14-17.613.txt,10,Reference measurement,Empty,73.0,True
+20260423_131532.jpg,2026-04-23T13:15:32,2026-04-23_13-14-01.859/FD/10_2026-04-23_13-14-17.613.txt,10,Reference measurement,Empty,75.0,True
+20260423_131910.jpg,2026-04-23T13:19:11,2026-04-23_13-21-01.064/FD/20_2026-04-23_13-21-01.992.txt,20,Reference measurement,1/3 of plastic,110.0,True
+20260423_131915.jpg,2026-04-23T13:19:15,2026-04-23_13-21-01.064/FD/20_2026-04-23_13-21-01.992.txt,20,Reference measurement,1/3 of plastic,106.0,True
+20260423_132128.jpg,2026-04-23T13:21:29,2026-04-23_13-21-01.064/FD/20_2026-04-23_13-21-15.004.txt,20,Reference measurement,1/3 of plastic,14.0,True
+20260423_132212.jpg,2026-04-23T13:22:12,2026-04-23_13-21-01.064/FD/20_2026-04-23_13-21-15.004.txt,20,Reference measurement,1/3 of plastic,57.0,True
+20260423_132407.jpg,2026-04-23T13:24:07,2026-04-23_13-25-36.428/FD/50_2026-04-23_13-25-36.864.txt,50,Plastic + wooden objects,1/3 of plastic + wood objects,89.0,True
+20260423_132518.jpg,2026-04-23T13:25:19,2026-04-23_13-25-36.428/FD/50_2026-04-23_13-25-36.864.txt,50,Plastic + wooden objects,1/3 of plastic + wood objects,17.0,True
+20260423_132520.jpg,2026-04-23T13:25:20,2026-04-23_13-25-36.428/FD/50_2026-04-23_13-25-36.864.txt,50,Plastic + wooden objects,1/3 of plastic + wood objects,16.0,True
+20260423_132523.jpg,2026-04-23T13:25:23,2026-04-23_13-25-36.428/FD/50_2026-04-23_13-25-36.864.txt,50,Plastic + wooden objects,1/3 of plastic + wood objects,13.0,True
+20260423_132747.jpg,2026-04-23T13:27:48,2026-04-23_13-25-36.428/FD/50_2026-04-23_13-25-53.069.txt,50,Plastic + wooden objects,1/3 of plastic + wood objects,115.0,True
+20260423_132749.jpg,2026-04-23T13:27:49,2026-04-23_13-25-36.428/FD/50_2026-04-23_13-25-53.069.txt,50,Plastic + wooden objects,1/3 of plastic + wood objects,116.0,True
+20260423_132751.jpg,2026-04-23T13:27:51,2026-04-23_13-25-36.428/FD/50_2026-04-23_13-25-53.069.txt,50,Plastic + wooden objects,1/3 of plastic + wood objects,118.0,True
+20260423_133102.jpg,2026-04-23T13:31:03,2026-04-23_13-30-11.154/FD/80_2026-04-23_13-30-26.488.txt,80,Plastic + paper waste,1/3 of plastic + dry paper,37.0,True
+20260423_133104.jpg,2026-04-23T13:31:05,2026-04-23_13-30-11.154/FD/80_2026-04-23_13-30-26.488.txt,80,Plastic + paper waste,1/3 of plastic + dry paper,39.0,True
+20260423_133117.jpg,2026-04-23T13:31:17,2026-04-23_13-30-11.154/FD/80_2026-04-23_13-30-26.488.txt,80,Plastic + paper waste,1/3 of plastic + dry paper,51.0,True
+20260423_133120.jpg,2026-04-23T13:31:20,2026-04-23_13-30-11.154/FD/80_2026-04-23_13-30-26.488.txt,80,Plastic + paper waste,1/3 of plastic + dry paper,54.0,True
+20260423_133129.jpg,2026-04-23T13:31:29,2026-04-23_13-30-11.154/FD/80_2026-04-23_13-30-26.488.txt,80,Plastic + paper waste,1/3 of plastic + dry paper,63.0,True
+20260423_133131.jpg,2026-04-23T13:31:31,2026-04-23_13-30-11.154/FD/80_2026-04-23_13-30-26.488.txt,80,Plastic + paper waste,1/3 of plastic + dry paper,65.0,True
+20260423_133314.jpg,2026-04-23T13:33:15,2026-04-23_13-30-11.154/FD/80_2026-04-23_13-30-26.488.txt,80,Plastic + paper waste,1/3 of plastic + dry paper,169.0,False
+20260423_134011.jpg,2026-04-23T13:40:11,2026-04-23_13-39-36.012/FD/70_2026-04-23_13-39-51.072.txt,70,Plastic + wooden objects,1/3 of plastic + wood objects (panel parallel to the r. beam),20.0,True
+20260423_134012.jpg,2026-04-23T13:40:12,2026-04-23_13-39-36.012/FD/70_2026-04-23_13-39-51.072.txt,70,Plastic + wooden objects,1/3 of plastic + wood objects (panel parallel to the r. beam),21.0,True
+20260423_134051.jpg,2026-04-23T13:40:51,2026-04-23_13-41-01.230/FD/71_2026-04-23_13-41-01.958.txt,71,Plastic + wooden objects,1/3 of plastic + wood objects (panel at right angles to the r. beam),10.0,True
+20260423_134052.jpg,2026-04-23T13:40:53,2026-04-23_13-41-01.230/FD/71_2026-04-23_13-41-01.958.txt,71,Plastic + wooden objects,1/3 of plastic + wood objects (panel at right angles to the r. beam),8.0,True
+20260423_134053.jpg,2026-04-23T13:40:54,2026-04-23_13-41-01.230/FD/71_2026-04-23_13-41-01.958.txt,71,Plastic + wooden objects,1/3 of plastic + wood objects (panel at right angles to the r. beam),7.0,True
+20260423_134341.jpg,2026-04-23T13:43:41,2026-04-23_13-44-44.206/FD/160_2026-04-23_13-44-44.972.txt,160,Plastic + glass waste,Full of plastic + glass objects,63.0,True
+20260423_134417.jpg,2026-04-23T13:44:17,2026-04-23_13-44-44.206/FD/160_2026-04-23_13-44-44.972.txt,160,Plastic + glass waste,Full of plastic + glass objects,27.0,True
+20260423_134418.jpg,2026-04-23T13:44:18,2026-04-23_13-44-44.206/FD/160_2026-04-23_13-44-44.972.txt,160,Plastic + glass waste,Full of plastic + glass objects,26.0,True
+20260423_134617.jpg,2026-04-23T13:46:17,2026-04-23_13-46-31.702/FD/140_2026-04-23_13-46-31.702.txt,140,Plastic + glass waste,1/3 of plastic + glass objects,14.0,True
+20260423_134618.jpg,2026-04-23T13:46:18,2026-04-23_13-46-31.702/FD/140_2026-04-23_13-46-31.702.txt,140,Plastic + glass waste,1/3 of plastic + glass objects,13.0,True
+20260423_134909.jpg,2026-04-23T13:49:09,2026-04-23_13-50-02.188/FD/180_2026-04-23_13-50-02.712.txt,180,Plastic + Al blinds,1/3 of plastic + Al blinds (rolled up),53.0,True
+20260423_134914.jpg,2026-04-23T13:49:15,2026-04-23_13-50-02.188/FD/180_2026-04-23_13-50-02.712.txt,180,Plastic + Al blinds,1/3 of plastic + Al blinds (rolled up),47.0,True
+20260423_134952.jpg,2026-04-23T13:49:53,2026-04-23_13-50-02.188/FD/180_2026-04-23_13-50-02.712.txt,180,Plastic + Al blinds,1/3 of plastic + Al blinds (rolled up),9.0,True
+20260423_135115.jpg,2026-04-23T13:51:15,2026-04-23_13-51-58.553/FD/181_2026-04-23_13-51-58.553.txt,181,Plastic + Al blinds,1/3 of plastic + Al blinds (open),43.0,True
+20260423_135116.jpg,2026-04-23T13:51:17,2026-04-23_13-51-58.553/FD/181_2026-04-23_13-51-58.553.txt,181,Plastic + Al blinds,1/3 of plastic + Al blinds (open),41.0,True
+20260423_140715.jpg,2026-04-23T14:07:15,2026-04-23_14-06-38.340/FD/220_2026-04-23_14-06-51.404.txt,220,Only paper waste,1/3 of clear wet paper waste,24.0,True
+20260423_140907.jpg,2026-04-23T14:09:08,2026-04-23_14-08-31.849/FD/120_2026-04-23_14-08-45.730.txt,120,Plastic + paper waste,1/3 of plastic + wet paper,23.0,True
+20260423_140910.jpg,2026-04-23T14:09:10,2026-04-23_14-08-31.849/FD/120_2026-04-23_14-08-45.730.txt,120,Plastic + paper waste,1/3 of plastic + wet paper,25.0,True
+20260423_140929.jpg,2026-04-23T14:09:29,2026-04-23_14-08-31.849/FD/120_2026-04-23_14-08-45.730.txt,120,Plastic + paper waste,1/3 of plastic + wet paper,44.0,True
+20260423_140930.jpg,2026-04-23T14:09:31,2026-04-23_14-08-31.849/FD/120_2026-04-23_14-08-45.730.txt,120,Plastic + paper waste,1/3 of plastic + wet paper,46.0,True
+20260423_141128.jpg,2026-04-23T14:11:29,2026-04-23_14-10-57.076/FD/130_2026-04-23_14-11-11.289.txt,130,Plastic + paper waste,Full of plastic + wet paper,18.0,True

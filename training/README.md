@@ -1,75 +1,100 @@
 # Training
 
-This folder contains the first public modeling scaffold for radar-based waste recognition.
+Per-dataset training scaffolding lives under `training/configs/<name>_v<n>/`, matching the per-dataset layout used elsewhere in the repository.
 
-The goal is not to publish a final benchmark yet, but to make the release reproducible:
+## Available datasets
 
-- export public-ready radar tensors from the current raw workbook and curated mappings
-- train a compact transformer baseline on the exported data
-- save enough metadata to rerun the experiment later
+### radar_dataset_v1
 
-## Files
+Compact encoder-only transformer for the radar training set (D3.3 / D3.1).
 
-- `configs/radar_transformer_biomass.yaml`
-- `configs/radar_transformer_material_primary.yaml`
-- `../scripts/export_radar_dataset.py`
-- `../scripts/build_radar_release.py`
-- `../scripts/train_radar_transformer.py`
+Configs:
 
-## Recommended Workflow
+- `configs/radar_dataset_v1/transformer_biomass.yaml`
+- `configs/radar_dataset_v1/transformer_material_primary.yaml`
 
-1. Export a clean subset:
+Scripts (under `scripts/radar_dataset_v1/`):
+
+- `export_dataset.py`
+- `build_release.py`
+- `train_transformer.py`
+
+Workflow:
 
 ```bash
-python scripts/export_radar_dataset.py \
-  --subset core \
-  --output-dir build/radar_core_v1
+# Export a clean subset
+python scripts/radar_dataset_v1/export_dataset.py --subset core --output-dir build/radar_core_v1
+
+# Or build the full local release package
+python scripts/radar_dataset_v1/build_release.py
+
+# Train the biomass detector
+python scripts/radar_dataset_v1/train_transformer.py \
+    --config training/configs/radar_dataset_v1/transformer_biomass.yaml
+
+# Train the coarse material classifier
+python scripts/radar_dataset_v1/train_transformer.py \
+    --config training/configs/radar_dataset_v1/transformer_material_primary.yaml
 ```
 
-Or build the full local release package:
+### multidetector_dataset_v1
+
+Compact transformer and sklearn baseline for the fixed-geometry radar lab session (D4.3).
+
+Configs:
+
+- `configs/multidetector_dataset_v1/baseline.yaml`
+- `configs/multidetector_dataset_v1/transformer_label_category.yaml` (primary)
+- `configs/multidetector_dataset_v1/transformer_label_name.yaml` (17-class fine-grained)
+- `configs/multidetector_dataset_v1/transformer_label_contamination.yaml` (binary)
+
+Scripts (under `scripts/multidetector_dataset_v1/`):
+
+- `ingest_raw_txt.py`, `build_sample_mapping.py`, `export_dataset.py` — build the release
+- `extract_as7265x.py`, `build_foto_manifest.py` — auxiliary modalities
+- `build_samples.py` — GitHub-safe previews
+- `train_classifier.py` — baseline + transformer
+- `infer.py` — CLI inference on raw `.txt` frames
+
+Workflow:
 
 ```bash
-python scripts/build_radar_release.py
-```
+# End-to-end build
+python scripts/multidetector_dataset_v1/ingest_raw_txt.py
+python scripts/multidetector_dataset_v1/build_sample_mapping.py
+python scripts/multidetector_dataset_v1/export_dataset.py
+python scripts/multidetector_dataset_v1/extract_as7265x.py
+python scripts/multidetector_dataset_v1/build_foto_manifest.py
+python scripts/multidetector_dataset_v1/build_samples.py
 
-2. Train the biomass detector:
-
-```bash
-python scripts/train_radar_transformer.py \
-  --config training/configs/radar_transformer_biomass.yaml
-```
-
-3. Train the coarse material classifier:
-
-```bash
-python scripts/train_radar_transformer.py \
-  --config training/configs/radar_transformer_material_primary.yaml
+# Train + infer
+python scripts/multidetector_dataset_v1/train_classifier.py \
+    --model transformer --target label_category --epochs 30
+python scripts/multidetector_dataset_v1/infer.py \
+    --model models/multidetector_dataset_v1/transformer_label_category.pt \
+    --input data/multidetektor/meranie_23_04/2026-04-23_13-14-01.859/FD/
 ```
 
 ## Model Choice
 
-The default model is a compact encoder-only transformer with optional patch embedding.
+The default model across radar datasets is a compact encoder-only transformer with optional patch embedding. Multidetector also ships a scikit-learn baseline (LogReg / RandomForest on handcrafted + flattened features) for quick sanity checks without PyTorch.
 
 This is a deliberate compromise:
 
-- closer to the multivariate time series transformer literature than hand-crafted feature models
+- closer to the multivariate time-series transformer literature than hand-crafted feature models alone
 - simpler and more appropriate for short radar sequences than a large long-horizon forecasting architecture
 - easy to reproduce and deploy
 
 ## Runtime Notes
 
-- The current environment in this workspace does not have `torch` installed, so training was not executed here.
-- The scripts are written to be reproducible once PyTorch is installed.
-- The exporter script does not require PyTorch.
+- `scripts/*/train_*.py` and `scripts/multidetector_dataset_v1/infer.py` require PyTorch. The baseline path (`--model baseline`) requires only scikit-learn + joblib.
+- The exporter scripts do not require PyTorch.
 
 ## Suggested Install
 
-Install PyTorch from the official selector for your CPU or CUDA environment:
-
-- https://pytorch.org/get-started/locally/
-
-Then install the remaining Python dependencies:
-
 ```bash
+# PyTorch from the official selector (CPU / CUDA):
+#   https://pytorch.org/get-started/locally/
+
 pip install -r requirements-train.txt
 ```

@@ -1,0 +1,18 @@
+nb_of_sample,label_name,label_category,label_contamination_present
+10,Empty,Reference measurement,False
+20,1/3 of plastic,Reference measurement,False
+40,Full of plastic,Reference measurement,False
+50,1/3 of plastic + wood objects,Plastic + wooden objects,True
+70,1/3 of plastic + wood objects (panel parallel to the r. beam),Plastic + wooden objects,True
+71,1/3 of plastic + wood objects (panel at right angles to the r. beam),Plastic + wooden objects,True
+80,1/3 of plastic + dry paper,Plastic + paper waste,True
+120,1/3 of plastic + wet paper,Plastic + paper waste,True
+130,Full of plastic + wet paper,Plastic + paper waste,True
+140,1/3 of plastic + glass objects,Plastic + glass waste,True
+160,Full of plastic + glass objects,Plastic + glass waste,True
+180,1/3 of plastic + Al blinds (rolled up),Plastic + Al blinds,True
+181,1/3 of plastic + Al blinds (open),Plastic + Al blinds,True
+200,Full of plastic + Al blinds (rolled up),Plastic + Al blinds,True
+210,1/3 of clear dry paper waste,Only paper waste,True
+220,1/3 of clear wet paper waste,Only paper waste,True
+230,1/3 of clear dry paper waste + Al blinds (rolled up),Only paper waste,True

@@ -25,14 +25,37 @@ The intended publication model is:
 - restricted consortium material
 - dataset packages that should live only in an external archive because of size, sensitivity, or licensing
 
+## Folder Convention
+
+Every dataset family lives in its own per-version subfolder (`<name>_v<n>/`) so that the registry, sources, configs, and releases never collide between datasets.
+
+```
+docs/datasets/
+├── README.md                        (this file)
+├── TEMPLATE.md                      (template for new dataset pages)
+├── radar_dataset_v1/                (D3.3 radar training set)
+│   ├── experimental-data.md
+│   ├── publication-and-modeling.md
+│   ├── analysis-outputs.md
+│   └── material_mapping_overrides.csv
+├── multidetector_dataset_v1/        (D4.3 radar+UV-VIS+photos)
+│   ├── outputs.md
+│   ├── publication-and-modeling.md
+│   └── sample_mapping.csv
+└── video_segmentation_dataset_v1/   (D4.2, planned)
+    └── outputs.md
+```
+
+The same convention is mirrored in `release/`, `scripts/`, `samples/`, and `training/configs/`.
+
 ## Deliverable-Backed Dataset Families
 
-- [radar-publication-and-modeling.md](radar-publication-and-modeling.md) - release structure, metadata policy, and baseline transformer plan
-- [radar-experimental-data.md](radar-experimental-data.md) - linked mainly to `D3.3`, with a public repository release already available
-- [radar-analysis-outputs.md](radar-analysis-outputs.md) - linked mainly to `D4.1`
-- [video-segmentation-outputs.md](video-segmentation-outputs.md) - linked mainly to `D4.2`
-- [multidetector-outputs.md](multidetector-outputs.md) - linked mainly to `D4.3`
-- [TEMPLATE.md](TEMPLATE.md) - template for future dataset pages
+- [radar_dataset_v1/experimental-data.md](radar_dataset_v1/experimental-data.md) — linked mainly to `D3.3`, public repository release available
+- [radar_dataset_v1/publication-and-modeling.md](radar_dataset_v1/publication-and-modeling.md) — release structure, metadata policy, and baseline transformer plan
+- [radar_dataset_v1/analysis-outputs.md](radar_dataset_v1/analysis-outputs.md) — linked mainly to `D4.1`
+- [multidetector_dataset_v1/outputs.md](multidetector_dataset_v1/outputs.md) — linked mainly to `D4.3`
+- [video_segmentation_dataset_v1/outputs.md](video_segmentation_dataset_v1/outputs.md) — linked mainly to `D4.2`
+- [TEMPLATE.md](TEMPLATE.md) — template for future dataset pages
 
 ## Future Project-Level Dataset Families
 

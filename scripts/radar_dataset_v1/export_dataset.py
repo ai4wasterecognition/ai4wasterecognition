@@ -16,7 +16,7 @@ import pandas as pd
 
 DEFAULT_XLSX = Path("data/16012026/Dec_Jan_v5.xlsx")
 DEFAULT_MAPPING = Path("outputs/object_detectability/material_name_auto_mapping.csv")
-DEFAULT_MAPPING_OVERRIDES = Path("docs/datasets/radar_material_mapping_overrides.csv")
+DEFAULT_MAPPING_OVERRIDES = Path("docs/datasets/radar_dataset_v1/material_mapping_overrides.csv")
 
 
 def normalize_text(value: object) -> str | None:
