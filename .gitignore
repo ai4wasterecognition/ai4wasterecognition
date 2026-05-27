@@ -37,7 +37,7 @@ models/
 # evaluate the whitelist rules below.
 release/*
 !release/radar_dataset_v1/
-!release/multidetector_dataset_v1/
+!release/radar_dataset_from_multidetektor_measurement/
 
 # Working / report-only CSV exports in the repository root and elsewhere.
 # Whitelist only the CSV files that are part of a public release or doc set.

@@ -1,0 +1,44 @@
+filename,nb_of_sample,description,view,is_setup,has_radar_match
+Nb.10_empty_W.container_viewA.jpg,10,empty W container,a,False,True
+Nb.10_empty_W.container_viewB.jpg,10,empty W container,b,False,True
+Nb.20_PlasticWasteOnlyInContainer_OneThird_volume.jpg,20,PlasticWasteOnlyInContainer OneThird volume,,False,True
+Nb.20_PlasticWasteOnlySpreadOut_OneThird_volume.jpg,20,PlasticWasteOnlySpreadOut OneThird volume,,False,True
+Nb.20_PlasticWasteOnlySpreadOut_OneThird_volume_sl b.jpg,20,PlasticWasteOnlySpreadOut OneThird volume,b,False,True
+Nb.21_PlasticWasteOnlySpreadOut_OneThird_volume_sl.b.jpg,21,PlasticWasteOnlySpreadOut OneThird volume,b,False,False
+Nb.40_PlasticWaste_full_Container sl a.jpeg,40,PlasticWaste full Container,a,False,True
+Nb.50_Plastic_OneThird_and_WoodenObjects_sl a.jpg,50,Plastic OneThird and WoodenObjects,a,False,True
+Nb.50_Plastic_OneThird_and_WoodenObjects_sl b.jpg,50,Plastic OneThird and WoodenObjects,b,False,True
+Nb.50_Plastic_OneThird_and_WoodenObjects_sl c.jpg,50,Plastic OneThird and WoodenObjects,c,False,True
+Nb.51_WoodenObjects_spread_out.jpg,51,WoodenObjects spread out,,False,False
+Nb.70_FullContainer_of_PlasticWaste_plus_Wooden_objects_sl a.jpg,70,FullContainer of PlasticWaste plus Wooden objects,a,False,True
+Nb.70_FullContainer_of_PlasticWaste_plus_Wooden_objects_sl b.jpg,70,FullContainer of PlasticWaste plus Wooden objects,b,False,True
+Nb.70_FullContainer_of_PlasticWaste_plus_Wooden_objects_OtherPosition_sl c.jpg,70,FullContainer of PlasticWaste plus Wooden objects OtherPosition,c,False,True
+Nb.71_FullContainer_of_PlasticWaste_o_plus_Wooden_objects_OtherPosition.sl a.jpg,71,FullContainer of PlasticWaste o plus Wooden objects OtherPosition,a,False,True
+Nb.71_FullContainer_of_PlasticWaste_plus_Wooden_objects_Otherposition_sl b.jpg,71,FullContainer of PlasticWaste plus Wooden objects Otherposition,b,False,True
+Nb.80_OneThird_of_PlasticWaste_plus_PaperWaste_inWasteContainer_sl a.jpg,80,OneThird of PlasticWaste plus PaperWaste inWasteContainer,a,False,True
+Nb.80_OneThird_of_PlasticWaste_plus_PaperWaste_inWasteContainer_sl b.jpg,80,OneThird of PlasticWaste plus PaperWaste inWasteContainer,b,False,True
+Nb.80_OneThird_of_PlasticWaste_plus_PaperWaste_inWasteContainer_sl c.jpg,80,OneThird of PlasticWaste plus PaperWaste inWasteContainer,c,False,True
+Nb.81_PaperWaste_only_SpreadOut_sl a.jpg,81,PaperWaste only SpreadOut,a,False,False
+Nb.81_PaperWaste_only_SpreadOut_sl b.jpg,81,PaperWaste only SpreadOut,b,False,False
+Nb.81_PaperWaste_only_SpreadOut_sl c.jpg,81,PaperWaste only SpreadOut,c,False,False
+Nb.100_OneThirdPlastic_plus_PaperWaste_in_WasteContainer_sl a.jpg,100,OneThirdPlastic plus PaperWaste in WasteContainer,a,False,False
+Nb.120_PlasticWaste_OneThird_of_Container_plus_WetPaperWaste_objects_sl a.jpg,120,PlasticWaste OneThird of Container plus WetPaperWaste objects,a,False,True
+Nb.120_PlasticWaste_OneThird_of_Container_plus_WetPaperWaste_sl a.jpg,120,PlasticWaste OneThird of Container plus WetPaperWaste,a,False,True
+Nb.130_PlasticWaste_Full_of_Container_plus_WetPaperWaste_sl a.jpg,130,PlasticWaste Full of Container plus WetPaperWaste,a,False,True
+Nb.140_PlasticWaste_OneThird_of_Container_plus_Glass_objects_sl a.jpg,140,PlasticWaste OneThird of Container plus Glass objects,a,False,True
+Nb.140_PlasticWaste_OneThird_of_Container_plus_Glass_objects_sl b.jpg,140,PlasticWaste OneThird of Container plus Glass objects,b,False,True
+Nb.160_Full_of_PlasticWaste_plus_Glass_objects_sl a.jpg,160,Full of PlasticWaste plus Glass objects,a,False,True
+Nb.160_FullContainer_of_PlasticWaste_plus_Glass_objects_sl b.jpg,160,FullContainer of PlasticWaste plus Glass objects,b,False,True
+Nb.161_Glass_objects_SpreadOut_sl a.jpg,161,Glass objects SpreadOut,a,False,False
+Nb.180_PlasticWaste_OneThird_of_Container_plus_Al_blinds_sl a.jpg,180,PlasticWaste OneThird of Container plus Al blinds,a,False,True
+Nb.181_Al_blinds_sl a.jpg,181,Al blinds,a,False,True
+Nb.181_PlasticWaste_OneThird_of_Container_plus_Glass_objects_sl a.jpg,181,PlasticWaste OneThird of Container plus Glass objects,a,False,True
+Nb.181_PlasticWaste_OneThird_of_Container_plus_Glass_objects_sl b.jpg,181,PlasticWaste OneThird of Container plus Glass objects,b,False,True
+Nb.200_Al_blinds_only_in_Container sl a.jpeg,200,Al blinds only in Container,a,False,True
+Nb.210_PaperWaste_only_OneThird_od_Container sl a.jpeg,210,PaperWaste only OneThird od Container,a,False,True
+Nb.210_PaperWaste_only_OneThird_od_Container sl b.jpeg,210,PaperWaste only OneThird od Container,b,False,True
+Nb.220_PaperWaste_only_OneThird_of_Container_sl a.jpg,220,PaperWaste only OneThird of Container,a,False,True
+Nb.230_.PlasticWaste_OneThird_of_Container_plus_Al_blinds.jpeg,230,PlasticWaste OneThird of Container plus Al blinds,,False,True
+Measurement setup_slide2.jpg,,Measurement setup slide2,,True,False
+Measurement_setup_slide1.jpg,,Measurement setup slide1,,True,False
+Measurement_setup_slide3.jpg,,Measurement setup slide3,,True,False

@@ -1,0 +1,51 @@
+file,column,dtype,description
+measurement_bins.parquet,measurement_id,string,Unique frame identifier (relative path under raw_root)
+measurement_bins.parquet,bin_idx,int64,"1-based range bin index, 1..17"
+measurement_bins.parquet,range_m,float64,"Approximate range = (bin_idx-1) * bin_size_m, where bin_size_m≈0.320604"
+measurement_bins.parquet,mag_i1_dbm,float64,"Magnitude of I channel, antenna pair 1, in dBm"
+measurement_bins.parquet,mag_q1_dbm,float64,"Magnitude of Q channel, antenna pair 1, in dBm"
+measurement_bins.parquet,mag_i2_dbm,float64,"Magnitude of I channel, antenna pair 2, in dBm"
+measurement_bins.parquet,mag_q2_dbm,float64,"Magnitude of Q channel, antenna pair 2, in dBm"
+measurement_labels.parquet,measurement_id,string,Unique frame identifier
+measurement_labels.parquet,nb_of_sample,int64,"Sample number from operator catalogue (10,20,40,50,70,71,80,120,130,140,160,180,181,200,210,220,230)"
+measurement_labels.parquet,label_name,string,Verbatim 'Name o sample' from VysledkyPreStatistiku.xlsx (17 classes; trimmed)
+measurement_labels.parquet,label_category,string,Verbatim 'Category' from VysledkyPreStatistiku.xlsx (6 classes). Note: 'Plastic + Ai blinds' was corrected to 'Plastic + Al blinds' in the source xlsx by the maintainer.
+measurement_labels.parquet,label_contamination_present,bool,Derived: label_category != 'Reference measurement'
+measurement_metadata.parquet,measurement_id,string,Unique frame identifier
+measurement_metadata.parquet,nb_of_sample,int64,Sample number
+measurement_metadata.parquet,date,string,YYYY-MM-DD acquisition date (all frames: 2026-04-23)
+measurement_metadata.parquet,time,string,HH:MM:SS.mmm acquisition time within the day
+measurement_metadata.parquet,radar_no,string,Serial of the SENTIRE 24 GHz radar unit
+measurement_metadata.parquet,interface,string,Data interface (Ethernet)
+measurement_metadata.parquet,start_freq_mhz,int64,FMCW start frequency in MHz (24008)
+measurement_metadata.parquet,stop_freq_mhz,int64,FMCW stop frequency in MHz (24242)
+measurement_metadata.parquet,ramp_time_ms,int64,FMCW ramp duration in ms (50)
+measurement_metadata.parquet,attenuation_db,float64,Attenuation in dB (0.0)
+measurement_metadata.parquet,bin_size_mm,float64,Range bin size in mm (320.604)
+measurement_metadata.parquet,number_of_samples,int64,Number of range bins per frame (17)
+measurement_metadata.parquet,bin_size_hz,int64,Frequency bin size after FFT in Hz
+measurement_metadata.parquet,zero_pad_factor,int64,FFT zero-padding factor
+measurement_metadata.parquet,normalization,int64,Radar internal normalization flag (0 = OFF)
+measurement_metadata.parquet,active_channels,string,"Comma-separated active channels (I1, Q1, I2, Q2)"
+measurement_metadata.parquet,magnitude_unit,string,Magnitude unit string from radar header (dBm)
+measurement_metadata.parquet,measurement_distance_m,float64,Constant: distance radar → waste container = 2.12 m (per D4.31 report)
+measurement_metadata.parquet,back_wall_distance_m,float64,Constant: distance radar → far wall behind container = 4.0 m
+measurement_metadata.parquet,place,string,Acquisition site (Lab Optima)
+measurement_provenance.parquet,measurement_id,string,Unique frame identifier
+measurement_provenance.parquet,source_txt,string,Filename of the source .txt frame export
+measurement_provenance.parquet,folder_ts,string,Parent folder timestamp grouping frames from one capture session
+measurement_provenance.parquet,source_txt_relpath,string,Relative path inside meranie_23_04/ raw dump
+measurement_provenance.parquet,raw_root_hint,string,Original raw_root path on the maintainer's machine
+measurement_provenance.parquet,ingest_timestamp_utc,string,ISO-8601 UTC timestamp of the ingest run
+measurement_tensor.npz,X,"float32[N,4,17]","Channel-stacked dBm magnitudes; channel order = [I1, Q1, I2, Q2]; bin axis = 0..16 → bin_idx 1..17"
+measurement_tensor.npz,measurement_ids,object[N],measurement_id strings in the same order as X[i]
+splits.parquet,measurement_id,string,Unique frame identifier
+splits.parquet,split,string,"One of {train, val, test}"
+splits.parquet,split_seed,int64,Seed used for the split (42)
+splits.parquet,split_strategy,string,Strategy label: folder_time_ordered_60_20_20
+aux/foto_catalog.csv,filename,string,Photo file name under photos/
+aux/foto_catalog.csv,nb_of_sample,int64,Sample number; matches nb_of_sample in the radar tables. Empty for measurement-setup slides
+aux/foto_catalog.csv,description,string,English description parsed from the photo file name
+aux/foto_catalog.csv,view,string,"Slide/view label (a, b, c) when a sample has multiple photos"
+aux/foto_catalog.csv,is_setup,bool,True for the general measurement-setup slides (no sample number)
+aux/foto_catalog.csv,has_radar_match,bool,True if nb_of_sample exists in the radar measurement tables

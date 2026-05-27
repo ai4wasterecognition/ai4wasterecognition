@@ -38,7 +38,7 @@ docs/datasets/
 │   ├── publication-and-modeling.md
 │   ├── analysis-outputs.md
 │   └── material_mapping_overrides.csv
-├── multidetector_dataset_v1/        (D4.3 radar+UV-VIS+photos)
+├── radar_dataset_from_multidetektor_measurement/  (D4.3 radar + sample photos)
 │   ├── outputs.md
 │   ├── publication-and-modeling.md
 │   └── sample_mapping.csv
@@ -53,8 +53,8 @@ The same convention is mirrored in `release/`, `scripts/`, `samples/`, and `trai
 - [radar_dataset_v1/experimental-data.md](radar_dataset_v1/experimental-data.md) — linked mainly to `D3.3`, public repository release available
 - [radar_dataset_v1/publication-and-modeling.md](radar_dataset_v1/publication-and-modeling.md) — release structure, metadata policy, and baseline transformer plan
 - [radar_dataset_v1/analysis-outputs.md](radar_dataset_v1/analysis-outputs.md) — linked mainly to `D4.1`
-- [multidetector_dataset_v1/outputs.md](multidetector_dataset_v1/outputs.md) — linked mainly to `D4.3`
-- [video_segmentation_dataset_v1/outputs.md](video_segmentation_dataset_v1/outputs.md) — linked mainly to `D4.2`
+- [radar_dataset_from_multidetektor_measurement/outputs.md](radar_dataset_from_multidetektor_measurement/outputs.md) — linked mainly to `D4.3`; 24 GHz radar + numbered sample photos
+- [video_segmentation_dataset_v1/outputs.md](video_segmentation_dataset_v1/outputs.md) — linked mainly to `D4.2`; planned open video dataset
 - [TEMPLATE.md](TEMPLATE.md) — template for future dataset pages
 
 ## Future Project-Level Dataset Families

@@ -12,6 +12,6 @@ Recommended contents per subfolder:
 ## Current dataset previews
 
 - [`radar_dataset_v1/`](radar_dataset_v1/) — core measurement bin / label / metadata samples; full release: [release/radar_dataset_v1](../release/radar_dataset_v1/README.md)
-- [`multidetector_dataset_v1/`](multidetector_dataset_v1/) — raw frame .txt, label/metadata head, bin sample; full release: [release/multidetector_dataset_v1](../release/multidetector_dataset_v1/README.md)
+- [`radar_dataset_from_multidetektor_measurement/`](radar_dataset_from_multidetektor_measurement/) — raw frame .txt, label/metadata head, bin sample; full release: [release/radar_dataset_from_multidetektor_measurement](../release/radar_dataset_from_multidetektor_measurement/README.md)
 
 Do not place versioned dataset releases here. Use `release/<name>_v<n>/` for repository-hosted public datasets, or document external archives from `docs/datasets/<name>_v<n>/`.
