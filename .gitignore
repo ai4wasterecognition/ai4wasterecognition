@@ -32,12 +32,18 @@ runs/
 # Local model checkpoints (regeneratable from training scripts)
 models/
 
+# Local full segmentation datasets stay private
+build/video_segmentation_dataset_v1/
+
 # Releases — exclude unknown release subdirs by default, whitelist published ones.
 # Using release/* (not release/) so git can still traverse into release/ to
 # evaluate the whitelist rules below.
 release/*
 !release/radar_dataset_v1/
 !release/radar_dataset_from_multidetektor_measurement/
+
+# Local-only segmentation preparation helper
+scripts/build_segmentation_dataset.py
 
 # Working / report-only CSV exports in the repository root and elsewhere.
 # Whitelist only the CSV files that are part of a public release or doc set.

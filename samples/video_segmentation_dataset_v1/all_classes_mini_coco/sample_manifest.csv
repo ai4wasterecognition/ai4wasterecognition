@@ -1,0 +1,7 @@
+track,split,file_name,width,height,annotation_count,categories
+all_classes_mini_coco,train,waster_04_05_06_backup__05_pp_tenke__frame_vid1_1.jpg,406,720,65,PP_tenke
+all_classes_mini_coco,train,waster_11_backup__11_primesy__primesy_papier_v_pet_vid2_2.jpg,406,720,45,PET|contaminant
+all_classes_mini_coco,valid,waster_01_02_03_backup__02_hdpe__frame_vid8_1.jpg,406,720,50,HDPE
+all_classes_mini_coco,valid,waster_11_backup__11_primesy__primesy_pet_v_papieri_vid6_1.jpg,406,720,61,contaminant|paper
+all_classes_mini_coco,test,waster_01_02_03_backup__01_pet__frame_vid10_1.jpg,406,720,60,PET
+all_classes_mini_coco,test,waster_11_backup__11_primesy__primesy_papier_v_napojovych_kartonoch_vid5_1.jpg,406,720,36,contaminant|napojove_kartony

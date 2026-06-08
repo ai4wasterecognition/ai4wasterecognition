@@ -22,7 +22,7 @@ This GitHub repository is intended to publish:
 - public summaries of reports, methods, and outputs
 - dataset cards and dataset landing pages
 - versioned public dataset releases when they are small enough, non-sensitive, and consortium-approved
-- `samples/` for lightweight previews and for future larger datasets
+- `samples/` for lightweight previews of larger or private-local dataset families
 - links to DOI-backed archives where external archival release is preferred
 - publication and dissemination links
 
@@ -42,9 +42,12 @@ This GitHub repository can host curated benchmark-ready datasets directly when s
 - [docs/datasets/README.md](docs/datasets/README.md) - dataset registry and publication rules
 - [docs/datasets/radar_dataset_v1/publication-and-modeling.md](docs/datasets/radar_dataset_v1/publication-and-modeling.md) - concrete radar publication and transformer baseline plan
 - [docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md](docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md) - radar (multidetector measurement) dataset landing page
+- [docs/datasets/video_segmentation_dataset_v1/outputs.md](docs/datasets/video_segmentation_dataset_v1/outputs.md) - segmentation dataset page with current public sample status
+- [docs/datasets/video_segmentation_dataset_v1/input-spec.md](docs/datasets/video_segmentation_dataset_v1/input-spec.md) - local full-dataset input and export contract for segmentation
 - [docs/publications/README.md](docs/publications/README.md) - publication index placeholder
 - [samples/README.md](samples/README.md) - policy for repository-hosted samples
-- [training/README.md](training/README.md) - export and training workflow for radar data
+- [samples/video_segmentation_dataset_v1/README.md](samples/video_segmentation_dataset_v1/README.md) - public segmentation sample index
+- [training/README.md](training/README.md) - export and training workflows for radar and segmentation data
 - [DATASET_CARD.md](DATASET_CARD.md) - generic dataset-card template
 - [docs/PUBLISHING.md](docs/PUBLISHING.md) - GitHub and Zenodo publication workflow
 - [docs/LICENSING.md](docs/LICENSING.md) - licensing guidance for code, docs, and data
@@ -68,9 +71,10 @@ The current publication policy for this repository is:
 - public datasets may be versioned directly in GitHub when they are compact, curated, and approved for release
 - each dataset family lives in its own per-version subfolder across the entire repo: `release/<name>_v<n>/`, `scripts/<name>_v<n>/`, `samples/<name>_v<n>/`, `training/configs/<name>_v<n>/`, `docs/datasets/<name>_v<n>/`
 - current public releases:
-  - [release/radar_dataset_v1](release/radar_dataset_v1/README.md) — 24 GHz FMCW radar training set
-  - [release/radar_dataset_from_multidetektor_measurement](release/radar_dataset_from_multidetektor_measurement/README.md) — 24 GHz radar + numbered sample photos, fixed-geometry lab session
-- planned: `release/video_segmentation_dataset_v1/` (D4.2)
+  - [release/radar_dataset_v1](release/radar_dataset_v1/README.md) - 24 GHz FMCW radar training set
+  - [release/radar_dataset_from_multidetektor_measurement](release/radar_dataset_from_multidetektor_measurement/README.md) - 24 GHz radar plus numbered sample photos, fixed-geometry lab session
+- the current segmentation family is represented by docs, training scaffolding, and a mini COCO sample in [samples/video_segmentation_dataset_v1/all_classes_mini_coco](samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md)
+- `samples/` remains for lightweight previews and for dataset families that are not fully hosted in the repository
 - one landing page per dataset family in `docs/datasets/<name>_v<n>/`
 - one repository path and, when available, one archival DOI or external mirror per real dataset release
 - clear linkage between each dataset and the relevant deliverable(s)

@@ -1,4 +1,4 @@
-dataset_dir: build/radar_core_v1
+dataset_dir: /path/to/local/radar_core_v1
 task: biomass_binary
 output_dir: runs/radar_dataset_v1/transformer_biomass
 seed: 42

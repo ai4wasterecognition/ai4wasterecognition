@@ -1,0 +1,12 @@
+category_id,label,supercategory
+1,PET,waste
+2,HDPE,waste
+3,LDPE_hrube,waste
+4,LDPE_farebne,waste
+5,PP_tenke,waste
+6,PS,waste
+7,OST_plast,waste
+8,OCC_karton,waste
+9,paper,waste
+10,napojove_kartony,waste
+11,contaminant,waste

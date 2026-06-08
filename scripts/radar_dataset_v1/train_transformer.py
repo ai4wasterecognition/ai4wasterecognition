@@ -239,6 +239,12 @@ else:
 
 
 def load_exported_dataset(dataset_dir: Path, task: str) -> tuple[SplitData, SplitData, SplitData, dict[str, Any]]:
+    dataset_text = str(dataset_dir)
+    if "<" in dataset_text or dataset_text.startswith("/path/to/"):
+        raise SystemExit(
+            "The config still contains a placeholder dataset_dir. Replace it with the path to your local "
+            "exported radar dataset before running training."
+        )
     tensor = np.load(dataset_dir / "measurement_tensor.npz")
     signal = tensor["signal"].astype(np.float32)
     valid_mask = tensor["valid_mask"].astype(bool)

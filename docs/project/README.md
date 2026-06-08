@@ -9,6 +9,12 @@ The goal of the repository is to mirror the project logic from the application:
 - dataset pages document real data releases, whether they are hosted in this repository or mirrored externally
 - `samples/` holds small illustrative files and previews for larger dataset families
 
+Current examples in this repository:
+
+- full public radar release in `release/radar_dataset_v1/`
+- public segmentation mini sample in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
+- local-only full segmentation dataset documented through specs and training templates
+
 ## Official Project Context
 
 - Title: `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`
@@ -24,6 +30,7 @@ This repository should function as:
 - the deliverables index
 - the dataset registry
 - the host for approved compact public dataset releases
+- the host for public sample packages that document larger local-only datasets
 - the publication and dissemination index
 
 It should not function as the main storage for raw internal data, very large archives, or internal consortium documentation.

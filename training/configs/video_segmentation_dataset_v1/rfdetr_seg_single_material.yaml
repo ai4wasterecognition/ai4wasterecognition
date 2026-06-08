@@ -1,0 +1,13 @@
+model_size: small
+dataset_dir: /path/to/local/video_segmentation_dataset_v1/single_material_v1
+output_dir: runs/rfdetr_seg_single_material
+epochs: 100
+batch_size: 4
+grad_accum_steps: 4
+lr: 0.0001
+lr_encoder: 0.00015
+resolution: 384
+weight_decay: 0.0001
+device: cuda
+seed: 42
+notes: "WasteR single-material instance segmentation fine-tune with RF-DETR Seg Small."

@@ -12,3 +12,8 @@ These milestone notes are derived from the application and translated into expec
 ## How To Use This Page
 
 This page should be updated as public outputs appear. It does not replace the official milestone reporting. It only explains how milestone progress is reflected in the public repository.
+
+Current public repository signals already present:
+
+- `M3`-style dataset outputs are represented by the public radar release in `release/radar_dataset_v1/`
+- the segmentation branch is represented by docs, a public mini COCO sample, and published training templates
