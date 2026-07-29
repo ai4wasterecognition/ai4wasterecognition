@@ -2,12 +2,12 @@
 
 These milestone notes are derived from the application and translated into expected public repository signals.
 
-| Milestone | Title | Planned month | Expected public repository signal |
-| --- | --- | --- | --- |
-| M1 | Working project boards established | M1 | project structure and governance pages available |
-| M2 | Data collection start | M7 | first experimental workflow notes or dataset-page placeholders |
-| M3 | Data collection finalisation, optimisation and evaluation finalisation, interim report | M24 | interim output pages, dataset landing pages, repository-hosted releases where appropriate, and progress summaries |
-| M4 | Articles finalisation, project landing | M30 | publication index, final summaries, and linked archival mirrors where needed |
+| Milestone | Title | Work package | Verification method | Original planned month | Current planned month | Expected public repository signal |
+| --- | --- | --- | --- | --- | --- | --- |
+| M1 | Working project boards established | KPB1 | List of experts | M1 | M6 | project structure and governance pages available |
+| M2 | Data collection start | KPB3 | Initial data delivered | M7 | M8 | first experimental workflow notes or dataset-page placeholders |
+| M3 | a) Data collection finalisation, b) optimisation and evaluation finalisation, c) interim report | KPB3, KPB4 | Report delivered | M24 | M21 | interim output pages, dataset landing pages, repository-hosted releases where appropriate, and progress summaries |
+| M4 | a) Articles finalisation, b) project closure | KPB1, KPB5 | All articles / report | M30 | M22 | publication index, final summaries, and linked archival mirrors where needed |
 
 ## How To Use This Page
 
