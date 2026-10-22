@@ -16,7 +16,7 @@ A fourth, image layer accompanies the radar data: sample photographs under `phot
 
 - Raw .txt frames themselves (provenance recorded; the canonical bin parquet is byte-equivalent).
 - Source xlsx (`VysledkyPreStatistiku.xlsx`) — internal project workbook.
-- D4.31 report (consortium-internal).
+- D4.3 report (consortium-internal).
 - Working notebooks / one-off analyses.
 - Per-frame radar-distance field (geometry is a session-level constant 2.12 m, not a per-frame measurement; do not treat it as a regression target).
 
@@ -34,7 +34,7 @@ Three label columns are shipped:
 
 Each radar sample number (Nb) is paired with photograph(s) of the same physical sample. The photos capture the detailed waste composition and the top-down view of the sample in the container. Because the photos and radar frames share `nb_of_sample`, the dataset supports a direct comparison between radar-based classification and image-based recognition, and is a starting point for multi-input (radar + image) models.
 
-A separate **open video dataset** (built over a large collection of separated plastic/paper waste images, used during the project to train an image-recognition neural network) will be published in the repository and can serve as the image-recognition counterpart for this comparison.
+The project's **video segmentation dataset** (separated plastic/paper waste images, used during the project to train an image-recognition neural network) serves as the image-recognition counterpart for this comparison. Only a preview sample of it is published in this repository.
 
 ## Splits
 
@@ -77,4 +77,4 @@ The script validates that the input `.txt` matches the setup (17 bins, bin_size=
 
 ## Archival Workflow
 
-The GitHub repository serves as the canonical hub. Zenodo mirroring with DOI may be added once the release is validated by a second-session evaluation. The radar tables are compact (~1.7 MB); the sample photographs add ~150 MB, and are also offered as a downloadable zip archive (link TBD).
+The GitHub repository is the reference location of this release; it has no DOI-backed archive copy. The radar tables are compact (~1.7 MB); the sample photographs add ~150 MB.

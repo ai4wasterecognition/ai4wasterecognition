@@ -39,25 +39,33 @@ def write_checksums(root: Path) -> None:
 
 
 def write_release_readme(root: Path, summary: dict[str, object]) -> None:
-    text = f"""# AI4WasteRecognition Radar Dataset Release
+    core = summary["core"]
+    extended = summary["extended"]
+    splits = core["split_counts"]
+    classes = ", ".join(f"`{name}`" for name in core["material_primary_counts"])
+    text = f"""# AI4WasteRecognition Radar Dataset v1
 
-This local release package was generated from the `WasteR` workspace.
+Curated 24 GHz FMCW radar dataset of sorted waste materials, collected in the project laboratory experiments (deliverable `D3.3`). The dataset is versioned directly in this repository as `release/radar_dataset_v1`.
 
 Contents:
 
-- `core/` clean benchmark-oriented subset
-- `extended/` atypical or lower-consistency subset
-- `summary.json` combined release summary
-- `checksums.sha256` file checksums
+- `core/` - clean benchmark subset
+- `extended/` - atypical or lower-consistency measurements
+- `summary.json` - combined release summary
+- `checksums.sha256` - file checksums
+- `core/data_dictionary.csv` and `extended/data_dictionary.csv` - column reference
+
+Each subset contains `measurement_bins.parquet`, `measurement_tensor.npz`, `measurement_labels.parquet`, `measurement_metadata.parquet`, `measurement_provenance.parquet`, `splits.parquet`, and `summary.json`.
 
 Counts:
 
-- core measurements: {summary['core']['measurement_count']}
-- core bin rows: {summary['core']['bin_row_count']}
-- extended measurements: {summary['extended']['measurement_count']}
-- extended bin rows: {summary['extended']['bin_row_count']}
+- core measurements: {core['measurement_count']:,} (train {splits['train']:,} / val {splits['val']:,} / test {splits['test']:,})
+- core bin rows: {core['bin_row_count']:,}
+- extended measurements: {extended['measurement_count']:,}
+- extended bin rows: {extended['bin_row_count']:,}
+- core primary material classes: {classes}
 
-This package is intended for local review before any public archival release.
+The dataset has no DOI-backed archive copy yet. Landing page: [docs/datasets/radar_dataset_v1/experimental-data.md](../../docs/datasets/radar_dataset_v1/experimental-data.md).
 """
     (root / "README.md").write_text(text, encoding="utf-8")
 

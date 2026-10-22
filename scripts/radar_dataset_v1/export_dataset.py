@@ -242,11 +242,11 @@ def attach_labels(raw_bins: pd.DataFrame, catalog: pd.DataFrame, mapping: pd.Dat
         suffixes=("", "_mapped"),
     )
     mapped["material_name_auto"] = mapped["material_name_auto"].fillna(mapped["material_name_auto_mapped"])
-    mapped["has_biomass"] = np.where(
-        mapped["material_primary"].eq("unknown"),
-        pd.NA,
-        mapped["material_primary"].eq("biomass") | mapped["material_secondary"].eq("biomass"),
-    )
+    has_biomass = (
+        mapped["material_primary"].eq("biomass") | mapped["material_secondary"].eq("biomass")
+    ).astype("boolean")
+    has_biomass[mapped["material_primary"].eq("unknown")] = pd.NA
+    mapped["has_biomass"] = has_biomass
     mapped["is_background"] = mapped["material_primary"].eq("background")
 
     conditions = [

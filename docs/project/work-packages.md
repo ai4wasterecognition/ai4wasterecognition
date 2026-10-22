@@ -1,16 +1,16 @@
 # Work Packages
 
-This repository uses the work-package structure from the application as its primary public navigation model.
+The repository is organised by the work packages from the project application.
 
 ## Work-Package Map
 
-| WP | Title | Lead | Main public representation in this repository |
+| WP | Title | Lead | Content in this repository |
 | --- | --- | --- | --- |
-| KPB1 | Project Management | STU | governance summaries, data-management notes, sustainability notes |
-| KPB2 | Tech and AI Research | STU | reviews, technology landscape summaries, methodological notes |
-| KPB3 | Laboratory Experiment | Sensoneo | setup summaries, experimental data landing pages, approved benchmark dataset releases, sample assets |
-| KPB4 | Data analysis | Optima Ideas | radar, video, and multidetector analysis pages, linked datasets, and training resources |
-| KPB5 | Evaluation | STU | comparisons, recommendations, final summaries, publication index |
+| KPB1 | Project Management | STU | deliverable page only; management deliverables are internal |
+| KPB2 | Tech and AI Research | STU | deliverable page only; reports not published yet |
+| KPB3 | Laboratory Experiment | Sensoneo | radar dataset v1, CSV previews, measurement setup photos |
+| KPB4 | Data analysis | Optima Ideas | multidetector radar dataset with sample photos, radar training and inference code, segmentation preview sample and training code |
+| KPB5 | Evaluation | STU | deliverable page and publication index; no publications yet |
 
 ## Repository Interpretation
 

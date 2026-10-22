@@ -1,12 +1,14 @@
 # Publications
 
-This folder is the public publication index for outputs linked to `D5.3 Summary Articles` and any other public dissemination outputs.
+Publication index for outputs linked to `D5.3 Summary Articles` and other public dissemination outputs of the project.
 
-Recommended contents:
+## Published Articles
 
-- article list with DOI links
-- preprint links
-- conference or workshop outputs
-- project-level summary articles
+No articles have been published yet.
 
-When publications become available, this folder can host one page per publication family or a single indexed list.
+## Citing Project Data
+
+Articles that use the project datasets should cite the repository via [CITATION.cff](../../CITATION.cff) and the specific release folder:
+
+- [release/radar_dataset_v1](../../release/radar_dataset_v1/README.md)
+- [release/radar_dataset_from_multidetektor_measurement](../../release/radar_dataset_from_multidetektor_measurement/README.md)

@@ -51,16 +51,15 @@ For the concrete publication and modeling strategy, see [publication-and-modelin
 - small illustrative CSV samples in `samples/`
 - exporter and training scripts linked from the repository
 
-## What Should Stay Outside The Public Release
+## What Is Not Included
 
-- raw logs
-- internal working notebooks that were not cleaned for publication
+- raw radar logs
+- internal working notebooks
 - large binary captures
-- restricted or unapproved consortium material
+- restricted consortium material
 
-## DOI and Archival Mirror
+## DOI and Archive
 
-- current repository release: `release/radar_dataset_v1`
-- DOI: `TBD`
-- archival mirror URL: `TBD`
+- repository release: `release/radar_dataset_v1`
+- DOI: none (no archive copy yet)
 - version: `v1`

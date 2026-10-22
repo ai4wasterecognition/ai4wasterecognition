@@ -1,23 +1,20 @@
 # KPB3 - Laboratory Experiment
 
-This page covers the public repository representation of laboratory and data-collection deliverables.
+This page lists laboratory and data-collection deliverables and what this repository contains for each of them.
 
-| Code | Deliverable | Delivery | Access | Public representation |
+| Code | Deliverable | Delivery | Access | Content in this repository |
 | --- | --- | --- | --- | --- |
-| D3.1 | Laboratory Setup and Calibration Report | M5 | V | setup page, figures, and selected sample material |
-| D3.2 | Detector Validation and Certification Documentation | M6 | N | reference note only if a public summary is allowed |
-| D3.3 | Experimental Data Collection Dataset | M24 | N | dataset landing page, versioned public release in `release/`, and optional archival DOI link |
+| D3.1 | Laboratory Setup and Calibration Report | M5 | V | measurement setup photos in [release/radar_dataset_from_multidetektor_measurement/photos](../../release/radar_dataset_from_multidetektor_measurement/photos/); report not published |
+| D3.2 | Detector Validation and Certification Documentation | M6 | N | not published (internal) |
+| D3.3 | Experimental Data Collection Dataset | M24 | N | published radar dataset [release/radar_dataset_v1](../../release/radar_dataset_v1/README.md), landing page [experimental-data.md](../datasets/radar_dataset_v1/experimental-data.md), export and training code |
 
-## What Belongs in GitHub
+## What This Repository Contains
 
-- setup descriptions
-- calibration figures if approved
-- sample files and schema previews
-- dataset landing pages
-- curated benchmark-ready public releases when explicitly approved
+- radar dataset v1 (`D3.3`): [release/radar_dataset_v1](../../release/radar_dataset_v1/README.md), landing page [experimental-data.md](../datasets/radar_dataset_v1/experimental-data.md)
+- CSV previews: [samples/radar_dataset_v1](../../samples/radar_dataset_v1/)
+- measurement setup photos (`D3.1`): [release/radar_dataset_from_multidetektor_measurement/photos](../../release/radar_dataset_from_multidetektor_measurement/photos/)
 
-## What Should Stay Out of GitHub
+## Not Published
 
-- uncurated or unapproved full experimental datasets
-- restricted validation documents
-- raw logs and device dumps
+- raw radar logs and device dumps
+- the laboratory setup and calibration report (`D3.1`) and the detector validation documentation (`D3.2`)

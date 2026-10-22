@@ -80,7 +80,7 @@ List items that should not be published in GitHub or in any external archive.
 
 Specify the intended license only after consortium review.
 
-See [docs/LICENSING.md](docs/LICENSING.md).
+See [docs/LICENSING.md](../LICENSING.md).
 
 ## Citation
 

@@ -12,7 +12,7 @@
 
 ## Related Deliverable
 
-- `D4.31` — *Správa o multidetektorovej analýze údajov riadenej AI*
+- `D4.3` — *Správa o multidetektorovej analýze údajov riadenej AI*
 
 ## Purpose
 
@@ -47,15 +47,15 @@ There are photographs of the measured samples that share the same sample number 
 - the photos show the **detailed composition of the waste** and the **top-down view of the sample poured into the waste container** — the same scene the radar observes;
 - this enables a direct **comparison between radar sensing and video/image technology** on identical samples.
 
-The photographs are included under `release/.../photos/` and are also available as a zip archive: **xxx** (link TBD).
+The photographs are included under `release/.../photos/`.
 
-## Relation to the Planned Open Video Dataset
+## Relation to the Video Segmentation Dataset
 
-The repository will additionally host a separate **open video dataset** focused on recognising plastic and paper waste and their individual categories. It is built over an extensive collection of images of these separated waste fractions. During the project it was used to train a neural network, which was then applied to recognise photographs from that dataset; those recognition results can be compared with the radar-based classification provided here. See [`video_segmentation_dataset_v1/outputs.md`](../video_segmentation_dataset_v1/outputs.md).
+The project also built a **video segmentation dataset** of separated plastic and paper waste and their individual categories. During the project it was used to train an image-recognition neural network, which was then applied to the photographs in this collection; those recognition results can be compared with the radar-based classification provided here. The full video segmentation dataset is not published; this repository contains only a preview sample. See [`video_segmentation_dataset_v1/outputs.md`](../video_segmentation_dataset_v1/outputs.md).
 
 ## DOI and Archive
 
-- DOI: TBD
+- DOI: none (no archive copy yet)
 - URL: this repository at `release/radar_dataset_from_multidetektor_measurement/`
 - Version: `1.0.0`
 

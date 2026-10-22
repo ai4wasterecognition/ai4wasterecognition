@@ -1,21 +1,13 @@
 # KPB1 - Project Management
 
-This page covers the public repository representation of project-management deliverables.
+This page lists project-management deliverables and what this repository contains for each of them.
 
-| Code | Deliverable | Delivery | Access | Public representation |
+| Code | Deliverable | Delivery | Access | Content in this repository |
 | --- | --- | --- | --- | --- |
-| D1.1 | Project Management Board (PMB) meetings | M1, per M3 | N | milestone note or governance summary only |
-| D1.2 | Data management plan and its implementation report | M3, M30 | N | public summary page, data-governance statement, archive policy |
-| D1.3 | Project Sustainability Plan | M26 | N | short public sustainability note if approved |
+| D1.1 | Project Management Board (PMB) meetings | M1, per M3 | N | not published (internal) |
+| D1.2 | Data management plan and its implementation report | M3, M30 | N | not published (internal) |
+| D1.3 | Project Sustainability Plan | M26 | N | not published (internal) |
 
-## What Belongs in GitHub
+## Not Published
 
-- concise governance summaries
-- data-management principles
-- high-level sustainability statement
-
-## What Should Stay Out of GitHub
-
-- meeting records
-- internal management documents
-- restricted administrative material
+The project-management deliverables are internal (access `N`). Meeting records, the data management plan, and the sustainability plan are not published in this repository. The publication rules derived from data management are in [docs/PUBLISHING.md](../PUBLISHING.md).

@@ -1,12 +1,12 @@
 # Video Segmentation Samples
 
-This folder contains tiny public previews derived from the private/local WasteR image-segmentation corpus.
+This folder contains a small public preview of the project image-segmentation dataset. The full dataset is not published.
 
 Current sample package:
 
 - `all_classes_mini_coco/`
 
-The sample package is intentionally small. It is meant to show the exact training-ready format, not to act as the real benchmark release.
+The sample shows the exact training-ready format of the dataset. It is not a benchmark release.
 
 ## all_classes_mini_coco
 
@@ -28,7 +28,7 @@ This sample is suitable for:
 
 - inspecting the COCO instance-segmentation layout
 - validating training scripts with a dry run
-- documenting the expected public dataset structure
+- documenting the dataset structure
 
 This sample is not suitable for:
 
@@ -36,4 +36,4 @@ This sample is not suitable for:
 - benchmark reporting
 - class-balance analysis
 
-For the full dataset description and publication plan, see [../../docs/datasets/video_segmentation_dataset_v1/outputs.md](../../docs/datasets/video_segmentation_dataset_v1/outputs.md).
+For the full dataset description, see [../../docs/datasets/video_segmentation_dataset_v1/outputs.md](../../docs/datasets/video_segmentation_dataset_v1/outputs.md).

@@ -1,12 +1,12 @@
 # radar_dataset_from_multidetektor_measurement
 
-24 GHz FMCW radar dataset of plastic-waste samples in a fixed lab geometry, paired with numbered/named sample photographs. The radar measurements form the core; the photos make the set **multi-input ready** — radar frames and images of the same sample share one sample number (Nb), so the data can later be combined with image-based recognition.
+24 GHz FMCW radar dataset of plastic-waste samples in a fixed lab geometry, paired with numbered/named sample photographs. The radar measurements form the core; the photos make the set **multi-input ready** — radar frames and images of the same sample share one sample number (Nb), so the data can be combined with image-based recognition.
 
 **Version:** `radar_dataset_from_multidetektor_measurement_1.0.0`
 **Acquisition date:** 2026-04-23
 **Location:** Lab Optima
 **Project:** AI4WasteRecognition — `09I05-03-V02-00068`
-**Related deliverable:** D4.31 — *Správa o multidetektorovej analýze údajov riadenej AI*
+**Related deliverable:** D4.3 — *Správa o multidetektorovej analýze údajov riadenej AI*
 
 ## Overview
 
@@ -44,11 +44,11 @@ Alongside the radar data there are photographs of the measured samples. **Each p
 
 Naming convention (from `data/Foto/`): `Nb.<sample_number>` — the sample number, identical to the radar sample numbering, followed by an English description of the photographed sample.
 
-The photographs are included in this release under `photos/` and are also available as a zip archive: **xxx** (link TBD).
+The photographs are included in this release under `photos/`.
 
-## Relation to the planned open video dataset
+## Relation to the video segmentation dataset
 
-The repository will additionally host a separate **open video dataset** focused on recognising plastic and paper waste and their individual categories. That dataset is built over an extensive collection of images of these separated waste fractions. During the project it was used to train a neural network, which was then applied to recognise the photographs in this collection; the recognition results can be compared against the radar-based classification here. See [`docs/datasets/video_segmentation_dataset_v1/outputs.md`](../../docs/datasets/video_segmentation_dataset_v1/outputs.md).
+The project also built a **video segmentation dataset** of separated plastic and paper waste and their individual categories. During the project it was used to train an image-recognition neural network, which was then applied to the photographs in this collection; the recognition results can be compared against the radar-based classification here. The full video segmentation dataset is not published; this repository contains only a preview sample. See [`docs/datasets/video_segmentation_dataset_v1/outputs.md`](../../docs/datasets/video_segmentation_dataset_v1/outputs.md).
 
 ## Quick start (Python)
 
@@ -113,7 +113,7 @@ data/multidetektor/meranie_23_04/<folder_ts>/FD/<Nb>_<ts>.txt   ← canonical ra
         │
         ├── ingest_raw_txt.py  (parse header + 17 bin rows × 4 channels)
         │       └── processed/.../df_bins.parquet
-        └── (geometry constants from D4.31 report)
+        └── (geometry constants from D4.3 report)
 
 data/multidetektor/VysledkyPreStatistiku.xlsx                   ← label source
         └── build_sample_mapping.py → processed/.../sample_mapping.csv
@@ -146,8 +146,8 @@ YAML configs in [`training/configs/radar_dataset_from_multidetektor_measurement/
 
 ## Citation
 
-If you use this dataset, please cite the project's `CITATION.cff` and reference the D4.31 deliverable for the methodology.
+If you use this dataset, please cite the project's `CITATION.cff` and reference the D4.3 deliverable for the methodology.
 
 ## License
 
-See repository [`LICENSE`](../../LICENSE) for license terms.
+The dataset is licensed under CC BY 4.0, see [`LICENSE-DATA`](../../LICENSE-DATA). The scripts are licensed under MIT, see [`LICENSE`](../../LICENSE).

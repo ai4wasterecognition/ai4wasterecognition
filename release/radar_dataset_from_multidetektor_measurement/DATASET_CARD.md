@@ -10,7 +10,7 @@
 
 ## Related Deliverables
 
-- `D4.31` — *Správa o multidetektorovej analýze údajov riadenej AI*
+- `D4.3` — *Správa o multidetektorovej analýze údajov riadenej AI*
 
 ## Purpose
 
@@ -26,7 +26,7 @@
 
 ## DOI and Archive
 
-- DOI: TBD (Zenodo mirror may be added)
+- DOI: none (no archive copy yet)
 - URL: GitHub-hosted at `release/radar_dataset_from_multidetektor_measurement/` of this repository
 - version: `1.0.0`
 
@@ -69,7 +69,7 @@ See `data_dictionary.csv` for the full column reference per file.
 1. Raw .txt frames parsed from `data/multidetektor/meranie_23_04/<folder_ts>/FD/`.
 2. Per-frame validation: header consistency, 17 bins × 4 channels.
 3. Labels merged from `VysledkyPreStatistiku.xlsx` columns `Name o sample` and `Category`.
-4. Geometry constants stamped from the D4.31 report.
+4. Geometry constants stamped from the D4.3 report.
 5. Time-ordered 60/20/20 split within each Nb (`folder_time_ordered_60_20_20`).
 6. Long-format parquet + (N, 4, 17) float32 tensor + splits + checksums.
 7. Sample photos catalogued by Nb and copied into `photos/`.
@@ -82,11 +82,10 @@ See `data_dictionary.csv` for the full column reference per file.
 
 ## Licensing
 
-See repository [`LICENSE`](../../LICENSE) and [`docs/LICENSING.md`](../../docs/LICENSING.md).
+The dataset is licensed under CC BY 4.0, see [`LICENSE-DATA`](../../LICENSE-DATA) and [`docs/LICENSING.md`](../../docs/LICENSING.md).
 
 ## Notes
 
 - `Plastic + Ai blinds` → `Plastic + Al blinds` typo correction was applied in the source xlsx before export.
 - Sample `Nb=90` (178 frames) excluded — no matching `Name o sample` entry in the source catalogue.
 - One stray Empty frame in the xlsx but not in the raw `.txt` dump is excluded.
-- Photos are also available as a zip archive: **xxx** (link TBD).

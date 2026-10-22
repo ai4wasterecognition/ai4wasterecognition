@@ -1,38 +1,25 @@
-# Radar Publication and Modeling Plan
+# Radar Dataset v1: Release Structure and Modeling
 
-This note translates the current `WasteR` workspace into a publication and modeling strategy that is both research-grade and practical for downstream training.
+This page describes the structure of the published radar dataset [release/radar_dataset_v1](../../../release/radar_dataset_v1/README.md), its labels and split protocol, and the baseline transformer model.
 
-## Why This Structure
+## Design Goals
 
-The publication strategy should satisfy four constraints at once:
+The release is structured so that:
 
-- the released dataset must be usable for machine learning from raw radar measurements
-- the published files must remain interpretable and reproducible
-- the public archive must separate canonical signal data from derived analytical features
-- the repository must document the data well enough for external reuse
+- the data are usable for machine learning from raw radar measurements
+- the published files are interpretable and reproducible
+- canonical signal data are separated from derived model inputs
+- the data are documented well enough for external reuse
 
-This direction is consistent with the FAIR principles, which emphasize findability, accessibility, interoperability, and reusability for data and also for the workflows that produced them. The FAIR paper also explicitly highlights persistent identifiers, rich metadata, provenance, licensing, and domain standards as core requirements.
+This follows the FAIR principles (findability, accessibility, interoperability, reusability), which highlight rich metadata, provenance, licensing, and domain standards for data and the workflows that produced them.
 
-## What To Publish
+## Release Layers
 
-The recommended public radar release has three layers:
-
-1. Canonical signal layer
-2. Model-ready tensor layer
-3. Metadata, labels, and split layer
+The release has three layers, each present in both the `core/` and `extended/` subsets.
 
 ### Canonical Signal Layer
 
-This is the minimum-processed representation of each radar measurement.
-
-Recommended files:
-
-- `measurement_bins.parquet`
-- `measurement_metadata.parquet`
-- `measurement_labels.parquet`
-- `measurement_provenance.parquet`
-
-`measurement_bins.parquet` should keep one row per `(measurement_id, bin_idx)` with:
+`measurement_bins.parquet` is the minimum-processed representation of each radar measurement, with one row per `(measurement_id, bin_idx)`:
 
 - `measurement_id`
 - `bin_idx`
@@ -45,235 +32,133 @@ Recommended files:
 - `is_target_bin_w3`
 - `is_background_bin`
 
-This is the audit layer. Anyone should be able to rebuild a model input tensor from this file.
+This is the audit layer: the model input tensor can be rebuilt from this file.
 
 ### Model-Ready Tensor Layer
 
-This is the training layer. It should represent exactly what the model receives at train and inference time.
+`measurement_tensor.npz` contains exactly what the model receives at train and inference time. It is generated from the canonical signal layer.
 
-Recommended file:
-
-- `measurement_tensor.npz`
-
-Recommended arrays:
+Arrays:
 
 - `measurement_id`
-- `signal`
-- `valid_mask`
+- `signal` with shape `[N, L, C]`
+- `valid_mask` with shape `[N, L]`
+- `seq_len`
 - `bin_indices`
-- `channel_names`
+- `channel_names`, fixed as `["i1_dbm", "q1_dbm", "i2_dbm", "q2_dbm"]`
 
-Where:
-
-- `signal` has shape `[N, L, C]`
-- `valid_mask` has shape `[N, L]`
-- `channel_names` is fixed as `["i1_dbm", "q1_dbm", "i2_dbm", "q2_dbm"]`
-
-This layer should be generated from the canonical signal layer, not maintained manually.
+All arrays use plain numeric or string dtypes, so `np.load(path)` works without `allow_pickle`.
 
 ### Metadata, Labels, and Splits
 
-Recommended files:
+- `measurement_metadata.parquet` - acquisition settings (mode, attenuation, ramp time, bin size, frequency range, channels), place, orientation, and QC flags
+- `measurement_labels.parquet` - curated labels
+- `measurement_provenance.parquet` - source file and label source of each measurement
+- `splits.parquet` - leakage-safe split assignments
+- `data_dictionary.csv` - column reference
 
-- `measurement_metadata.parquet`
-- `measurement_labels.parquet`
-- `measurement_provenance.parquet`
-- `splits.parquet`
-- `data_dictionary.csv`
+## Excluded Data
 
-This layer should include:
+The release does not contain:
 
-- acquisition settings
-- environment and orientation fields
-- curated labels
-- task-ready labels such as biomass binary detection
-- leakage-safe split assignments
-
-## What Not To Publish Directly
-
-The first public release should avoid publishing:
-
-- private office documents
-- raw internal working notebooks without cleanup
+- private office documents or internal working notebooks
 - ambiguous distance fields
-- unreviewed operational file paths as primary public IDs
-- hidden partner-specific notes
+- internal file paths as primary IDs
+- partner-specific notes
 
-In particular:
-
-- `measurement_distance_m` in the current raw workbook is actually a bin-range field, not an object-distance field
-- `distance_m` is not currently reliable enough to expose as a benchmark feature without additional validation
+In particular, `measurement_distance_m` in the raw workbook is a bin-range field, not an object distance, and `distance_m` is not reliable enough to be a benchmark feature. Neither is included.
 
 ## File Formats
 
-Recommended public formats:
-
-- `Parquet` for tabular canonical data and metadata
+- `Parquet` for tabular signal data and metadata
 - `NPZ` for model-ready dense tensors
-- `CSV` for dictionaries and taxonomies
-- `JSON` for summaries, manifests, and training metrics
+- `CSV` for dictionaries
+- `JSON` for summaries
 
-This split is deliberate:
-
-- Parquet is efficient and interoperable for columnar research data
-- NPZ is convenient for direct array loading in training code
-
-## Release Layout
-
-Recommended archive layout:
-
-- `README.md`
-- `DATASET_CARD.md`
-- `CITATION.cff`
-- `checksums.sha256`
-- `core/measurement_bins.parquet`
-- `core/measurement_metadata.parquet`
-- `core/measurement_labels.parquet`
-- `core/measurement_tensor.npz`
-- `core/splits.parquet`
-- `core/data_dictionary.csv`
-- `extended/` with the same pattern for atypical or lower-confidence subsets
-- `code/` or a linked GitHub release for exporters and training scripts
-
-## Core vs Extended Subsets
-
-For this project, a split into `core` and `extended` is justified.
+## Core and Extended Subsets
 
 ### Core
 
-Recommended first benchmark subset:
+The benchmark subset (13,650 measurements):
 
 - 4-channel measurements only
 - valid `bin_size_mm > 0`
 - `number_of_samples` in `{17, 32, 33}`
 - no partial-channel captures
 
-This currently corresponds to the cleanest and most immediately trainable portion of the data.
-
 ### Extended
 
-Recommended second subset:
+Atypical measurements kept for completeness (201 measurements):
 
 - 161-bin special measurements
 - partial-channel or atypical captures
-- records retained mainly for completeness or follow-up work
 
-The `extended` subset should be documented but should not be the default benchmark.
+`extended` is not the default benchmark.
 
-## Labeling Strategy
+## Labels
 
-The public release should carry at least three label granularities:
+The release carries three label granularities:
 
-- `material_name_auto` as fine-grained label
-- `material_primary` as coarse primary class
-- `has_biomass` as binary task label
+- `material_name_auto` - fine-grained label (68 classes in `core`)
+- `material_primary` - coarse primary class (11 classes)
+- `has_biomass` - binary biomass label
 
-This supports:
-
-- fine-grained classification
-- coarse material classification
-- biomass detection
-
-The recommended public label source chain is:
+Label source chain:
 
 1. catalog join from `Ciselnik Merani`
 2. curated mapping from `material_name_auto_mapping.csv`
-3. tracked overrides from `docs/datasets/radar_dataset_v1/material_mapping_overrides.csv`
-4. explicit provenance fields that record whether a label came from catalog only or from catalog plus curated mapping
+3. tracked overrides from [material_mapping_overrides.csv](material_mapping_overrides.csv)
+4. the `label_source` field records the origin of each label (`catalog+mapping` for all `core` measurements)
 
-Known ambiguous records should not be forced into benchmark classes. In this repository, unresolved labels can be marked as `unknown`, and the default material-classification training script excludes `unknown` from the supervised benchmark.
+Ambiguous records are labelled `unknown` and are not forced into benchmark classes. The training script excludes `unknown` from supervised material classification and biomass detection.
 
-## Split Policy
+In `core`, `has_biomass` is stored as the strings `"True"`/`"False"` (missing for `unknown`); in `extended` it is a boolean column. Convert it explicitly, for example `labels["has_biomass"].map({"True": True, "False": False, True: True, False: False})`.
 
-Do not split randomly by individual measurements.
+## Split Protocol
 
-The current data contains repeated captures from the same scenarios. Random row-level splitting would leak near-duplicate conditions across train and test.
+Splits are made at group level, not randomly by individual measurement. The data contain repeated captures of the same scenarios, so random row-level splitting would leak near-duplicate conditions across train and test.
 
-Use group-level splitting with a deterministic `capture_group_id`, for example derived from:
+Each measurement has a deterministic `capture_group_id` (448 groups in `core`) derived from series prefix, sample type, mode, attenuation, ramp time, bin size, number of samples, place, orientation, and background setup. Whole groups are assigned to `train`, `val`, or `test` (split scheme `group_hash_v1`): 9,102 / 2,418 / 2,130 measurements in `core`.
 
-- series prefix
-- sample type
-- mode
-- attenuation
-- ramp time
-- bin size
-- number of samples
-- place
-- orientation
-- background setup
+## Documentation
 
-The default public split should be deterministic and documented.
+The release is accompanied by:
 
-## Documentation Requirements
+- a landing page: [experimental-data.md](experimental-data.md)
+- a release README, summary, and checksums: [release/radar_dataset_v1](../../../release/radar_dataset_v1/README.md)
+- data dictionaries per subset
+- this description of structure, labels, and splits
+- citation metadata: [CITATION.cff](../../../CITATION.cff)
 
-Each public radar release should be accompanied by:
+This structure follows Datasheets for Datasets and Data Cards, which document motivation, composition, collection process, and recommended uses across the dataset lifecycle.
 
-- a dataset card
-- a datasheet-style description of composition and collection
-- a labeling and preprocessing note
-- a split protocol
-- a citation entry
+## Baseline Model
 
-This aligns well with:
+The data are short multivariate signal sequences with moderate dataset size and a strong risk of scenario leakage, so the baseline is a compact model rather than a large forecasting architecture:
 
-- Datasheets for Datasets, which recommends documenting motivation, composition, collection process, and recommended uses
-- Data Cards, which emphasizes structured dataset documentation across the dataset lifecycle
-
-## Repository and DOI Workflow
-
-Recommended workflow:
-
-1. Keep the GitHub repository as the public project hub and home for compact curated releases.
-2. Publish the radar dataset directly in the repository when its size and sensitivity allow it.
-3. Add a Zenodo mirror when you want archival DOI support or a second publication channel.
-4. Link the GitHub repository to Zenodo for code or release archiving if needed.
-5. Reserve the DOI before the final upload if you want the DOI included inside files.
-6. Use DataCite-compliant metadata fields when describing the archival record.
-
-Zenodo states that a record consists of metadata, files, and a persistent identifier, and that metadata is critical for discoverability. Zenodo also supports automatic ingestion of GitHub releases once the repository is enabled.
-
-## Model Recommendation
-
-For v1, the most suitable transformer is not a large forecasting-oriented architecture. The data here are short multivariate signal sequences with moderate dataset size and strong risk of scenario leakage.
-
-Recommended baseline:
-
-- a compact encoder-only multivariate time series transformer classifier
-- optional temporal patch embedding
-- leakage-safe supervised training on `measurement_tensor.npz`
-
-Reasoning from primary sources:
-
-- Zerveas et al. present a transformer framework for multivariate time series and report strong results on regression and classification, including settings with limited training samples.
-- PatchTST shows that patching can improve efficiency and representation learning, but its main formulation targets long-term forecasting. Its patching idea is still useful here as an optional front-end, but the full forecasting-oriented design is not necessary for short radar sequences.
-
-Therefore, the best v1 choice is:
-
-- compact encoder-only transformer backbone
+- compact encoder-only multivariate time-series transformer classifier
 - raw bin sequence as input
-- optional small patch embedding
-- binary biomass and coarse-material tasks first
+- optional temporal patch embedding
+- supervised training on `measurement_tensor.npz` with the group-level split
+- two tasks: binary biomass detection and coarse material classification
 
-## What This Repository Now Includes
+Rationale:
 
-The repository contains a first reproducibility scaffold for this plan:
+- Zerveas et al. present a transformer framework for multivariate time series with strong classification results, including settings with limited training samples.
+- PatchTST shows that patching improves efficiency and representation learning. Its main formulation targets long-term forecasting, so only the patching idea is used here, as an optional front-end.
 
-- `scripts/radar_dataset_v1/export_dataset.py`
-- `scripts/radar_dataset_v1/build_release.py`
-- `scripts/radar_dataset_v1/train_transformer.py`
-- `docs/datasets/radar_dataset_v1/material_mapping_overrides.csv`
-- `training/configs/radar_dataset_v1/`
-- `training/README.md`
-- `release/radar_dataset_v1/`
+## Code
 
-These scripts are meant to create and consume the dataset structure described above.
+- [scripts/radar_dataset_v1/export_dataset.py](../../../scripts/radar_dataset_v1/export_dataset.py) - builds one subset from the internal source data
+- [scripts/radar_dataset_v1/build_release.py](../../../scripts/radar_dataset_v1/build_release.py) - builds the full release, README, checksums, and samples
+- [scripts/radar_dataset_v1/train_transformer.py](../../../scripts/radar_dataset_v1/train_transformer.py) - trains the baseline transformer on the release
+- [training/configs/radar_dataset_v1/](../../../training/configs/radar_dataset_v1/) - training configurations
+- [training/README.md](../../../training/README.md) - training workflow
 
 ## Sources
 
 - FAIR principles: https://www.nature.com/articles/sdata201618
 - DataCite Metadata Schema 4.7: https://schema.datacite.org/
-- Zenodo records and DOI docs: https://help.zenodo.org/docs/deposit/about-records/ and https://help.zenodo.org/docs/deposit/describe-records/reserve-doi/
-- Zenodo GitHub integration: https://help.zenodo.org/docs/github/ and https://help.zenodo.org/docs/github/enable-repository/
 - Datasheets for Datasets: https://arxiv.org/abs/1803.09010
 - Data Cards: https://arxiv.org/abs/2204.01075
 - Transformer framework for multivariate time series: https://openreview.net/forum?id=lE1AB4stmX

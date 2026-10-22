@@ -2,9 +2,8 @@
 
 ## Status
 
-- local training-ready dataset prepared in private/local storage
-- public GitHub mini-sample published in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
-- full public archive and DOI still pending
+- preview sample published in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
+- the full dataset is not published; it is kept in project-internal storage
 
 ## Related Deliverables
 
@@ -14,18 +13,18 @@
 
 ## Purpose
 
-This page covers the public image-segmentation dataset family derived from annotated video frames and still images collected in the project.
+This page describes the image-segmentation dataset built from annotated video frames and still images collected in the project. The dataset covers instance segmentation of sorted-waste materials and selected impurity scenarios.
 
-The primary goal is to publish a curated instance-segmentation benchmark for sorted-waste materials and selected impurity scenarios, together with training-ready annotations, split definitions, and baseline training code.
+This repository publishes a preview sample of the dataset in the exact training-ready format, together with the input specification and baseline training code. The full dataset is not published.
 
-For the detailed work plan, see [workplan.md](workplan.md).
-For the required private/local input format, see [input-spec.md](input-spec.md).
-For the current sample package, see [../../../samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md](../../../samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md).
-For the public training scaffold, see [../../../training/README.md](../../../training/README.md).
+For the dataset preparation plan, see [workplan.md](workplan.md).
+For the input and export format, see [input-spec.md](input-spec.md).
+For the preview sample, see [../../../samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md](../../../samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md).
+For the training workflow, see [../../../training/README.md](../../../training/README.md).
 
-## Current Source Inventory
+## Dataset Inventory
 
-The current private/local source inventory includes:
+The full (non-public) dataset consists of:
 
 - `WasteR_01_02_03_Backup.zip`
   - tasks `01_PET`, `02_HDPE`, `03_LDPE_HRUBE`
@@ -44,71 +43,41 @@ The current private/local source inventory includes:
   - `84` images total
   - annotated instances: `PET=499`, `paper=753`, `OCC_karton=275`, `napojove_kartony=235`, `contaminant=437`
 
-Current working totals:
+Totals:
 
 - `232` annotated images
 - `4,978` polygon instances
 - single-material tasks for plastics
 - mixed-material and impurity scenarios for downstream robustness evaluation
 
-Current local prepared tracks:
+Prepared training tracks (non-public):
 
 - `all_classes_v1`
 - `single_material_v1`
 - `mixtures_and_impurities_v1`
 
-Current public repository sample:
+Published preview sample:
 
 - `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
 - `6` images total
 - `317` annotated instances total
 - `train/valid/test` layout with `_annotations.coco.json` in each split
 
-## Recommended Public Dataset Shape
+## What This Repository Contains
 
-The main public release should use:
+- dataset description and inventory summary (this page)
+- preview sample in [`samples/video_segmentation_dataset_v1/all_classes_mini_coco/`](../../../samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md): images, `COCO instance segmentation` annotations per split, `label_taxonomy.csv`, and `sample_manifest.csv`
+- input and export format of the dataset: [input-spec.md](input-spec.md)
+- dataset preparation plan: [workplan.md](workplan.md)
+- RF-DETR Seg training script and configurations: [`scripts/video_segmentation_dataset_v1/`](../../../scripts/video_segmentation_dataset_v1/README.md), [`training/configs/video_segmentation_dataset_v1/`](../../../training/configs/video_segmentation_dataset_v1/)
 
-- original full images as inputs
-- polygon-based annotations converted to `COCO instance segmentation`
-- one benchmark for single-material instance segmentation
-- one benchmark for mixed or impurity segmentation
-- one optional combined `all_classes_v1` track for development, smoke tests, and unified training
-- split definitions grouped by source video, not random image-level splits
+## What This Repository Does Not Contain
 
-The repository may also later include:
-
-- a crop-based auxiliary dataset derived from single object instances
-- additional preview packages in `samples/`
-- additional training and evaluation scripts linked from `training/` or `scripts/`
-
-## What This Repository Should Contain
-
-- dataset description and inventory summary
-- label taxonomy summary
-- annotation format notes and export rules
-- split protocol grouped by source video or source capture
-- sample assets in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
-- compact repository release in `release/` if approved and practical
-- external archive link once released, if needed
-- baseline training scripts and benchmark notes
-- input specification for private/local dataset preparation
+- the full annotated image dataset (232 images, 4,978 polygon instances)
+- raw video recordings and the source annotation ZIP bundles
+- internal conversion helpers that depend on the non-public ZIP bundles
 
 ## Relation to the Radar Dataset
 
-- The project also publishes [`radar_dataset_from_multidetektor_measurement`](../radar_dataset_from_multidetektor_measurement/outputs.md), a 24 GHz radar dataset with numbered sample photographs.
-- The segmentation dataset provides the image-recognition counterpart for project benchmarking and later radar-vs-video comparison studies.
-
-## What Should Not Be The Primary Public Release
-
-- raw video dumps if they exist outside the current frame exports
-- duplicated crop-only datasets as the main benchmark
-- random image-level train or test splits that leak near-identical scenes
-- unreviewed label variants or temporary class names
-- restricted internal annotation exports
-- private workstation-specific conversion helpers that depend on non-public ZIP bundles
-
-## DOI and Archive
-
-- DOI: `TBD`
-- URL: `TBD`
-- version: `TBD`
+- The project publishes [`radar_dataset_from_multidetektor_measurement`](../radar_dataset_from_multidetektor_measurement/outputs.md), a 24 GHz radar dataset with numbered sample photographs.
+- The segmentation dataset was used to train the image-recognition model whose results are compared with radar-based classification on the same samples.

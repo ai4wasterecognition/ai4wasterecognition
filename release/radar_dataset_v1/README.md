@@ -1,20 +1,23 @@
-# AI4WasteRecognition Radar Dataset Release
+# AI4WasteRecognition Radar Dataset v1
 
-This public release package was generated from the `WasteR` workspace and is versioned directly in this repository as `release/radar_dataset_v1`.
+Curated 24 GHz FMCW radar dataset of sorted waste materials, collected in the project laboratory experiments (deliverable `D3.3`). The dataset is versioned directly in this repository as `release/radar_dataset_v1`.
 
 Contents:
 
-- `core/` clean benchmark-oriented subset
-- `extended/` atypical or lower-consistency subset
-- `summary.json` combined release summary
-- `checksums.sha256` file checksums
-- `core/data_dictionary.csv` and `extended/data_dictionary.csv`
+- `core/` - clean benchmark subset
+- `extended/` - atypical or lower-consistency measurements
+- `summary.json` - combined release summary
+- `checksums.sha256` - file checksums
+- `core/data_dictionary.csv` and `extended/data_dictionary.csv` - column reference
+
+Each subset contains `measurement_bins.parquet`, `measurement_tensor.npz`, `measurement_labels.parquet`, `measurement_metadata.parquet`, `measurement_provenance.parquet`, `splits.parquet`, and `summary.json`.
 
 Counts:
 
-- core measurements: 13650
-- core bin rows: 254594
+- core measurements: 13,650 (train 9,102 / val 2,418 / test 2,130)
+- core bin rows: 254,594
 - extended measurements: 201
-- extended bin rows: 17495
+- extended bin rows: 17,495
+- core primary material classes: `plastic`, `paper_cardboard`, `water`, `biomass`, `background`, `glass`, `human`, `container_only`, `oil`, `metal`, `unknown`
 
-This package is the current public GitHub release for the radar training dataset. A DOI-backed archival mirror can be added later if needed.
+The dataset has no DOI-backed archive copy yet. Landing page: [docs/datasets/radar_dataset_v1/experimental-data.md](../../docs/datasets/radar_dataset_v1/experimental-data.md).

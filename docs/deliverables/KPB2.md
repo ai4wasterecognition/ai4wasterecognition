@@ -1,16 +1,13 @@
 # KPB2 - Tech and AI Research
 
-This page covers the public repository representation of research and review deliverables.
+This page lists research and review deliverables and what this repository contains for each of them.
 
-| Code | Deliverable | Delivery | Access | Public representation |
+| Code | Deliverable | Delivery | Access | Content in this repository |
 | --- | --- | --- | --- | --- |
-| D2.1 | Quality and Reliability Analysis Report in Waste Management | M8 | V | report summary page and publication link |
-| D2.2 | Waste Types and Detection Technologies Review | M8 | V | review page and bibliography links |
-| D2.3 | AI and Radar Sensor Applications in Waste Management Report | M8 | V | methods page and public report link |
+| D2.1 | Quality and Reliability Analysis Report in Waste Management | M8 | V | not published in this repository |
+| D2.2 | Waste Types and Detection Technologies Review | M8 | V | not published in this repository |
+| D2.3 | AI and Radar Sensor Applications in Waste Management Report | M8 | V | not published in this repository |
 
-## What Belongs in GitHub
+## Status
 
-- review summaries
-- curated bibliographies
-- methodological overviews
-- public report links or PDFs if approved
+The research and review reports of `KPB2` are not published in this repository yet.

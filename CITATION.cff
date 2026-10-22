@@ -2,9 +2,14 @@ cff-version: 1.2.0
 message: "If you use this repository or a dataset released from it, please cite it using the metadata below."
 title: "AI4WasteRecognition"
 type: software
+repository-code: "https://github.com/ai4wasterecognition/ai4wasterecognition"
+url: "https://github.com/ai4wasterecognition/ai4wasterecognition"
+license:
+  - MIT
+  - CC-BY-4.0
 authors:
   - name: "AI4WasteRecognition Consortium"
-abstract: "Public-facing umbrella repository for the AI4WasteRecognition project, including project documentation, research artifacts, and links to curated dataset releases derived from the WasteR analysis workspace."
+abstract: "Public repository of the AI4WasteRecognition project. It publishes two 24 GHz FMCW radar datasets of sorted waste collected in the project laboratory experiments, a preview sample of the video segmentation dataset, dataset documentation, and export and training code."
 keywords:
   - radar
   - waste

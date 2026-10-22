@@ -1,19 +1,13 @@
 # Project Overview
 
-This folder contains the project-level public structure derived from the official application.
+This folder contains the project-level structure of the repository, derived from the official application.
 
-The goal of the repository is to mirror the project logic from the application:
+The repository follows the project logic from the application:
 
 - work packages define the main output areas
-- deliverables define the public-facing output containers
-- dataset pages document real data releases, whether they are hosted in this repository or mirrored externally
-- `samples/` holds small illustrative files and previews for larger dataset families
-
-Current examples in this repository:
-
-- full public radar release in `release/radar_dataset_v1/`
-- public segmentation mini sample in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
-- local-only full segmentation dataset documented through specs and training templates
+- deliverables are listed per work package, with their status in this repository
+- dataset pages document the published data releases
+- `samples/` holds small previews of each dataset
 
 ## Official Project Context
 
@@ -22,35 +16,19 @@ Current examples in this repository:
 - Project code: `09I05-03-V02-00068`
 - Funding line: Recovery and Resilience Plan for Slovakia, call `09I05-03-V02`
 
-## Public Repository Role
+## What the Repository Contains
 
-This repository should function as:
+- the public project landing page ([README.md](../../README.md))
+- the deliverables index ([docs/deliverables/](../deliverables/README.md))
+- the dataset registry ([docs/datasets/](../datasets/README.md))
+- two full radar dataset releases in `release/radar_dataset_v1/` and `release/radar_dataset_from_multidetektor_measurement/`
+- a preview sample of the video segmentation dataset in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`; the full segmentation dataset is not published
+- export, training, and inference code in `scripts/` and `training/`
+- the publication index ([docs/publications/](../publications/README.md))
 
-- the public project landing page
-- the deliverables index
-- the dataset registry
-- the host for approved compact public dataset releases
-- the host for public sample packages that document larger local-only datasets
-- the publication and dissemination index
-
-It should not function as the main storage for raw internal data, very large archives, or internal consortium documentation.
+The repository does not contain raw internal data, internal reports, or internal consortium documentation. See [docs/PUBLISHING.md](../PUBLISHING.md).
 
 ## Structure
 
-- [work-packages.md](work-packages.md) - normalized WP structure for the repository
-- [milestones.md](milestones.md) - milestone map and expected public outputs
-
-## Repository Convention
-
-When a deliverable leads to a dataset:
-
-1. create or update the dataset page in `docs/datasets/`
-2. decide whether the curated public release belongs in `release/` or only in an external archive
-3. add a small example to `samples/` if useful
-4. if an archival mirror exists, link the DOI back into the dataset page
-
-When a deliverable leads to a report or dissemination output:
-
-1. create or update the relevant page in `docs/deliverables/`
-2. add a public summary, abstract, or publication link
-3. avoid uploading restricted internal files directly
+- [work-packages.md](work-packages.md) - work-package structure
+- [milestones.md](milestones.md) - milestone map and related repository content

@@ -1,8 +1,47 @@
 # AI4WasteRecognition
 
-This repository is the public umbrella repository for the project `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`.
+[Slovenská verzia](README.sk.md)
 
-It is structured from the official project application and its deliverables, not from one internal analysis workspace. Radar measurements are only one output stream. The repository is meant to aggregate project information, deliverable-linked public outputs, dataset landing pages, directly hosted public dataset releases when practical, sample files, and links to externally archived datasets.
+Public repository of the project `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`. It publishes the radar datasets collected in the project laboratory experiments, together with dataset documentation, preview samples, export and training code, and the public mapping of project work packages and deliverables.
+
+## Published Data
+
+The repository contains two full radar datasets and one preview sample. All files are in the `main` branch and can be downloaded directly from GitHub (`Code → Download ZIP` or `git clone`).
+
+| Dataset | Content | Size | Location |
+| --- | --- | --- | --- |
+| Radar dataset v1 | 24 GHz FMCW radar measurements of sorted waste materials, 11 primary material classes, `train`/`val`/`test` splits | 13,650 measurements (`core`) + 201 measurements (`extended`) | [release/radar_dataset_v1](release/radar_dataset_v1/README.md) |
+| Radar dataset from multidetector measurement | 24 GHz FMCW radar measurements of plastic waste with controlled contaminations (wood, paper, glass, Al blinds), fixed lab geometry, paired with sample photographs | 2,950 measurements, 17 sample types, 43 photographs | [release/radar_dataset_from_multidetektor_measurement](release/radar_dataset_from_multidetektor_measurement/README.md) |
+| Video segmentation dataset v1 (preview only) | COCO instance-segmentation sample of sorted plastic and paper waste; the full dataset is not published | 6 images, 317 annotated instances | [samples/video_segmentation_dataset_v1](samples/video_segmentation_dataset_v1/README.md) |
+
+Each radar release contains:
+
+- `measurement_bins.parquet` - bin-level radar signal, one row per measurement and range bin
+- `measurement_tensor.npz` - model-ready arrays built from the bin-level data
+- `measurement_labels.parquet` - labels per measurement
+- `measurement_metadata.parquet` - acquisition metadata
+- `measurement_provenance.parquet` - mapping of each measurement to its raw source file
+- `splits.parquet` - deterministic `train`/`val`/`test` split
+- `data_dictionary.csv` - column reference
+- `summary.json` and `checksums.sha256` - counts and file checksums
+
+Parquet and NPZ files cannot be previewed in the GitHub web interface. Download them and open them with Python, for example:
+
+```python
+import numpy as np
+import pandas as pd
+
+base = "release/radar_dataset_v1/core"
+labels = pd.read_parquet(f"{base}/measurement_labels.parquet")
+splits = pd.read_parquet(f"{base}/splits.parquet")
+print(labels.merge(splits[["measurement_id", "split"]], on="measurement_id")
+            .groupby(["split", "material_primary"]).size().unstack(fill_value=0))
+
+npz = np.load(f"{base}/measurement_tensor.npz")
+X = npz["signal"]  # (13650, 33, 4): measurements x range bins x channels
+```
+
+Small CSV previews of every radar release are available in [samples/](samples/README.md) and can be viewed directly in the browser.
 
 ## Project Identity
 
@@ -13,48 +52,32 @@ It is structured from the official project application and its deliverables, not
 - Call: `09I05-03-V02`
 - Consortium: Slovak University of Technology in Bratislava, Optima Ideas s.r.o., Sensoneo j. s. a., Asseco Central Europe, a. s., and the City of Michalovce
 
-## Public Output Model
+## Repository Contents
 
-This GitHub repository is intended to publish:
+| Folder | Content |
+| --- | --- |
+| [release/](release/) | full public radar dataset releases |
+| [samples/](samples/README.md) | small CSV, raw-frame, and image previews of each dataset |
+| [docs/datasets/](docs/datasets/README.md) | dataset landing pages, schema notes, and release documentation |
+| [scripts/](scripts/) | dataset export, release-building, training, and inference scripts |
+| [training/](training/README.md) | training configurations and run scripts for radar and segmentation models |
+| [docs/project/](docs/project/README.md) | project overview, work packages, and milestones |
+| [docs/deliverables/](docs/deliverables/README.md) | deliverables index and their status in this repository |
+| [docs/publications/](docs/publications/README.md) | publication index |
 
-- project overview pages derived from the application
-- work-package and deliverable indexes
-- public summaries of reports, methods, and outputs
-- dataset cards and dataset landing pages
-- versioned public dataset releases when they are small enough, non-sensitive, and consortium-approved
-- `samples/` for lightweight previews of larger or private-local dataset families
-- links to DOI-backed archives where external archival release is preferred
-- publication and dissemination links
+Key pages:
 
-This GitHub repository can host curated benchmark-ready datasets directly when size and sensitivity allow it. For long-term archival, DOI minting, or larger future datasets, Zenodo or another research repository remains the recommended companion archive.
-
-## Repository Layout
-
-- [docs/project/README.md](docs/project/README.md) - project overview and repository model
-- [docs/project/work-packages.md](docs/project/work-packages.md) - work-package structure derived from the application
-- [docs/project/milestones.md](docs/project/milestones.md) - milestone map for public outputs
-- [docs/deliverables/README.md](docs/deliverables/README.md) - full deliverables index
-- [docs/deliverables/KPB1.md](docs/deliverables/KPB1.md) - project management outputs
-- [docs/deliverables/KPB2.md](docs/deliverables/KPB2.md) - research and review outputs
-- [docs/deliverables/KPB3.md](docs/deliverables/KPB3.md) - laboratory and data collection outputs
-- [docs/deliverables/KPB4.md](docs/deliverables/KPB4.md) - analysis outputs
-- [docs/deliverables/KPB5.md](docs/deliverables/KPB5.md) - evaluation and publication outputs
-- [docs/datasets/README.md](docs/datasets/README.md) - dataset registry and publication rules
-- [docs/datasets/radar_dataset_v1/publication-and-modeling.md](docs/datasets/radar_dataset_v1/publication-and-modeling.md) - concrete radar publication and transformer baseline plan
-- [docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md](docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md) - radar (multidetector measurement) dataset landing page
-- [docs/datasets/video_segmentation_dataset_v1/outputs.md](docs/datasets/video_segmentation_dataset_v1/outputs.md) - segmentation dataset page with current public sample status
-- [docs/datasets/video_segmentation_dataset_v1/input-spec.md](docs/datasets/video_segmentation_dataset_v1/input-spec.md) - local full-dataset input and export contract for segmentation
-- [docs/publications/README.md](docs/publications/README.md) - publication index placeholder
-- [samples/README.md](samples/README.md) - policy for repository-hosted samples
-- [samples/video_segmentation_dataset_v1/README.md](samples/video_segmentation_dataset_v1/README.md) - public segmentation sample index
-- [training/README.md](training/README.md) - export and training workflows for radar and segmentation data
-- [DATASET_CARD.md](DATASET_CARD.md) - generic dataset-card template
-- [docs/PUBLISHING.md](docs/PUBLISHING.md) - GitHub and Zenodo publication workflow
-- [docs/LICENSING.md](docs/LICENSING.md) - licensing guidance for code, docs, and data
+- [docs/datasets/radar_dataset_v1/experimental-data.md](docs/datasets/radar_dataset_v1/experimental-data.md) - radar dataset v1 landing page
+- [docs/datasets/radar_dataset_v1/publication-and-modeling.md](docs/datasets/radar_dataset_v1/publication-and-modeling.md) - release structure and transformer baseline
+- [docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md](docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md) - multidetector radar dataset landing page
+- [docs/datasets/video_segmentation_dataset_v1/outputs.md](docs/datasets/video_segmentation_dataset_v1/outputs.md) - segmentation dataset page and preview sample
+- [docs/deliverables/README.md](docs/deliverables/README.md) - deliverables index
+- [docs/PUBLISHING.md](docs/PUBLISHING.md) - publication rules and workflow
+- [docs/LICENSING.md](docs/LICENSING.md) - licensing notes
 
 ## Deliverable-Oriented Structure
 
-The application defines five work packages:
+The repository follows the five work packages defined in the project application:
 
 - `KPB1` Project Management
 - `KPB2` Tech and AI Research
@@ -62,30 +85,14 @@ The application defines five work packages:
 - `KPB4` Data analysis
 - `KPB5` Evaluation
 
-This repository follows that same structure. Each work package has its own deliverable page and expected public representation. That keeps the repository aligned with the official project plan even if future outputs include radar, waste-management, segmentation, or multidetector resources.
+Each work package has a page in [docs/deliverables/](docs/deliverables/README.md) listing its deliverables and what this repository contains for each of them. The published radar datasets belong to `D3.3` (Experimental Data Collection Dataset) and `D4.3` (Report on AI-Driven multidetector Data Analysis).
 
-## Dataset Policy
+## Publication Rules
 
-The current publication policy for this repository is:
+The rules for what is and is not published in this repository are described in [docs/PUBLISHING.md](docs/PUBLISHING.md).
 
-- public datasets may be versioned directly in GitHub when they are compact, curated, and approved for release
-- each dataset family lives in its own per-version subfolder across the entire repo: `release/<name>_v<n>/`, `scripts/<name>_v<n>/`, `samples/<name>_v<n>/`, `training/configs/<name>_v<n>/`, `docs/datasets/<name>_v<n>/`
-- current public releases:
-  - [release/radar_dataset_v1](release/radar_dataset_v1/README.md) - 24 GHz FMCW radar training set
-  - [release/radar_dataset_from_multidetektor_measurement](release/radar_dataset_from_multidetektor_measurement/README.md) - 24 GHz radar plus numbered sample photos, fixed-geometry lab session
-- the current segmentation family is represented by docs, training scaffolding, and a mini COCO sample in [samples/video_segmentation_dataset_v1/all_classes_mini_coco](samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md)
-- `samples/` remains for lightweight previews and for dataset families that are not fully hosted in the repository
-- one landing page per dataset family in `docs/datasets/<name>_v<n>/`
-- one repository path and, when available, one archival DOI or external mirror per real dataset release
-- clear linkage between each dataset and the relevant deliverable(s)
+## License and Citation
 
-## Important Publication Constraints
+Source code is released under the [MIT License](LICENSE). Datasets and documentation are released under [CC BY 4.0](LICENSE-DATA). Details are in [docs/LICENSING.md](docs/LICENSING.md).
 
-- Do not publish raw logs, sensitive measurements, or private consortium material without approval.
-- Do not publish personal data or anything that could identify a person.
-- Do not publish assets that may weaken future IP protection or commercialization.
-- Use repository-hosted releases only for curated public datasets. Larger, citation-critical, or long-term archival copies should also be mirrored in Zenodo or another research archive.
-
-## Citation
-
-If you use this repository or a dataset released from it, cite the repository metadata in `CITATION.cff` and the archival DOI when one is added.
+If you use this repository or one of its datasets, cite it using the metadata in [CITATION.cff](CITATION.cff).

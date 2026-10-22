@@ -1,24 +1,10 @@
 # Video Segmentation Input Specification
 
-This note describes the expected local inputs for preparing a segmentation training dataset. It is intended for private/local dataset preparation, not as a public release artifact containing the raw image data itself.
-
-## Goal
-
-The public repository should document:
-
-- the expected raw annotation format
-- the expected training-ready dataset format
-- the sample training script
-
-The public repository should not require publishing:
-
-- the raw image ZIP bundles
-- the full private image archive
-- private local conversion helpers tied to one workstation
+This page describes the raw annotation format used to prepare the video segmentation dataset and the training-ready format that the training scripts read. The raw image bundles and the full dataset are not published.
 
 ## Supported Raw Input Pattern
 
-The local raw source is expected to be a CVAT-style export with polygon annotations.
+The raw source is a CVAT export with polygon annotations.
 
 Each bundle can be in one of these shapes:
 
@@ -59,13 +45,13 @@ Each task must contain:
 
 ## Required Annotation Semantics
 
-Each annotated object should provide:
+Each annotated object provides:
 
 - a polygon
 - a class label
 - a frame index that maps to an entry in `manifest.jsonl`
 
-The raw label set can be project-specific, but for `WasteR` the current canonical label family is:
+The canonical label set of the dataset is:
 
 - `PET`
 - `HDPE`
@@ -79,11 +65,11 @@ The raw label set can be project-specific, but for `WasteR` the current canonica
 - `napojove_kartony`
 - `contaminant`
 
-`background` can remain implicit and does not need to become a foreground training category.
+`background` is implicit and is not a training category.
 
-## Recommended Naming Convention
+## Naming Convention
 
-To enable leakage-safe grouping, the source frame names should encode scene/video identity, for example:
+Source frame names encode scene and video identity, which enables leakage-safe grouping, for example:
 
 ```text
 frame_vid3_2.jpg
@@ -98,9 +84,9 @@ The important fields are:
 
 ## Training-Ready Output Contract
 
-The training-ready local dataset should be prepared in COCO instance-segmentation format because this works cleanly with RF-DETR Seg.
+The training-ready dataset uses the COCO instance-segmentation format, which RF-DETR Seg reads directly.
 
-Expected layout:
+Layout:
 
 ```text
 <dataset_root>/
@@ -115,7 +101,7 @@ Expected layout:
     <images>.jpg
 ```
 
-Each COCO annotation should include:
+Each COCO annotation includes:
 
 - `image_id`
 - `category_id`
@@ -126,9 +112,7 @@ Each COCO annotation should include:
 
 ## Split Policy
 
-Do not split randomly by image.
-
-Use grouping by source video or source scene so that near-identical frames from the same capture do not leak across `train`, `valid`, and `test`.
+Splits are not made randomly by image. They are grouped by source video or source scene so that near-identical frames from the same capture do not leak across `train`, `valid`, and `test`.
 
 Minimum grouping fields:
 
@@ -136,17 +120,15 @@ Minimum grouping fields:
 - `scene_group`
 - `video_id`
 
-## What The Public Repo Should Include
+## Published in This Repository
 
 - this input specification
-- the segmentation dataset landing page
-- a sample RF-DETR Seg training script
-- sample configs
-- a tiny but real COCO preview package in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
+- the segmentation dataset landing page: [outputs.md](outputs.md)
+- the RF-DETR Seg training script and configs
+- a COCO preview sample in [samples/video_segmentation_dataset_v1/all_classes_mini_coco](../../../samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md)
 
-## What Stays Local
+## Not Published
 
 - raw ZIP exports
 - full image data
-- workstation-specific conversion helpers
-- local build outputs
+- internal conversion helpers

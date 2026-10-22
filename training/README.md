@@ -23,13 +23,12 @@ Optional shell launcher:
 
 - `run_radar_transformer.sh`
 
+Both configs read the published release in `release/radar_dataset_v1/core` directly, so training needs no export step. `export_dataset.py` and `build_release.py` rebuild the release from the internal source data, which is not published.
+
 Workflow:
 
 ```bash
-# Export a clean subset
-python scripts/radar_dataset_v1/export_dataset.py --subset core --output-dir build/radar_core_v1
-
-# Or build the full local release package
+# Rebuild the release (requires the internal source data)
 python scripts/radar_dataset_v1/build_release.py
 
 # Train the biomass detector
@@ -73,28 +72,28 @@ Workflow:
 ```bash
 NAME=radar_dataset_from_multidetektor_measurement
 
-# End-to-end build
+# End-to-end build of the release (requires the internal raw data in data/)
 python scripts/$NAME/ingest_raw_txt.py
 python scripts/$NAME/build_sample_mapping.py
 python scripts/$NAME/export_dataset.py
 python scripts/$NAME/build_foto_catalog.py
 python scripts/$NAME/build_samples.py
 
-# Train via a config (recommended) — CLI flags override config values
+# Train on the published release via a config (recommended) — CLI flags override config values
 python scripts/$NAME/train_classifier.py \
     --config training/configs/$NAME/transformer_label_category.yaml
 
-# Infer
+# Infer on raw radar .txt frames (a published example frame is in samples/)
 python scripts/$NAME/infer.py \
     --model models/$NAME/transformer_label_category.pt \
-    --input data/multidetektor/meranie_23_04/2026-04-23_13-14-01.859/FD/
+    --input samples/$NAME/sample_frame.txt
 ```
 
 `train_classifier.py` reads the YAML config and resolves settings as `CLI flag > config value > built-in default`, so the configs in `configs/$NAME/` drive the model family, target, transformer architecture, and augmentation.
 
 ### video_segmentation_dataset_v1
 
-RF-DETR Seg training template for the local full image-segmentation dataset prepared from private CVAT exports.
+RF-DETR Seg training template for the video segmentation dataset. The full dataset is not published; the configs can be validated with the public preview sample.
 
 Configs:
 
@@ -108,7 +107,7 @@ Scripts:
 
 Recommended workflow:
 
-1. Prepare a local COCO dataset that matches the input contract in [../docs/datasets/video_segmentation_dataset_v1/input-spec.md](../docs/datasets/video_segmentation_dataset_v1/input-spec.md).
+1. Prepare a COCO dataset that matches the input contract in [../docs/datasets/video_segmentation_dataset_v1/input-spec.md](../docs/datasets/video_segmentation_dataset_v1/input-spec.md).
 
 Expected layout:
 
@@ -125,7 +124,7 @@ Expected layout:
     *.jpg
 ```
 
-2. Update the config so `dataset_dir` points to your local COCO dataset.
+2. Update the config so `dataset_dir` points to the COCO dataset (for example the preview sample in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`).
 
 3. Validate the RF-DETR Seg config without starting training:
 
@@ -180,6 +179,6 @@ pip install "rfdetr[train,loggers]"
 
 ## Segmentation Notes
 
-- The raw image ZIP bundles and the full local dataset are not intended for GitHub publication.
+- The raw image ZIP bundles and the full segmentation dataset are not published.
 - A tiny public COCO preview is available in `../samples/video_segmentation_dataset_v1/all_classes_mini_coco/` for schema inspection and dry runs only.
 - RF-DETR accepts COCO layout directly, so the only required public contract is the `train/valid/test` COCO structure.

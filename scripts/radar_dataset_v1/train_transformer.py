@@ -258,8 +258,10 @@ def load_exported_dataset(dataset_dir: Path, task: str) -> tuple[SplitData, Spli
     merged = merged[merged["measurement_id"].isin(id_to_row)].copy()
 
     if task == "biomass_binary":
-        merged = merged[merged["has_biomass"].notna()].copy()
-        merged["target_label"] = merged["has_biomass"].astype(bool).map({False: "no_biomass", True: "biomass"})
+        # The core release stores has_biomass as "True"/"False" strings; astype(bool) would map both to True.
+        has_biomass = merged["has_biomass"].map({True: True, False: False, "True": True, "False": False})
+        merged = merged[has_biomass.notna()].copy()
+        merged["target_label"] = has_biomass[has_biomass.notna()].map({False: "no_biomass", True: "biomass"})
     elif task == "material_primary":
         merged = merged[merged["material_primary"].notna()].copy()
         merged = merged[merged["material_primary"].astype(str) != "unknown"].copy()

@@ -28,7 +28,7 @@ Examples:
   training/run_radar_transformer.sh --config /data/custom_radar_config.yaml
 
 Notes:
-  - Export the radar dataset first, or update dataset_dir in the YAML config.
+  - The configs read the published release in release/radar_dataset_v1/core; update dataset_dir to use another export.
   - Training requires PyTorch in the current environment.
 EOF
 }
