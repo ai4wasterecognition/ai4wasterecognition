@@ -1,6 +1,6 @@
 # Video Segmentation Samples
 
-This folder contains a small public preview of the project image-segmentation dataset. The full dataset is not published.
+This folder contains a small preview of the project image-segmentation dataset. The full dataset is published in [../../release/video_segmentation_dataset_v1/](../../release/video_segmentation_dataset_v1/README.md).
 
 Current sample package:
 

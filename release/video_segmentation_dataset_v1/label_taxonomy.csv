@@ -1,0 +1,12 @@
+category_id,label,supercategory,description_en,description_sk
+1,PET,waste,"PET bottles, clear and colored","PET fľaše, číre a farebné"
+2,HDPE,waste,"HDPE containers, white and colored","HDPE obaly, biele a farebné"
+3,LDPE_hrube,waste,thick LDPE films,LDPE hrubé fólie
+4,LDPE_farebne,waste,colored LDPE films,LDPE farebné fólie
+5,PP_tenke,waste,thin PP films,PP tenké fólie
+6,PS,waste,polystyrene,polystyrén
+7,OST_plast,waste,other rigid plastics,ostatný tvrdený plast
+8,OCC_karton,waste,corrugated cardboard (OCC),kartón (OCC)
+9,paper,waste,mixed paper,zmiešaný papier
+10,napojove_kartony,waste,beverage cartons,nápojové kartóny
+11,contaminant,waste,admixture / foreign object in a sorted fraction,prímes / cudzí predmet v triedenej frakcii

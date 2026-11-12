@@ -8,6 +8,6 @@ This folder contains small, non-sensitive previews of the project datasets that 
 | --- | --- | --- |
 | [radar_dataset_v1/](radar_dataset_v1/) | CSV samples of measurement bins, labels, and metadata from the `core` subset | [release/radar_dataset_v1](../release/radar_dataset_v1/README.md) |
 | [radar_dataset_from_multidetektor_measurement/](radar_dataset_from_multidetektor_measurement/README.md) | one raw radar `.txt` frame, first 25 label and metadata rows, all bin rows of one measurement | [release/radar_dataset_from_multidetektor_measurement](../release/radar_dataset_from_multidetektor_measurement/README.md) |
-| [video_segmentation_dataset_v1/](video_segmentation_dataset_v1/README.md) | mini COCO instance-segmentation sample: 6 images, 317 annotated instances | not published |
+| [video_segmentation_dataset_v1/](video_segmentation_dataset_v1/README.md) | mini COCO instance-segmentation sample: 6 images, 317 annotated instances | [release/video_segmentation_dataset_v1](../release/video_segmentation_dataset_v1/README.md) |
 
 Full dataset releases are in `release/<name>/`, not in this folder.

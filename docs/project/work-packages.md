@@ -9,7 +9,7 @@ The repository is organised by the work packages from the project application.
 | KPB1 | Project Management | STU | deliverable page only; management deliverables are internal |
 | KPB2 | Tech and AI Research | STU | deliverable page only; reports not published yet |
 | KPB3 | Laboratory Experiment | Sensoneo | radar dataset v1, CSV previews, measurement setup photos |
-| KPB4 | Data analysis | Optima Ideas | multidetector radar dataset with sample photos, radar training and inference code, segmentation preview sample and training code |
+| KPB4 | Data analysis | Optima Ideas | multidetector radar dataset with sample photos, radar training and inference code, video segmentation dataset and training code |
 | KPB5 | Evaluation | STU | deliverable page and publication index; no publications yet |
 
 ## Repository Interpretation

@@ -2,19 +2,19 @@
 
 [English version](README.md)
 
-Verejný repozitár projektu `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness` (Rozpoznávanie čistoty vytriedeného odpadu s podporou umelej inteligencie). Zverejňuje radarové datasety zozbierané v laboratórnych experimentoch projektu spolu s dokumentáciou datasetov, ukážkovými súbormi, kódom na export a tréning modelov a verejným prehľadom pracovných balíkov a výstupov projektu.
+Verejný repozitár projektu `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness` (Rozpoznávanie čistoty vytriedeného odpadu s podporou umelej inteligencie). Zverejňuje radarové datasety zozbierané v laboratórnych experimentoch projektu a video segmentačný dataset vytriedeného odpadu spolu s dokumentáciou datasetov, ukážkovými súbormi, kódom na export a tréning modelov a verejným prehľadom pracovných balíkov a výstupov projektu.
 
 Hlavnou verziou dokumentácie je anglická verzia [README.md](README.md). Ostatná dokumentácia v repozitári je v angličtine.
 
 ## Zverejnené dáta
 
-Repozitár obsahuje dva kompletné radarové datasety a jednu ukážku. Všetky súbory sú vo vetve `main` a dajú sa stiahnuť priamo z GitHubu (`Code → Download ZIP` alebo `git clone`).
+Repozitár obsahuje dva kompletné radarové datasety a kompletný video segmentačný dataset. Všetky súbory sú vo vetve `main` a dajú sa stiahnuť priamo z GitHubu (`Code → Download ZIP` alebo `git clone`).
 
 | Dataset | Obsah | Rozsah | Umiestnenie |
 | --- | --- | --- | --- |
 | Radarový dataset v1 | merania 24 GHz FMCW radarom na vytriedených odpadových materiáloch, 11 hlavných materiálových tried, rozdelenie `train`/`val`/`test` | 13 650 meraní (`core`) + 201 meraní (`extended`) | [release/radar_dataset_v1](release/radar_dataset_v1/README.md) |
 | Radarový dataset z multidetektorového merania | merania 24 GHz FMCW radarom na plastovom odpade s kontrolovanými prímesami (drevo, papier, sklo, hliníkové žalúzie), pevná laboratórna geometria, doplnené fotografiami vzoriek | 2 950 meraní, 17 typov vzoriek, 43 fotografií | [release/radar_dataset_from_multidetektor_measurement](release/radar_dataset_from_multidetektor_measurement/README.md) |
-| Video segmentačný dataset v1 (iba ukážka) | ukážka anotácií (COCO instance segmentation) vytriedeného plastového a papierového odpadu; celý dataset sa nezverejňuje | 6 obrázkov, 317 anotovaných objektov | [samples/video_segmentation_dataset_v1](samples/video_segmentation_dataset_v1/README.md) |
+| Video segmentačný dataset v1 | anotácie COCO instance segmentation vytriedeného plastového a papierového odpadu a prímesí, 11 tried, rozdelenie `train`/`valid`/`test`; tréningové dáta modelov z `D4.2` | 322 obrázkov, 7 124 anotovaných objektov | [release/video_segmentation_dataset_v1](release/video_segmentation_dataset_v1/README.md) |
 
 Každý radarový dataset obsahuje:
 

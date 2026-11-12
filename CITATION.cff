@@ -9,7 +9,7 @@ license:
   - CC-BY-4.0
 authors:
   - name: "AI4WasteRecognition Consortium"
-abstract: "Public repository of the AI4WasteRecognition project. It publishes two 24 GHz FMCW radar datasets of sorted waste collected in the project laboratory experiments, a preview sample of the video segmentation dataset, dataset documentation, and export and training code."
+abstract: "Public repository of the AI4WasteRecognition project. It publishes two 24 GHz FMCW radar datasets of sorted waste collected in the project laboratory experiments, a video segmentation dataset of sorted waste (322 images, 7,124 instances), dataset documentation, and export and training code."
 keywords:
   - radar
   - waste

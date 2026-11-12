@@ -1,0 +1,43 @@
+file,field,type,description
+splits.csv,file_name,string,Image file name inside the split folder.
+splits.csv,split,string,"Split: train, valid or test."
+splits.csv,task,string,"Annotation task (material fraction or admixture series), e.g. 01_pet, 11_primesy."
+splits.csv,scene_group,string,Scene or mixture prefix parsed from the source frame name.
+splits.csv,video_id,integer,Source video number within the task and scene group.
+splits.csv,frame_id,integer,Frame number within the source video.
+splits.csv,group_key,string,Grouping key task|scene_group|video_id. All frames of one group are in the same split.
+splits.csv,source_bundle,string,CVAT export bundle the image comes from (raw bundles are not published).
+metadata.csv,image_id,integer,"COCO image id, unique within its split."
+metadata.csv,file_name,string,Image file name inside the split folder.
+metadata.csv,split,string,"Split: train, valid or test."
+metadata.csv,width,integer,Image width in pixels.
+metadata.csv,height,integer,Image height in pixels.
+metadata.csv,task,string,"Annotation task, see splits.csv."
+metadata.csv,scene_group,string,"Scene or mixture prefix, see splits.csv."
+metadata.csv,video_id,integer,"Source video number, see splits.csv."
+metadata.csv,frame_id,integer,Frame number within the source video.
+metadata.csv,source_bundle,string,CVAT export bundle the image comes from.
+metadata.csv,annotation_count,integer,Number of polygon instances in the image.
+metadata.csv,categories,string,"Labels present in the image, separated by |."
+metadata.csv,anonymized_regions,integer,Number of regions blurred in the image to remove personal data (0 = unchanged).
+metadata.csv,sha256,string,SHA-256 checksum of the published image file.
+anonymization_regions.csv,file_name,string,Image file name.
+anonymization_regions.csv,x / y,integer,Top-left corner of the blurred box in pixels.
+anonymization_regions.csv,w / h,integer,Width and height of the blurred box in pixels.
+anonymization_regions.csv,reason,string,"Type of personal data removed, e.g. handwriting, address_label, invoice_address."
+label_taxonomy.csv,category_id,integer,COCO category id (1-11).
+label_taxonomy.csv,label,string,Canonical label name used in the COCO files.
+label_taxonomy.csv,supercategory,string,COCO supercategory (always waste).
+label_taxonomy.csv,description_en,string,Label description in English.
+label_taxonomy.csv,description_sk,string,Label description in Slovak.
+_annotations.coco.json,images[].id,integer,"Image id, unique within the split file."
+_annotations.coco.json,images[].file_name,string,Image file name in the same folder.
+_annotations.coco.json,images[].width / height,integer,Image size in pixels.
+_annotations.coco.json,annotations[].id,integer,"Annotation id, unique within the split file."
+_annotations.coco.json,annotations[].image_id,integer,Id of the annotated image.
+_annotations.coco.json,annotations[].category_id,integer,"Category id, see label_taxonomy.csv."
+_annotations.coco.json,annotations[].segmentation,list of float,"Polygon [x1, y1, x2, y2, ...] in pixel coordinates."
+_annotations.coco.json,annotations[].bbox,list of float,"Bounding box [x, y, width, height] of the polygon in pixels."
+_annotations.coco.json,annotations[].area,float,Polygon area in square pixels (shoelace formula).
+_annotations.coco.json,annotations[].iscrowd,integer,Always 0 (individual instances).
+_annotations.coco.json,categories[],object,"Category list {id, name, supercategory}, identical in all splits."

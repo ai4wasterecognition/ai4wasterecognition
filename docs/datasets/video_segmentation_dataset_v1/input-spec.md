@@ -1,6 +1,6 @@
 # Video Segmentation Input Specification
 
-This page describes the raw annotation format used to prepare the video segmentation dataset and the training-ready format that the training scripts read. The raw image bundles and the full dataset are not published.
+This page describes the raw annotation format used to prepare the video segmentation dataset and the training-ready format that the training scripts read. The raw CVAT bundles are not published; the training-ready dataset is published in [release/video_segmentation_dataset_v1](../../../release/video_segmentation_dataset_v1/README.md).
 
 ## Supported Raw Input Pattern
 
@@ -124,11 +124,11 @@ Minimum grouping fields:
 
 - this input specification
 - the segmentation dataset landing page: [outputs.md](outputs.md)
+- the full training-ready dataset in [release/video_segmentation_dataset_v1](../../../release/video_segmentation_dataset_v1/README.md)
 - the RF-DETR Seg training script and configs
 - a COCO preview sample in [samples/video_segmentation_dataset_v1/all_classes_mini_coco](../../../samples/video_segmentation_dataset_v1/all_classes_mini_coco/README.md)
 
 ## Not Published
 
-- raw ZIP exports
-- full image data
+- raw ZIP exports and source videos
 - internal conversion helpers

@@ -1,6 +1,6 @@
 # WasteR Segmentation Mini Sample
 
-This is the public mini sample of the WasteR image-segmentation dataset. The full dataset is not published.
+This is the mini sample of the WasteR image-segmentation dataset. The full dataset is published in [../../../release/video_segmentation_dataset_v1/](../../../release/video_segmentation_dataset_v1/README.md).
 
 It mirrors the same `COCO instance segmentation` layout expected by the RF-DETR Seg training template, but contains only a tiny subset for inspection and dry-run validation.
 

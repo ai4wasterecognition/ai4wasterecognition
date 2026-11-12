@@ -41,6 +41,7 @@ build/video_segmentation_dataset_v1/
 release/*
 !release/radar_dataset_v1/
 !release/radar_dataset_from_multidetektor_measurement/
+!release/video_segmentation_dataset_v1/
 
 # Local-only segmentation preparation helper
 scripts/build_segmentation_dataset.py

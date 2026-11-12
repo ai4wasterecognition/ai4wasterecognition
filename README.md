@@ -2,17 +2,17 @@
 
 [Slovenská verzia](README.sk.md)
 
-Public repository of the project `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`. It publishes the radar datasets collected in the project laboratory experiments, together with dataset documentation, preview samples, export and training code, and the public mapping of project work packages and deliverables.
+Public repository of the project `AI4WasteRecognition: AI-assisted recognition of sorted waste cleanliness`. It publishes the radar datasets collected in the project laboratory experiments and the video segmentation dataset of sorted waste, together with dataset documentation, preview samples, export and training code, and the public mapping of project work packages and deliverables.
 
 ## Published Data
 
-The repository contains two full radar datasets and one preview sample. All files are in the `main` branch and can be downloaded directly from GitHub (`Code → Download ZIP` or `git clone`).
+The repository contains two full radar datasets and the full video segmentation dataset. All files are in the `main` branch and can be downloaded directly from GitHub (`Code → Download ZIP` or `git clone`).
 
 | Dataset | Content | Size | Location |
 | --- | --- | --- | --- |
 | Radar dataset v1 | 24 GHz FMCW radar measurements of sorted waste materials, 11 primary material classes, `train`/`val`/`test` splits | 13,650 measurements (`core`) + 201 measurements (`extended`) | [release/radar_dataset_v1](release/radar_dataset_v1/README.md) |
 | Radar dataset from multidetector measurement | 24 GHz FMCW radar measurements of plastic waste with controlled contaminations (wood, paper, glass, Al blinds), fixed lab geometry, paired with sample photographs | 2,950 measurements, 17 sample types, 43 photographs | [release/radar_dataset_from_multidetektor_measurement](release/radar_dataset_from_multidetektor_measurement/README.md) |
-| Video segmentation dataset v1 (preview only) | COCO instance-segmentation sample of sorted plastic and paper waste; the full dataset is not published | 6 images, 317 annotated instances | [samples/video_segmentation_dataset_v1](samples/video_segmentation_dataset_v1/README.md) |
+| Video segmentation dataset v1 | COCO instance segmentation of sorted plastic and paper waste and admixtures, 11 classes, `train`/`valid`/`test` splits; the training data of the models in `D4.2` | 322 images, 7,124 annotated instances | [release/video_segmentation_dataset_v1](release/video_segmentation_dataset_v1/README.md) |
 
 Each radar release contains:
 
@@ -70,7 +70,7 @@ Key pages:
 - [docs/datasets/radar_dataset_v1/experimental-data.md](docs/datasets/radar_dataset_v1/experimental-data.md) - radar dataset v1 landing page
 - [docs/datasets/radar_dataset_v1/publication-and-modeling.md](docs/datasets/radar_dataset_v1/publication-and-modeling.md) - release structure and transformer baseline
 - [docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md](docs/datasets/radar_dataset_from_multidetektor_measurement/outputs.md) - multidetector radar dataset landing page
-- [docs/datasets/video_segmentation_dataset_v1/outputs.md](docs/datasets/video_segmentation_dataset_v1/outputs.md) - segmentation dataset page and preview sample
+- [docs/datasets/video_segmentation_dataset_v1/outputs.md](docs/datasets/video_segmentation_dataset_v1/outputs.md) - segmentation dataset page
 - [docs/deliverables/README.md](docs/deliverables/README.md) - deliverables index
 - [docs/PUBLISHING.md](docs/PUBLISHING.md) - publication rules and workflow
 - [docs/LICENSING.md](docs/LICENSING.md) - licensing notes

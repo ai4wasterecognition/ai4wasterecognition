@@ -34,7 +34,7 @@ Three label columns are shipped:
 
 Each radar sample number (Nb) is paired with photograph(s) of the same physical sample. The photos capture the detailed waste composition and the top-down view of the sample in the container. Because the photos and radar frames share `nb_of_sample`, the dataset supports a direct comparison between radar-based classification and image-based recognition, and is a starting point for multi-input (radar + image) models.
 
-The project's **video segmentation dataset** (separated plastic/paper waste images, used during the project to train an image-recognition neural network) serves as the image-recognition counterpart for this comparison. Only a preview sample of it is published in this repository.
+The project's **video segmentation dataset** (separated plastic/paper waste images, used during the project to train an image-recognition neural network) serves as the image-recognition counterpart for this comparison. It is published in [release/video_segmentation_dataset_v1](../../../release/video_segmentation_dataset_v1/README.md).
 
 ## Splits
 

@@ -1,5 +1,5 @@
 model_size: small
-dataset_dir: /path/to/local/video_segmentation_dataset_v1/all_classes_v1
+dataset_dir: release/video_segmentation_dataset_v1
 output_dir: runs/rfdetr_seg_all_classes
 epochs: 100
 batch_size: 4

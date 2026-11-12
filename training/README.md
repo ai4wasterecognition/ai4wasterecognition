@@ -93,12 +93,13 @@ python scripts/$NAME/infer.py \
 
 ### video_segmentation_dataset_v1
 
-RF-DETR Seg training template for the video segmentation dataset. The full dataset is not published; the configs can be validated with the public preview sample.
+RF-DETR Seg training for the video segmentation dataset (`D4.2`). The configs point to the published release [`release/video_segmentation_dataset_v1`](../release/video_segmentation_dataset_v1/README.md), the dataset on which the models in `D4.2` were trained. The best model in `D4.2` is RF-DETR Seg Large (`rfdetr_seg_all_classes_large.yaml`).
 
 Configs:
 
-- `configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes.yaml`
-- `configs/video_segmentation_dataset_v1/rfdetr_seg_single_material.yaml`
+- `configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes_large.yaml` - RF-DETR Seg Large, all 11 classes (best model in `D4.2`)
+- `configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes.yaml` - RF-DETR Seg Small, all 11 classes
+- `configs/video_segmentation_dataset_v1/rfdetr_seg_single_material.yaml` - RF-DETR Seg Small, single-material track (template; this track is not part of the release)
 
 Scripts:
 
@@ -107,7 +108,7 @@ Scripts:
 
 Recommended workflow:
 
-1. Prepare a COCO dataset that matches the input contract in [../docs/datasets/video_segmentation_dataset_v1/input-spec.md](../docs/datasets/video_segmentation_dataset_v1/input-spec.md).
+1. Use the published release `release/video_segmentation_dataset_v1/`, or prepare your own COCO dataset that matches the input contract in [../docs/datasets/video_segmentation_dataset_v1/input-spec.md](../docs/datasets/video_segmentation_dataset_v1/input-spec.md).
 
 Expected layout:
 
@@ -124,13 +125,13 @@ Expected layout:
     *.jpg
 ```
 
-2. Update the config so `dataset_dir` points to the COCO dataset (for example the preview sample in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`).
+2. The `all_classes` configs already point to `release/video_segmentation_dataset_v1`. For another dataset, change `dataset_dir` (for example to the preview sample in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`).
 
 3. Validate the RF-DETR Seg config without starting training:
 
 ```bash
 python scripts/video_segmentation_dataset_v1/train_rfdetr.py \
-  --config training/configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes.yaml \
+  --config training/configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes_large.yaml \
   --dry-run
 ```
 
@@ -139,21 +140,22 @@ python scripts/video_segmentation_dataset_v1/train_rfdetr.py \
 ```bash
 pip install "rfdetr[train,loggers]"
 python scripts/video_segmentation_dataset_v1/train_rfdetr.py \
-  --config training/configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes.yaml
+  --config training/configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes_large.yaml
 ```
 
 Or use the shell launcher:
 
 ```bash
-training/run_rfdetr_seg.sh all --dry-run
-training/run_rfdetr_seg.sh single
+training/run_rfdetr_seg.sh all-large --dry-run
+training/run_rfdetr_seg.sh all-large   # RF-DETR Seg Large (D4.2)
+training/run_rfdetr_seg.sh all         # RF-DETR Seg Small
 ```
 
 ## Model Choice
 
 The default model across radar datasets is a compact encoder-only transformer with optional patch embedding. Multidetector also ships a scikit-learn baseline (LogReg / RandomForest on handcrafted plus flattened features) for quick sanity checks without PyTorch.
 
-For image segmentation, the public template uses `RFDETRSegSmall` by default because it accepts the COCO instance-segmentation layout directly and provides a modern transformer-based baseline.
+For image segmentation, the configs use RF-DETR Seg (`RFDETRSegSmall` and `RFDETRSegLarge`) because it accepts the COCO instance-segmentation layout directly and provides a modern transformer-based baseline. In `D4.2`, RF-DETR Seg Large reached the best segm mAP@50 (0.639).
 
 This is a deliberate compromise:
 
@@ -179,6 +181,6 @@ pip install "rfdetr[train,loggers]"
 
 ## Segmentation Notes
 
-- The raw image ZIP bundles and the full segmentation dataset are not published.
-- A tiny public COCO preview is available in `../samples/video_segmentation_dataset_v1/all_classes_mini_coco/` for schema inspection and dry runs only.
+- The full training-ready segmentation dataset is published in `../release/video_segmentation_dataset_v1/` (322 images, 7,124 polygon instances). The raw CVAT ZIP bundles and source videos are not published.
+- A tiny COCO preview is available in `../samples/video_segmentation_dataset_v1/all_classes_mini_coco/` for quick schema inspection.
 - RF-DETR accepts COCO layout directly, so the only required public contract is the `train/valid/test` COCO structure.

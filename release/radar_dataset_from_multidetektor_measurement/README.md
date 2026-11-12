@@ -48,7 +48,7 @@ The photographs are included in this release under `photos/`.
 
 ## Relation to the video segmentation dataset
 
-The project also built a **video segmentation dataset** of separated plastic and paper waste and their individual categories. During the project it was used to train an image-recognition neural network, which was then applied to the photographs in this collection; the recognition results can be compared against the radar-based classification here. The full video segmentation dataset is not published; this repository contains only a preview sample. See [`docs/datasets/video_segmentation_dataset_v1/outputs.md`](../../docs/datasets/video_segmentation_dataset_v1/outputs.md).
+The project also built a **video segmentation dataset** of separated plastic and paper waste and their individual categories. During the project it was used to train an image-recognition neural network, which was then applied to the photographs in this collection; the recognition results can be compared against the radar-based classification here. The video segmentation dataset is published in [`release/video_segmentation_dataset_v1`](../video_segmentation_dataset_v1/README.md). See [`docs/datasets/video_segmentation_dataset_v1/outputs.md`](../../docs/datasets/video_segmentation_dataset_v1/outputs.md).
 
 ## Quick start (Python)
 

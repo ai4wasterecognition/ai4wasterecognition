@@ -58,4 +58,4 @@ python scripts/$NAME/infer.py \
 - All scripts are idempotent — re-running overwrites outputs deterministically.
 - This folder is one dataset family. Sister folders for other datasets:
   - `scripts/radar_dataset_v1/` — radar training set (D3.3)
-  - `scripts/video_segmentation_dataset_v1/` — video segmentation dataset (D4.2; only a preview sample is published)
+  - `scripts/video_segmentation_dataset_v1/` — video segmentation dataset (D4.2; published in `release/video_segmentation_dataset_v1/`)

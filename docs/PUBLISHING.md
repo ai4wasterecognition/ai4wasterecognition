@@ -15,13 +15,15 @@ Current dataset releases:
 
 - [release/radar_dataset_v1](../release/radar_dataset_v1/README.md)
 - [release/radar_dataset_from_multidetektor_measurement](../release/radar_dataset_from_multidetektor_measurement/README.md)
+- [release/video_segmentation_dataset_v1](../release/video_segmentation_dataset_v1/README.md)
 
-The video segmentation dataset is represented only by a preview sample in [samples/video_segmentation_dataset_v1](../samples/video_segmentation_dataset_v1/README.md). The full segmentation dataset is not published.
+Personal data visible in published photographs (for example handwriting or address labels on discarded documents) are blurred before release; the blurred regions are listed in the release (`anonymization_regions.csv`).
 
 ## What Is Not Published
 
 - raw measurement logs and device dumps
-- full datasets that the consortium has not approved for release, including the full video segmentation dataset
+- full datasets that the consortium has not approved for release
+- raw video recordings and source annotation bundles
 - personal data or anything that could identify a person
 - restricted consortium documents and internal reports
 - material whose disclosure could weaken IP protection or commercialization

@@ -1,0 +1,142 @@
+{
+  "dataset": "video_segmentation_dataset_v1",
+  "format": "COCO instance segmentation",
+  "splits": {
+    "train": {
+      "images": 226,
+      "annotations": 5054,
+      "groups": 76,
+      "per_category": {
+        "HDPE": 534,
+        "LDPE_farebne": 79,
+        "LDPE_hrube": 163,
+        "OCC_karton": 438,
+        "OST_plast": 59,
+        "PET": 924,
+        "PP_tenke": 413,
+        "PS": 121,
+        "contaminant": 285,
+        "napojove_kartony": 715,
+        "paper": 1323
+      }
+    },
+    "valid": {
+      "images": 48,
+      "annotations": 952,
+      "groups": 16,
+      "per_category": {
+        "HDPE": 153,
+        "LDPE_farebne": 33,
+        "LDPE_hrube": 22,
+        "OCC_karton": 129,
+        "OST_plast": 209,
+        "PET": 44,
+        "PS": 74,
+        "contaminant": 12,
+        "napojove_kartony": 57,
+        "paper": 219
+      }
+    },
+    "test": {
+      "images": 48,
+      "annotations": 1118,
+      "groups": 16,
+      "per_category": {
+        "HDPE": 123,
+        "LDPE_hrube": 37,
+        "OCC_karton": 42,
+        "OST_plast": 181,
+        "PET": 73,
+        "PS": 36,
+        "contaminant": 140,
+        "napojove_kartony": 414,
+        "paper": 72
+      }
+    }
+  },
+  "per_category": {
+    "HDPE": 810,
+    "LDPE_farebne": 112,
+    "LDPE_hrube": 222,
+    "OCC_karton": 609,
+    "OST_plast": 449,
+    "PET": 1041,
+    "PP_tenke": 413,
+    "PS": 231,
+    "contaminant": 437,
+    "napojove_kartony": 1186,
+    "paper": 1614
+  },
+  "per_task": {
+    "01_pet": {
+      "images": 30,
+      "annotations": 542
+    },
+    "02_hdpe": {
+      "images": 30,
+      "annotations": 810
+    },
+    "03_ldpe_hrube": {
+      "images": 29,
+      "annotations": 222
+    },
+    "04_ldpe_farebne": {
+      "images": 15,
+      "annotations": 112
+    },
+    "05_pp_tenke": {
+      "images": 14,
+      "annotations": 413
+    },
+    "06_ps": {
+      "images": 15,
+      "annotations": 231
+    },
+    "07_ost_plast": {
+      "images": 15,
+      "annotations": 449
+    },
+    "08_occ_karton": {
+      "images": 30,
+      "annotations": 334
+    },
+    "09_paper": {
+      "images": 30,
+      "annotations": 861
+    },
+    "10_napojove_kartony": {
+      "images": 30,
+      "annotations": 951
+    },
+    "11_primesy": {
+      "images": 84,
+      "annotations": 2199
+    }
+  },
+  "anonymized_images": 90,
+  "anonymized_regions": 166,
+  "total_images": 322,
+  "total_annotations": 7124,
+  "categories": [
+    "PET",
+    "HDPE",
+    "LDPE_hrube",
+    "LDPE_farebne",
+    "PP_tenke",
+    "PS",
+    "OST_plast",
+    "OCC_karton",
+    "paper",
+    "napojove_kartony",
+    "contaminant"
+  ],
+  "source_bundles": [
+    "WasteR_01_02_03_Backup.zip",
+    "WasteR_04_05_06_Backup.zip",
+    "WasteR_07_Backup.zip",
+    "WasteR_08_Backup.zip",
+    "WasteR_09_Backup.zip",
+    "WasteR_10_Backup.zip",
+    "WasteR_11_Backup.zip"
+  ]
+}

@@ -6,6 +6,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 DEFAULT_ALL_CONFIG="${REPO_ROOT}/training/configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes.yaml"
 DEFAULT_SINGLE_CONFIG="${REPO_ROOT}/training/configs/video_segmentation_dataset_v1/rfdetr_seg_single_material.yaml"
+DEFAULT_ALL_LARGE_CONFIG="${REPO_ROOT}/training/configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes_large.yaml"
 TRAIN_SCRIPT="${REPO_ROOT}/scripts/video_segmentation_dataset_v1/train_rfdetr.py"
 
 usage() {
@@ -13,15 +14,17 @@ usage() {
 Usage:
   training/run_rfdetr_seg.sh all [--dry-run]
   training/run_rfdetr_seg.sh single [--dry-run]
+  training/run_rfdetr_seg.sh all-large [--dry-run]
   training/run_rfdetr_seg.sh --config /path/to/config.yaml [--dry-run]
 
 Modes:
-  all       Use training/configs/video_segmentation_dataset_v1/rfdetr_seg_all_classes.yaml
-  single    Use training/configs/video_segmentation_dataset_v1/rfdetr_seg_single_material.yaml
+  all         Use rfdetr_seg_all_classes.yaml          (RF-DETR Seg Small)
+  single      Use rfdetr_seg_single_material.yaml      (RF-DETR Seg Small, single-material track)
+  all-large   Use rfdetr_seg_all_classes_large.yaml    (RF-DETR Seg Large, all-classes track)
 
 Examples:
   training/run_rfdetr_seg.sh all --dry-run
-  training/run_rfdetr_seg.sh single
+  training/run_rfdetr_seg.sh all-large
   training/run_rfdetr_seg.sh --config /data/my_seg_config.yaml --dry-run
 
 Notes:
@@ -47,6 +50,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     single)
       CONFIG_PATH="${DEFAULT_SINGLE_CONFIG}"
+      shift
+      ;;
+    all-large)
+      CONFIG_PATH="${DEFAULT_ALL_LARGE_CONFIG}"
       shift
       ;;
     --config)

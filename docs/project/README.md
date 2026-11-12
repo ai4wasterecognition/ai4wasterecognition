@@ -22,7 +22,7 @@ The repository follows the project logic from the application:
 - the deliverables index ([docs/deliverables/](../deliverables/README.md))
 - the dataset registry ([docs/datasets/](../datasets/README.md))
 - two full radar dataset releases in `release/radar_dataset_v1/` and `release/radar_dataset_from_multidetektor_measurement/`
-- a preview sample of the video segmentation dataset in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`; the full segmentation dataset is not published
+- the video segmentation dataset in `release/video_segmentation_dataset_v1/` and a preview sample in `samples/video_segmentation_dataset_v1/all_classes_mini_coco/`
 - export, training, and inference code in `scripts/` and `training/`
 - the publication index ([docs/publications/](../publications/README.md))
 
