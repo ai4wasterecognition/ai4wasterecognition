@@ -21,7 +21,7 @@ Instance-segmentation dataset of sorted waste on a sorting line. It supports the
 ## Repository Release or External Archive
 
 - repository release path: `release/video_segmentation_dataset_v1/`
-- DOI: none; the GitHub repository is the reference location of this release
+- DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `video_segmentation_dataset_v1.zip`)
 - landing page: [docs/datasets/video_segmentation_dataset_v1/outputs.md](../../docs/datasets/video_segmentation_dataset_v1/outputs.md)
 - version: `v1`
 
@@ -109,4 +109,4 @@ CC BY 4.0, see [LICENSE-DATA](../../LICENSE-DATA) and [docs/LICENSING.md](../../
 
 ## Citation
 
-Use [CITATION.cff](../../CITATION.cff) and name the release `release/video_segmentation_dataset_v1`.
+Use [CITATION.cff](../../CITATION.cff) and name the release `release/video_segmentation_dataset_v1`, DOI [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950).

@@ -48,9 +48,11 @@ Each dataset family uses the same subfolder name across the repository:
 
 ## Zenodo Archiving
 
-No release is archived in Zenodo yet. To archive a GitHub release:
+All dataset releases are archived in one Zenodo record: DOI [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950). The record holds one ZIP file per release folder (`release/<name>/` → `<name>.zip`).
 
-1. connect the GitHub repository in Zenodo and enable it
-2. create a GitHub release
-3. Zenodo archives the release and mints a DOI
-4. add the DOI to the dataset landing page, `CITATION.cff`, and the README
+To archive a new or updated release:
+
+1. zip the release folder (`zip -r <name>.zip <name>` inside `release/`)
+2. open the Zenodo record and create a **New version**, replace the changed ZIP files, and publish
+3. the new version gets its own DOI; the concept DOI of the record always resolves to the latest version
+4. update the DOI in the dataset landing page, `CITATION.cff`, and the README

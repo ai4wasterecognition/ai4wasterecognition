@@ -10,7 +10,7 @@ This folder documents every dataset family of the AI4WasteRecognition project. E
 | Radar dataset from multidetector measurement | full release published | `D4.3` | [release/radar_dataset_from_multidetektor_measurement](../../release/radar_dataset_from_multidetektor_measurement/README.md) | [radar_dataset_from_multidetektor_measurement/outputs.md](radar_dataset_from_multidetektor_measurement/outputs.md) |
 | Video segmentation dataset v1 | full release published | `D4.2` | [release/video_segmentation_dataset_v1](../../release/video_segmentation_dataset_v1/README.md) | [video_segmentation_dataset_v1/outputs.md](video_segmentation_dataset_v1/outputs.md) |
 
-None of the datasets has a DOI-backed archive copy yet. The GitHub repository is the reference location.
+All three releases are archived together in one Zenodo record, DOI [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950); each dataset is one ZIP file in the record (`<name>.zip`). The GitHub repository remains the working location of the releases.
 
 ## Pages per Dataset
 

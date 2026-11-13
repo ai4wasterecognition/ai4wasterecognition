@@ -8,7 +8,7 @@ Hlavnou verziou dokumentácie je anglická verzia [README.md](README.md). Ostatn
 
 ## Zverejnené dáta
 
-Repozitár obsahuje dva kompletné radarové datasety a kompletný video segmentačný dataset. Všetky súbory sú vo vetve `main` a dajú sa stiahnuť priamo z GitHubu (`Code → Download ZIP` alebo `git clone`).
+Repozitár obsahuje dva kompletné radarové datasety a kompletný video segmentačný dataset. Všetky súbory sú vo vetve `main` a dajú sa stiahnuť priamo z GitHubu (`Code → Download ZIP` alebo `git clone`). Všetky tri datasety sú archivované aj v Zenode, DOI [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950).
 
 | Dataset | Obsah | Rozsah | Umiestnenie |
 | --- | --- | --- | --- |

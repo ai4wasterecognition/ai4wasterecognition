@@ -19,5 +19,9 @@ keywords:
   - segmentation
   - waste-management
   - project-repository
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24187950"
+    description: "Zenodo archive of the three project datasets (video segmentation dataset v1, radar dataset v1, radar dataset from multidetector measurement)"
 version: "0.1.0"
 date-released: "2026-04-23"

@@ -55,7 +55,7 @@ The project also built a **video segmentation dataset** of separated plastic and
 
 ## DOI and Archive
 
-- DOI: none (no archive copy yet)
+- DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `radar_dataset_from_multidetektor_measurement.zip`)
 - URL: this repository at `release/radar_dataset_from_multidetektor_measurement/`
 - Version: `1.0.0`
 

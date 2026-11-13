@@ -42,4 +42,4 @@ The release is generated from the internal training-ready COCO export by [`scrip
 
 ## Citation
 
-Cite using [CITATION.cff](../../CITATION.cff) and name the release `release/video_segmentation_dataset_v1`. The GitHub repository is the reference location of this release.
+Cite using [CITATION.cff](../../CITATION.cff) and name the release `release/video_segmentation_dataset_v1`. DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `video_segmentation_dataset_v1.zip`).

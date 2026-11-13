@@ -5,7 +5,7 @@
 - full training-ready release published in [`release/video_segmentation_dataset_v1/`](../../../release/video_segmentation_dataset_v1/README.md)
 - this is the dataset on which the RF-DETR Seg models reported in `D4.2` were trained
 - personal data visible in some photos (handwriting, letters, invoices, address labels) were blurred before publication, see [Anonymization](#anonymization)
-- DOI: none; the GitHub repository is the reference location of this release
+- DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `video_segmentation_dataset_v1.zip`)
 
 ## Related Deliverables
 

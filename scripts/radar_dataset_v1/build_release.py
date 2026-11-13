@@ -65,7 +65,7 @@ Counts:
 - extended bin rows: {extended['bin_row_count']:,}
 - core primary material classes: {classes}
 
-The dataset has no DOI-backed archive copy yet. Landing page: [docs/datasets/radar_dataset_v1/experimental-data.md](../../docs/datasets/radar_dataset_v1/experimental-data.md).
+DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `radar_dataset_v1.zip`). Landing page: [docs/datasets/radar_dataset_v1/experimental-data.md](../../docs/datasets/radar_dataset_v1/experimental-data.md).
 """
     (root / "README.md").write_text(text, encoding="utf-8")
 

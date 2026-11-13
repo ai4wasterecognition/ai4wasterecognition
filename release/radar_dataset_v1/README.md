@@ -20,4 +20,4 @@ Counts:
 - extended bin rows: 17,495
 - core primary material classes: `plastic`, `paper_cardboard`, `water`, `biomass`, `background`, `glass`, `human`, `container_only`, `oil`, `metal`, `unknown`
 
-The dataset has no DOI-backed archive copy yet. Landing page: [docs/datasets/radar_dataset_v1/experimental-data.md](../../docs/datasets/radar_dataset_v1/experimental-data.md).
+DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `radar_dataset_v1.zip`). Landing page: [docs/datasets/radar_dataset_v1/experimental-data.md](../../docs/datasets/radar_dataset_v1/experimental-data.md).

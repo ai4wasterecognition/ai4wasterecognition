@@ -26,7 +26,7 @@
 
 ## DOI and Archive
 
-- DOI: none (no archive copy yet)
+- DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `radar_dataset_from_multidetektor_measurement.zip`)
 - URL: GitHub-hosted at `release/radar_dataset_from_multidetektor_measurement/` of this repository
 - version: `1.0.0`
 

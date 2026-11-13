@@ -77,4 +77,4 @@ The script validates that the input `.txt` matches the setup (17 bins, bin_size=
 
 ## Archival Workflow
 
-The GitHub repository is the reference location of this release; it has no DOI-backed archive copy. The radar tables are compact (~1.7 MB); the sample photographs add ~150 MB.
+The release is published in this GitHub repository and archived in Zenodo with DOI [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (file `radar_dataset_from_multidetektor_measurement.zip`). The radar tables are compact (~1.7 MB); the sample photographs add ~150 MB.

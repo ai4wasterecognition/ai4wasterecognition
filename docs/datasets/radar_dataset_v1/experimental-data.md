@@ -61,5 +61,5 @@ For the concrete publication and modeling strategy, see [publication-and-modelin
 ## DOI and Archive
 
 - repository release: `release/radar_dataset_v1`
-- DOI: none (no archive copy yet)
+- DOI: [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950) (Zenodo archive of all project datasets, file `radar_dataset_v1.zip`)
 - version: `v1`

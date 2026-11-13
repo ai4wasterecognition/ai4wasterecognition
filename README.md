@@ -6,7 +6,7 @@ Public repository of the project `AI4WasteRecognition: AI-assisted recognition o
 
 ## Published Data
 
-The repository contains two full radar datasets and the full video segmentation dataset. All files are in the `main` branch and can be downloaded directly from GitHub (`Code → Download ZIP` or `git clone`).
+The repository contains two full radar datasets and the full video segmentation dataset. All files are in the `main` branch and can be downloaded directly from GitHub (`Code → Download ZIP` or `git clone`). All three datasets are also archived in Zenodo, DOI [10.5281/zenodo.24187950](https://doi.org/10.5281/zenodo.24187950).
 
 | Dataset | Content | Size | Location |
 | --- | --- | --- | --- |
